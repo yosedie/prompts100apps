@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Judul Klik-Positif AI: Click-Positive Headline Generator
+## Application Name
+AI Click-Positive Headlines: Click-Positive Headline Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang membantu penulis dan kreator konten membuat judul yang menarik perhatian tanpa menjadi clickbait yang menipu. Pengguna memasukkan topik atau judul asli, dan AI akan menghasilkan 5 alternatif judul "klik-positif" yang memancing rasa penasaran namun tetap akurat.
+## Project Summary
+Build a web application that helps writers and content creators create attention-grabbing titles without being deceptive clickbait. Users enter an original topic or title, and the AI ​​will generate 5 alternative “click-positive” titles that are intriguing yet accurate.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Judul Klik-Positif AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Masukkan Topik atau Judul Asli Artikel/Video Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Judul Menarik!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Brainstorming...".
-4.  **Area Output:**
-    *   Judul (H3): "5 Alternatif Judul Klik-Positif:"
-    *   Sebuah area konten tunggal untuk menampilkan 5 judul dalam daftar bernomor.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Semua" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Positive-Click Headline".
+2.  **User Input Form:**
+    *   A text input field labeled "Enter the Original Topic or Title of Your Article/Video:".
+3.  **Action Button:** A main button with the text "Create a Catchy Title!". While the process is running, the button should be activated and display the status "Brainstorming...".
+4.  **Output Area:**
+    *   Headline (H3): "5 Click-Positive Headline Alternatives:"
+    *   A single content area to display 5 titles in a numbered list.
+    *   **Copy Button:** There should be a "Copy All" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (daftar bernomor) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (numbered lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan topik/judul dan mengklik tombol "Buat Judul Menarik!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a topic/title and clicks the "Create a Catchy Title!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang ahli strategi konten digital dan copywriter viral. Anda memahami psikologi di balik judul yang membuat orang mengklik, tetapi Anda juga menjunjung tinggi etika dan akurasi.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web yang membantu penulis dan kreator konten membuat judu
 
     Sajikan hasilnya dalam format daftar bernomor.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 5 alternatif judul di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 5 alternative titles in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Topik atau Judul Asli Artikel/Video Anda:" dengan:**
-    `Manfaat Minum Air Putih`
+*   **Fill in the "Enter the Original Topic or Title of Your Article/Video:" column with:**
+`Benefits of Drinking Water`
 ---

@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Komentator Pertandingan Fiktif AI
+## Application Name
+AI Fictitious Match Commentator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web hiburan yang menulis narasi komentar play-by-play yang seru untuk pertandingan olahraga yang sepenuhnya fiktif. Pengguna memasukkan nama olahraga aneh, dan AI akan menghasilkan naskah komentar yang dramatis dan penuh semangat seolah-olah sedang menyiarkan momen puncak pertandingan.
+## Project Summary
+Build an entertainment web application that writes exciting play-by-play commentary narratives for completely fictional sports games. Users enter the name of a strange sport, and the AI ​​will generate a dramatic and passionate commentary script as if it were broadcasting the peak moments of the game.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Komentator Pertandingan Fiktif AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Nama Olahraga Fiktif yang Akan Dikomentari:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Mulai Komentari!". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menyiapkan Mikrofon...".
-4.  **Area Output:**
-    *   Judul (H3): "Komentar Play-by-Play:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh narasi.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Fictitious Match Commentator".
+2.  **User Input Form:**
+    *   A text input field labeled "Name of Fictitious Sport to Comment on:".
+3.  **Action Button:** A main button with the text "Start Commenting!". While the process is running, the button should be disabled and display the status "Setting up Microphone...".
+4.  **Output Area:**
+    *   Title (H3): "Play-by-Play Commentary:"
+    *   A single content area to display the entire narrative.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan nama olahraga dan mengklik tombol "Mulai Komentari!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters the name of the sport and clicks the "Start Commenting!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang komentator olahraga legendaris dengan energi tinggi. Anda mampu membuat pertandingan paling aneh sekalipun terdengar seru, dramatis, dan menegangkan.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web hiburan yang menulis narasi komentar play-by-play yan
 
     Gunakan format Markdown untuk penekanan pada momen-momen dramatis.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan narasi komentar yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted comment narrative in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Nama Olahraga Fiktif yang Akan Dikomentari:" dengan:**
-    `Final Kejuaraan Dunia Balap Siput Ekstrem`
+*   **Fill in the "Name of the Fictitious Sport to be Commented on:" column with:**
+`Extreme Snail Racing World Championship Final`
 ---

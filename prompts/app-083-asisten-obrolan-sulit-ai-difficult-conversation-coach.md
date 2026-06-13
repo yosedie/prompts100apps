@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Asisten "Obrolan Sulit" AI: Difficult Conversation Coach
+## Application Name
+AI "Difficult Conversation" Assistant: Difficult Conversation Coach
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai pelatih komunikasi. Pengguna mendeskripsikan sebuah percakapan sulit yang harus mereka hadapi, dan AI akan memberikan panduan terstruktur yang mencakup beberapa opsi kalimat pembuka, poin-poin kunci yang harus dibahas, dan tips untuk menjaga agar percakapan tetap produktif dan tidak eskalatif.
+## Project Summary
+Build a web application that functions as a communication coach. Users describe a difficult conversation they had to face, and the AI ​​will provide a structured guide that includes several opening line options, key points to cover, and tips for keeping the conversation productive and non-escalative.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Asisten 'Obrolan Sulit' AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Jelaskan percakapan sulit yang harus Anda lakukan:". Berikan placeholder seperti "Contoh 1: Saya perlu memberitahu rekan kerja bahwa kualitas pekerjaannya menurun. Contoh 2: Saya ingin meminta kenaikan gaji kepada atasan saya."
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Siapkan Strategi Percakapan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menyusun Strategi...".
-4.  **Area Output:**
-    *   Judul (H3): "Strategi Percakapan Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh panduan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI 'Difficult Chat' Assistant".
+2.  **User Input Form:**
+    *   A large text area labeled "Describe a difficult conversation you had to have:". Provide a placeholder such as "Example 1: I need to tell a coworker that the quality of their work is declining. Example 2: I want to ask my boss for a raise."
+3.  **Action Button:** A main button with the text "Set Up a Conversation Strategy". While the process is running, the button should be activated and display the status "Making a Strategy...".
+4.  **Output Area:**
+    *   Title (H3): "Your Conversation Strategy:"
+    *   A single content area to display the entire guide.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan deskripsi percakapan dan mengklik tombol "Siapkan Strategi Percakapan".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a conversation description and clicks the "Prepare Conversation Strategy" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang pelatih komunikasi (communication coach) dan ahli resolusi konflik yang empatik dan strategis.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai pelatih komunikasi. Pengguna m
 
     Gunakan format Markdown untuk menyusun panduan dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan panduan strategi di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a strategy guide in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Jelaskan percakapan sulit yang harus Anda lakukan:" dengan:**
-    `Saya harus memberitahu rekan satu tim saya, Budi, bahwa dia sering terlambat mengumpulkan pekerjaannya, yang berdampak pada seluruh tim. Saya tidak ingin merusak hubungan kerja kami.`
+*   **Fill in the "Describe a difficult conversation you had to have:" column with:**
+`I had to tell my teammate, Budi, that he was often late turning in his work, which had an impact on the whole team. I don't want to ruin our working relationship.`
 ---

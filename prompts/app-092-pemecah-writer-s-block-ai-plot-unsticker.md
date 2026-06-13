@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Pemecah Writer's Block AI: Plot Unsticker
+## Application Name
+AI Writer's Block Breaker: Plot Unsticker
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai teman brainstorming untuk para penulis. Pengguna mendeskripsikan sebuah adegan atau titik plot di mana mereka merasa buntu, dan AI akan memberikan tiga saran yang berbeda dan tak terduga tentang bagaimana cerita bisa berlanjut.
+## Project Summary
+Build a web application that serves as a brainstorming companion for writers. Users describe a scene or plot point where they feel stuck, and the AI ​​will make three different and unexpected suggestions about how the story could progress.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pemecah Writer's Block AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Jelaskan di mana Anda merasa buntu dalam cerita Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Beri Saya Ide!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Brainstorming...".
-4.  **Area Output:**
-    *   Judul (H3): "3 Ide untuk Melanjutkan Cerita:"
-    *   Sebuah area konten tunggal untuk menampilkan 3 ide. Setiap ide harus dipisahkan dengan jelas.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Semua" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Writer's Block Breaker".
+2.  **User Input Form:**
+    *   A large textarea labeled "Explain where you feel stuck in your story:".
+3.  **Action Button:** A main button with the text "Give Me Ideas!". While the process is running, the button should be activated and display the status "Brainstorming...".
+4.  **Output Area:**
+    *   Title (H3): "3 Ideas to Continue the Story:"
+    *   A single content area to showcase 3 ideas. Each idea must be clearly separated.
+    *   **Copy Button:** There should be a "Copy All" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##` dan `---`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##` and `---`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan deskripsi kebuntuan mereka dan mengklik tombol "Beri Saya Ide!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users enter a description of their deadlock and click the "Give Me Ideas!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang editor cerita (story editor) dan penulis kreatif yang sangat imajinatif. Anda ahli dalam menemukan solusi tak terduga untuk masalah plot.
 
@@ -45,15 +45,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai teman brainstorming untuk para
 
     Gunakan format Markdown untuk memisahkan setiap saran dengan jelas (misalnya, menggunakan garis horizontal `---`).
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 3 ide di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 3 ideas in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Jelaskan di mana Anda merasa buntu dalam cerita Anda:" dengan:**
-    `Protagonis saya, seorang detektif, akhirnya berhasil menyudutkan penjahat utama di atap gedung. Mereka berdua saling menodongkan senjata. Saya tidak tahu bagaimana cara mengakhiri adegan ini tanpa terasa klise.`
+*   **Fill in the "Describe where you got stuck in your story:" column with:**
+`My protagonist, a detective, finally manages to corner the main villain on the roof of the building. They both pointed guns at each other. I don't know how to end this scene without it feeling cliche.`
 ---

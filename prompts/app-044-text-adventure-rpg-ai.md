@@ -1,41 +1,41 @@
-## Nama Aplikasi
+## Application Name
 Text Adventure RPG AI
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web interaktif yang berfungsi sebagai permainan petualangan berbasis teks (text-based RPG). AI akan berperan sebagai Game Master (GM), mendeskripsikan dunia dan skenario, sementara pengguna mengetikkan tindakan yang ingin mereka lakukan. AI akan merespons tindakan tersebut dan melanjutkan cerita.
+## Project Summary
+Build an interactive web application that functions as a text-based adventure game (text-based RPG). The AI ​​will act as Game Master (GM), describing the world and scenarios, while the user types in the actions they want to take. The AI ​​will respond to the action and continue the story.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Text Adventure RPG AI".
-2.  **Layar Pengaturan Awal (Setup Screen):**
-    *   **Pilihan Skenario:** Sebuah menu dropdown (select) dengan label "Pilih Skenario Petualangan:" dan opsi: "Detektif Noir di Kota Hujan", "Penjelajah Luar Angkasa di Kapal Terbengkalai", "Penyihir Muda di Hutan Terlarang".
-    *   **Tombol Mulai:** Sebuah tombol utama dengan teks "Mulai Petualangan!".
-3.  **Layar Permainan (Game Screen, setelah setup):**
-    *   **Jendela Cerita:** Sebuah area konten utama yang menampilkan riwayat narasi dari AI dan tindakan dari pengguna, seperti log percakapan.
-    *   **Input Tindakan:** Sebuah kolom input teks di bagian bawah dengan label "Apa yang kamu lakukan?".
-    *   **Tombol Kirim:** Tombol untuk mengirim tindakan pengguna.
-    *   **Tombol Restart:** Tombol untuk kembali ke Layar Pengaturan Awal.
-4.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "Text Adventure RPG AI".
+2.  **Initial Setup Screen:**
+    *   **Scenario Selection:** A dropdown (select) menu with the label "Select Adventure Scenario:" and the options: "Noir Detective in a Rainy City", "Space Explorer on an Abandoned Ship", "Young Witch in the Forbidden Forest".
+    *   **Start Button:** A main button with the text "Start the Adventure!".
+3.  **Game Screen, after setup:**
+    *   **Story Window:** A main content area that displays a narrative history of the AI ​​and actions of the user, such as a conversation log.
+    *   **Action Input:** A text input field at the bottom labeled "What do you do?".
+    *   **Submit Button:** Button to submit a user action.
+    *   **Restart Button:** Button to return to the Initial Setup Screen.
+4.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `*italic*` untuk deskripsi suasana) menjadi elemen HTML yang diformat dengan benar.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `*italic*` for scene descriptions) into properly formatted HTML elements.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih skenario dan mengklik "Mulai Petualangan!".
-2.  Aplikasi mengirimkan *prompt sistem awal* ke model AI untuk memulai cerita.
-3.  **Logika Percakapan (Sangat Penting):**
-    *   Setiap kali pengguna mengirimkan tindakan, aplikasi harus mengirim **seluruh riwayat percakapan** (narasi AI sebelumnya + tindakan pengguna) kembali ke model AI. Ini memungkinkan AI untuk mengingat konteks dan merespons secara koheren.
-    *   Aplikasi kemudian menambahkan respons baru dari AI ke Jendela Cerita.
+1.  The user selects a scenario and clicks "Start the Adventure!".
+2.  The app sends an *initial system prompt* to the AI ​​model to start the story.
+3.  **Conversation Logic (Very Important):**
+    *   Every time a user sends an action, the app must send **the entire conversation history** (previous AI narrative + user actions) back to the AI ​​model. This allows the AI ​​to remember the context and respond coherently.
+    *   The app then adds new responses from the AI ​​to the Story Window.
 
-4.  **Prompt Sistem Awal (Initial System Prompt):**
+4.  **Initial System Prompt:**
     ```
     Anda adalah seorang Game Master (GM) yang ahli untuk permainan petualangan berbasis teks. Tugas Anda adalah menciptakan cerita yang imersif dan interaktif.
 
@@ -49,13 +49,13 @@ Bangun sebuah aplikasi web interaktif yang berfungsi sebagai permainan petualang
 
     Mulailah sekarang dengan menulis paragraf pembuka yang menarik untuk memulai petualangan.
     ```
-5.  Aplikasi menampilkan respons pertama di Jendela Cerita, dan menunggu input tindakan dari pengguna.
+5.  The app displays the first response in the Story Window, and waits for action input from the user.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, atur pilihan default pada menu dropdown saat halaman pertama kali dimuat:**
+**To allow live testing, set the default options in the dropdown menu when the page first loads:**
 
-*   **Atur pilihan "Pilih Skenario Petualangan:" ke:**
-    `Detektif Noir di Kota Hujan`
+*   **Set the "Select Adventure Scenario:" option to:**
+`Detective Noir in the Rainy City`
 ---

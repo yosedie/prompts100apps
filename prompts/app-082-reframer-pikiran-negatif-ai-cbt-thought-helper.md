@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Reframer Pikiran Negatif AI: CBT Thought Helper
+## Application Name
+AI Negative Thought Reframer: CBT Thought Helper
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web berdasarkan prinsip Terapi Perilaku Kognitif (CBT). Pengguna memasukkan sebuah pemikiran negatif otomatis, dan AI akan membantu menuliskannya kembali menjadi 3 perspektif alternatif yang lebih seimbang, realistis, dan konstruktif.
+## Project Summary
+Build a web application based on the principles of Cognitive Behavioral Therapy (CBT). Users enter an automatic negative thought, and AI will help rewrite it into 3 alternative perspectives that are more balanced, realistic, and constructive.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Reframer Pikiran Negatif AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Tuliskan Pikiran Negatif yang Mengganggu Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Cari Perspektif Baru". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari Keseimbangan...".
-4.  **Area Output:**
-    *   **Disclaimer Penting:** Tepat di atas hasil, tampilkan teks peringatan: "**Catatan:** Aplikasi ini adalah alat bantu untuk refleksi diri dan bukan pengganti nasihat dari profesional kesehatan mental."
-    *   Judul (H3): "3 Perspektif Alternatif yang Lebih Seimbang:"
-    *   Sebuah area konten tunggal untuk menampilkan 3 perspektif dalam daftar bernomor.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Negative Thought Reframer".
+2.  **User Input Form:**
+    *   A large text area labeled "Write Down Negative Thoughts That Disturb You:".
+3.  **Action Buttons:** A main button with the text "Search for New Perspectives". While the process is running, the button should be activated and display the status "Searching for Balance...".
+4.  **Output Area:**
+    *   **Important Disclaimer:** Directly above the results, display warning text: "**Note:** This app is an aid to self-reflection and is not a substitute for advice from a mental health professional."
+    *   Title (H3): "3 Alternative, More Balanced Perspectives:"
+    *   A single content area to display 3 perspectives in a numbered list.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (daftar bernomor) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (numbered lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan pikiran negatif dan mengklik tombol "Cari Perspektif Baru".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a negative thought and clicks the “Search for a New Perspective” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang terapis yang terlatih dalam Terapi Perilaku Kognitif (CBT). Anda ahli dalam membantu orang mengidentifikasi distorsi kognitif dan menemukan cara berpikir yang lebih seimbang.
 
@@ -47,15 +47,15 @@ Bangun sebuah aplikasi web berdasarkan prinsip Terapi Perilaku Kognitif (CBT). P
 
     Sajikan hasilnya dalam format daftar bernomor.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 3 perspektif alternatif di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 3 alternative perspectives in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Tuliskan Pikiran Negatif yang Mengganggu Anda:" dengan:**
-    `Saya gagal total dalam presentasi tadi, saya pasti akan dipecat.`
+*   **Fill in the "Write Down Negative Thoughts That Disturb You" column with:**
+`I failed miserably in the presentation earlier, I will definitely be fired.`
 ---

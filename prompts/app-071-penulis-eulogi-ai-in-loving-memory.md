@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Penulis Eulogi AI: In Loving Memory
+## Application Name
+Author of Eulogy AI: In Loving Memory
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang membantu pengguna menyusun pidato kenangan (eulogi) di saat-saat sulit. Pengguna memasukkan kenangan, sifat-sifat baik, dan hubungan mereka dengan almarhum/almarhumah, lalu AI akan membantu merangkainya menjadi sebuah eulogi yang tulus, mengharukan, dan penuh hormat.
+## Project Summary
+Build a web application that helps users compose memorial eulogies during difficult times. Users enter memories, good qualities, and their relationship with the deceased, then AI will help assemble them into a sincere, moving, and respectful eulogy.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Penulis Eulogi AI".
-2.  **Form Input Pengguna:**
-    *   **Input Hubungan:** Sebuah kolom input teks dengan label "Apa hubungan Anda dengan almarhum/almarhumah?".
-    *   **Input Sifat:** Sebuah area teks (textarea) dengan label "Sebutkan 3 sifat terbaik yang paling Anda ingat darinya:".
-    *   **Input Kenangan:** Sebuah area teks (textarea) dengan label "Ceritakan satu kenangan singkat yang paling berkesan bersama beliau:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Susun Draf Eulogi". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mengenang...".
-4.  **Area Output:**
-    *   Judul (H3): "Draf Eulogi Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh naskah.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Eulogy Writer".
+2.  **User Input Form:**
+    *   **Relationship Input:** A text input field with the label "What was your relationship with the deceased/deceased?".
+    *   **Input Traits:** A text area with the label "Name the 3 best traits you remember most about him:".
+    *   **Input Memories:** A text area with the label "Tell me one short, most memorable memory with him:".
+3.  **Action Button:** A main button with the text "Draft Eulogy". While the process is running, the button should be activated and display the status "Recalling...".
+4.  **Output Area:**
+    *   Title (H3): "Draft Your Eulogy:"
+    *   A single content area to display the entire manuscript.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail kenangan dan mengklik tombol "Susun Draf Eulogi".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the memorial details and clicks the “Draft Eulogy” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis yang sangat empatik dan bijaksana. Anda mampu merangkai kata-kata untuk menghormati kenangan seseorang dengan cara yang tulus dan mengharukan.
 
@@ -48,19 +48,19 @@ Bangun sebuah aplikasi web yang membantu pengguna menyusun pidato kenangan (eulo
 
     Gunakan placeholder `[Nama Almarhum/ah]` agar mudah disesuaikan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan draf eulogi di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the draft eulogy in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa hubungan Anda dengan almarhum/almarhumah?" dengan:**
-    `Saya adalah cucunya.`
-*   **Isi kolom "Sebutkan 3 sifat terbaik yang paling Anda ingat darinya:" dengan:**
-    `Selalu sabar, punya selera humor yang luar biasa, dan sangat pandai membuat kue.`
-*   **Isi kolom "Ceritakan satu kenangan singkat yang paling berkesan bersama beliau:" dengan:**
-    `Saya ingat saat beliau mengajari saya cara membuat kue cokelat pertamanya, meskipun dapurnya jadi berantakan, beliau hanya tertawa dan berkata bahwa kekacauan adalah bagian dari petualangan.`
+*   **Fill in the column "What was your relationship with the deceased/deceased?" with:**
+`I am his grandson.`
+*   **Fill in the column "Name the 3 best qualities that you remember most about him:" with:**
+`Always patient, has a great sense of humor and is really good at baking.`
+*   **Fill in the column "Tell me one short, most memorable memory with him:" with:**
+`I remember when he taught me how to make his first chocolate cake, even though the kitchen was a mess, he just laughed and said that the mess was part of the adventure.'
 ---

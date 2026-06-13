@@ -1,37 +1,37 @@
-## Nama Aplikasi
+## Application Name
 Fantasy Name Forge AI
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web kreatif yang berfungsi sebagai generator nama fantasi. Pengguna memilih kategori (Karakter, Tempat, Artefak) dan memberikan tema opsional, lalu AI akan menciptakan sejumlah nama yang unik, lengkap dengan etimologi fiktif singkat untuk setiap nama.
+## Project Summary
+Build a creative web application that functions as a fantasy name generator. Users select a category (Characters, Places, Artifacts) and provide an optional theme, then the AI ​​will create a number of unique names, complete with a short fictional etymology for each name.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Fantasy Name Forge AI".
-2.  **Form Input Pengguna:**
-    *   **Pilihan Kategori:** Sebuah menu dropdown (select) dengan label "Pilih Kategori Nama:" dan opsi: "Karakter", "Tempat", "Artefak".
-    *   **Input Tema:** Sebuah kolom input teks dengan label "Tema atau Ras (Opsional):".
-    *   **Input Jumlah:** Sebuah kolom input angka (type="number") dengan label "Jumlah Nama yang Diinginkan:" dan nilai default 5.
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tempa Nama!". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menempa...".
-4.  **Area Output:**
-    *   Judul (H3): "Nama Fantasi yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan daftar nama.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "Fantasy Name Forge AI".
+2.  **User Input Form:**
+    *   **Category Selection:** A dropdown (select) menu with the label "Select Category Name:" and options: "Characters", "Places", "Artifacts".
+    *   **Theme Input:** A text input field labeled "Theme or Race (Optional):".
+    *   **Amount Input:** A number input field (type="number") with the label "Desired Number of Names:" and a default value of 5.
+3.  **Action Button:** A main button with the text "Forge a Name!". While the process is running, the button should be disabled and display the status "Forging...".
+4.  **Output Area:**
+    *   Title (H3): "Generated Fantasy Name:"
+    *   A single content area to display a list of names.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih kategori, mengisi tema (opsional), dan jumlah, lalu mengklik tombol "Tempa Nama!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users select a category, fill in a theme (optional), and quantity, then click the "Forge Name!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang world-builder, loremaster, dan ahli bahasa fiktif untuk dunia fantasi.
 
@@ -45,19 +45,19 @@ Bangun sebuah aplikasi web kreatif yang berfungsi sebagai generator nama fantasi
     Gunakan format Markdown berikut untuk setiap entri:
     **[Nama yang Dihasilkan]** - *[Etimologi fiktif singkat]*
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan daftar nama yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a formatted list of names in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Atur pilihan "Pilih Kategori Nama:" ke:**
-    `Karakter`
-*   **Isi kolom "Tema atau Ras (Opsional):" dengan:**
-    `Elf penjaga hutan kuno`
-*   **Atur "Jumlah Nama yang Diinginkan:" ke:**
-    `5`
+*   **Set the "Select Category Name:" option to:**
+`Character`
+*   **Fill in the "Theme or Race (Optional):" column with:**
+`Ancient forest guardian elves`
+*   **Set "Number of Desired Names:" to:**
+`5`
 ---

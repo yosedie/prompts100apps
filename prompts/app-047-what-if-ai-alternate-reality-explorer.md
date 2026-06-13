@@ -1,35 +1,35 @@
-## Nama Aplikasi
+## Application Name
 What If AI: Alternate Reality Explorer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang memungkinkan pengguna menjelajahi skenario sejarah atau fiksi alternatif. Pengguna mengajukan pertanyaan "Bagaimana jika...", dan AI akan menulis sebuah esai naratif yang mengeksplorasi konsekuensi dan realitas alternatif dari skenario tersebut.
+## Project Summary
+Build a web application that allows users to explore alternative historical or fictional scenarios. Users ask “What if…” questions, and the AI ​​will write a narrative essay exploring the consequences and alternative realities of the scenario.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "What If AI: Alternate Reality Explorer".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Ajukan Pertanyaan 'Bagaimana Jika...' Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Jelajahi Skenario!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menjelajahi Lini Masa...".
-4.  **Area Output:**
-    *   Judul (H3): "Eksplorasi Skenario Alternatif:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh esai.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "What If AI: Alternate Reality Explorer".
+2.  **User Input Form:**
+    *   A large text area labeled "Ask Your 'What If...' Question:".
+3.  **Action Buttons:** A main button with the text "Explore Scenarios!". While the process is running, the button should be activated and display the status "Browsing the Timeline...".
+4.  **Output Area:**
+    *   Title (H3): "Exploration of Alternative Scenarios:"
+    *   A single content area to display the entire essay.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan skenario "Bagaimana jika" dan mengklik tombol "Jelajahi Skenario!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a “What if” scenario and clicks the “Explore Scenarios!” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang sejarawan sejarah alternatif dan penulis fiksi spekulatif. Anda ahli dalam menganalisis titik-titik percabangan dalam sejarah dan mengeksplorasi konsekuensi jangka panjangnya.
 
@@ -45,15 +45,15 @@ Bangun sebuah aplikasi web yang memungkinkan pengguna menjelajahi skenario sejar
 
     Gunakan gaya penulisan yang menarik dan informatif. Gunakan format Markdown untuk menyusun esai dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan esai yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted essay in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Ajukan Pertanyaan 'Bagaimana Jika...' Anda:" dengan:**
-    `Bagaimana jika internet tidak pernah ditemukan?`
+*   **Fill in the "Ask Your 'What If...' Question:" field with:**
+`What if the internet had never been invented?`
 ---

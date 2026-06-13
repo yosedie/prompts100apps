@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Generator Prompt Jurnal AI: Reflective Prompts
+## Application Name
+AI Journal Prompt Generator: Reflective Prompts
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web sederhana yang berfungsi sebagai pemicu untuk journaling. Pengguna memasukkan satu kata yang menggambarkan perasaan mereka hari ini, dan AI akan menghasilkan 5 pertanyaan jurnal yang mendalam dan introspektif untuk membantu pengguna merefleksikan dan memahami perasaan tersebut.
+## Project Summary
+Build a simple web application that functions as a trigger for journaling. Users enter one word that describes how they are feeling today, and the AI ​​will generate 5 deep, introspective journal questions to help users reflect and understand those feelings.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Generator Prompt Jurnal AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Satu Kata yang Menggambarkan Perasaanmu Hari Ini:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Beri Saya Prompt Jurnal". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari Pertanyaan...".
-4.  **Area Output:**
-    *   Judul (H3): "5 Prompt Jurnal Untukmu:"
-    *   Sebuah area konten tunggal untuk menampilkan 5 pertanyaan dalam daftar bernomor.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Semua" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Journal Prompt Generator".
+2.  **User Input Form:**
+    *   A text input field labeled "One Word That Describes How You Feel Today:".
+3.  **Action Button:** A main button with the text "Give Me a Journal Prompt". While the process is running, the button should be activated and display the status "Searching for Questions...".
+4.  **Output Area:**
+    *   Title (H3): "5 Journal Prompts For You:"
+    *   A single content area to display 5 questions in a numbered list.
+    *   **Copy Button:** There should be a "Copy All" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (daftar bernomor) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (numbered lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan satu kata perasaan dan mengklik tombol "Beri Saya Prompt Jurnal".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users enter one feeling word and click the “Give Me a Journal Prompt” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang terapis dan pemandu jurnal (journaling facilitator) yang bijaksana. Anda ahli dalam membuat pertanyaan yang menggugah pikiran untuk refleksi diri.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web sederhana yang berfungsi sebagai pemicu untuk journal
 
     Sajikan hasilnya dalam format daftar bernomor.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 5 prompt jurnal di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 5 journal prompts in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Satu Kata yang Menggambarkan Perasaanmu Hari Ini:" dengan:**
-    `Lelah`
+*   **Fill in the "One Word That Describes How You Feel Today" column with:**
+`Tired`
 ---

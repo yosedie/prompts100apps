@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Asisten Negosiasi Gaji AI
+## Application Name
+AI Salary Negotiation Assistant
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai pelatih negosiasi gaji. Pengguna memasukkan data tentang posisi, industri, dan pencapaian mereka, lalu AI akan menghasilkan poin-poin argumen yang kuat dan frasa-frasa kunci yang bisa langsung digunakan dalam percakapan negosiasi.
+## Project Summary
+Build a web application that functions as a salary negotiation coach. Users input data about their position, industry, and accomplishments, and AI generates strong argument points and key phrases that can be immediately used in negotiation conversations.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Asisten Negosiasi Gaji AI".
-2.  **Form Input Pengguna:**
-    *   **Input Posisi:** Sebuah kolom input teks dengan label "Posisi/Jabatan Anda:".
-    *   **Input Industri:** Sebuah kolom input teks dengan label "Industri Perusahaan:".
-    *   **Input Pencapaian:** Sebuah area teks (textarea) dengan label "Sebutkan 2-3 Pencapaian Kuantitatif Terbaik Anda:". Berikan placeholder seperti "Contoh: Meningkatkan penjualan sebesar 20%, Mengurangi biaya operasional 15%".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Siapkan Argumen Saya". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mempersiapkan...".
-4.  **Area Output:**
-    *   Judul (H3): "Poin & Frasa Kunci untuk Negosiasi:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh panduan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Salary Negotiation Assistant".
+2.  **User Input Form:**
+    *   **Position Input:** A text input field with the label "Your Position/Title:".
+    *   **Industry Input:** A text input field labeled "Company Industry:".
+    *   **Input Achievements:** A text area labeled "Name your 2-3 Best Quantitative Achievements:". Provide a placeholder such as "Example: Increase sales by 20%, Reduce operational costs by 15%".
+3.  **Action Button:** A main button with the text "Set Up My Arguments". While the process is running, the button should be activated and display the status "Preparing...".
+4.  **Output Area:**
+    *   Title (H3): "Key Points & Phrases for Negotiation:"
+    *   A single content area to display the entire guide.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail posisi dan pencapaian, lalu mengklik tombol "Siapkan Argumen Saya".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users fill in position and accomplishment details, then click the "Prepare My Arguments" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang negosiator ulung dan konsultan karir yang ahli dalam strategi negosiasi gaji.
 
@@ -48,20 +48,20 @@ Bangun sebuah aplikasi web yang berfungsi sebagai pelatih negosiasi gaji. Penggu
 
     Gunakan format Markdown untuk menyusun panduan dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan panduan negosiasi di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a negotiation guide in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Posisi/Jabatan Anda:" dengan:**
-    `Senior Software Engineer`
-*   **Isi kolom "Industri Perusahaan:" dengan:**
-    `Teknologi Finansial (Fintech)`
-*   **Isi kolom "Sebutkan 2-3 Pencapaian Kuantitatif Terbaik Anda:" dengan:**
-    `- Memimpin proyek yang meningkatkan kecepatan loading aplikasi sebesar 30%.
-    - Mengurangi bug kritis di produksi sebesar 50% melalui implementasi unit testing yang lebih baik.`
+*   **Fill in the "Your Position/Title:" column with:**
+`Senior Software Engineer`
+*   **Fill in the "Company Industry:" column with:**
+`Financial Technology (Fintech)`
+*   **Fill in the column "Name your 2-3 Best Quantitative Achievements:" with:**
+`- Led a project that increased application loading speed by 30%.
+    - Reduced critical bugs in production by 50% through better implementation of unit testing.`
 ---

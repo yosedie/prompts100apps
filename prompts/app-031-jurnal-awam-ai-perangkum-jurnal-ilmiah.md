@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Jurnal Awam AI: Perangkum Jurnal Ilmiah
+## Application Name
+AI Public Journal: Summarize Scientific Journals
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai penerjemah sains. Pengguna menempelkan abstrak atau teks lengkap dari sebuah jurnal ilmiah yang padat dan teknis, dan AI akan merangkumnya menjadi penjelasan yang mudah dipahami oleh orang awam, tanpa menghilangkan esensi temuan utamanya.
+## Project Summary
+Build a web application that functions as a science translator. Users paste in the abstract or full text of a dense and technical scientific journal, and AI will summarize it into an explanation that is easy for laypeople to understand, without losing the essence of the main findings.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Jurnal Awam AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Tempelkan Abstrak atau Teks Jurnal Ilmiah di Sini:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Rangkum untuk Awam". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menerjemahkan Sains...".
-4.  **Area Output:**
-    *   Judul (H3): "Ringkasan Sederhana:"
-    *   Sebuah area konten tunggal untuk menampilkan ringkasan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "AI Lay Journal".
+2.  **User Input Form:**
+    *   A large text area with the label "Paste Abstract or Scientific Journal Text Here:".
+3.  **Action Button:** A main button with the text "Summarize for Laymen". While the process is running, the button should be activated and display the status "Translating Science...".
+4.  **Output Area:**
+    *   Title (H3): "Simple Summary:"
+    *   A single content area to display summaries.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna menempelkan teks jurnal dan mengklik tombol "Rangkum untuk Awam".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user pastes the journal text and clicks the "Summary for Laymen" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang komunikator sains (science communicator) yang sangat berbakat. Anda mampu memahami penelitian ilmiah yang kompleks dan menjelaskannya kepada audiens non-ahli dengan cara yang menarik dan mudah dimengerti.
 
@@ -45,15 +45,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai penerjemah sains. Pengguna men
 
     Gunakan format Markdown untuk penekanan pada istilah-istilah kunci yang telah Anda sederhanakan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan ringkasan yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a formatted summary in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan Abstrak atau Teks Jurnal Ilmiah di Sini:" dengan:**
-    `Abstrak: Penelitian ini menginvestigasi efek neuroprotektif dari kurkumin terhadap stres oksidatif yang diinduksi oleh glutamat pada kultur sel hipokampus. Hasil menunjukkan bahwa pra-perlakuan dengan kurkumin secara signifikan menekan produksi spesies oksigen reaktif (ROS) dan apoptosis seluler. Data kami mengindikasikan bahwa kurkumin dapat menjadi agen terapeutik potensial untuk gangguan neurodegeneratif yang dimediasi oleh eksitotoksisitas.`
+*   **Fill in the "Paste Abstract or Scientific Journal Text Here:" column with:**
+`Abstract: This study investigated the neuroprotective effects of curcumin against glutamate-induced oxidative stress in cultured hippocampal cells. The results showed that pretreatment with curcumin significantly suppressed the production of reactive oxygen species (ROS) and cellular apoptosis. Our data indicate that curcumin may be a potential therapeutic agent for neurodegenerative disorders mediated by excitotoxicity.`
 ---

@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Laporan Cuaca Puitis AI
+## Application Name
+AI Poetic Weather Report
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang mengubah data cuaca teknis menjadi sebuah deskripsi naratif yang puitis dan imajinatif. Pengguna memasukkan kondisi cuaca, dan AI akan menulis sebuah paragraf singkat yang melukiskan suasana hari itu dengan indah.
+## Project Summary
+Build a web application that turns technical weather data into poetic and imaginative narrative descriptions. Users enter weather conditions, and the AI ​​will write a short paragraph that beautifully describes the mood of the day.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Laporan Cuaca Puitis AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Masukkan Kondisi Cuaca Hari Ini:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Deskripsi Puitis". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Merasakan Angin...".
-4.  **Area Output:**
-    *   Judul (H3): "Laporan Cuaca Hari Ini:"
-    *   Sebuah area konten tunggal untuk menampilkan deskripsi puitis.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Poetic Weather Report".
+2.  **User Input Form:**
+    *   A text input field labeled "Enter Today's Weather Conditions:".
+3.  **Action Button:** A main button with the text "Create a Poetic Description". While the process is running, the button should be activated and display the status "Feeling the Wind...".
+4.  **Output Area:**
+    *   Title (H3): "Today's Weather Report:"
+    *   A single content area to display poetic descriptions.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan kondisi cuaca dan mengklik tombol "Buat Deskripsi Puitis".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters weather conditions and clicks the “Create Poetic Description” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penyair dan penulis alam (nature writer). Anda mampu melihat keindahan dan cerita di balik fenomena cuaca yang paling biasa sekalipun.
 
@@ -45,15 +45,15 @@ Bangun sebuah aplikasi web yang mengubah data cuaca teknis menjadi sebuah deskri
 
     Gunakan format Markdown untuk penekanan pada kata-kata tertentu jika perlu.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan deskripsi puitis di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a poetic description in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Kondisi Cuaca Hari Ini:" dengan:**
-    `Suhu 25 derajat Celcius, berawan, sedikit berangin.`
+*   **Fill in the "Enter Today's Weather Conditions:" column with:**
+`Temperature 25 degrees Celsius, cloudy, a little windy.`
 ---

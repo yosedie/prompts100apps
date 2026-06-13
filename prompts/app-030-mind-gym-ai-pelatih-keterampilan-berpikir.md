@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Mind Gym AI: Pelatih Keterampilan Berpikir
+## Application Name
+Mind Gym AI: Thinking Skills Trainer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web interaktif yang berfungsi sebagai pelatih untuk mengasah keterampilan berpikir. Pengguna memilih jenis keterampilan yang ingin dilatih (kritis, lateral, atau sistemik), dan AI akan memberikan sebuah skenario atau teka-teki yang dirancang khusus untuk melatih keterampilan tersebut, lengkap dengan opsi untuk meminta petunjuk dan melihat jawaban.
+## Project Summary
+Build an interactive web application that functions as a trainer to hone thinking skills. Users select the type of skill they want to train (critical, lateral, or systemic), and the AI ​​will present a scenario or puzzle specifically designed to practice that skill, complete with the option to ask for hints and view answers.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Mind Gym AI".
-2.  **Form Input Pengguna:**
-    *   **Pilihan Keterampilan:** Sebuah menu dropdown (select) dengan label "Pilih Keterampilan yang Ingin Dilatih:" dan opsi: "Berpikir Kritis", "Berpikir Lateral", "Berpikir Sistemik".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Mulai Latihan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Merancang Latihan...".
-4.  **Area Output yang Interaktif:**
-    *   **Skenario:** Judul (H3) "Skenario Latihan:" diikuti area konten untuk menampilkan teka-teki dari AI.
-    *   **Tombol Petunjuk:** Sebuah tombol dengan teks "Minta Petunjuk". Saat diklik, sebuah area tersembunyi di bawahnya akan muncul menampilkan petunjuk.
-    *   **Tombol Jawaban:** Sebuah tombol dengan teks "Tampilkan Jawaban & Penjelasan". Saat diklik, sebuah area tersembunyi di bawahnya akan muncul menampilkan jawaban lengkap.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "Mind Gym AI".
+2.  **User Input Form:**
+    *   **Skill Selection:** A dropdown (select) menu with the label "Select the Skill You Want to Train:" and the options: "Critical Thinking", "Lateral Thinking", "Systemic Thinking".
+3.  **Action Buttons:** A main button with the text "Start Workout". While the process is running, the button should be activated and display the status "Designing Exercise...".
+4.  **Interactive Output Area:**
+    *   **Scenario:** Title (H3) "Practice Scenario:" followed by a content area to display the puzzle from the AI.
+    *   **Hint Button:** A button with the text "Request a Hint". When clicked, a hidden area underneath will appear showing clues.
+    *   **Answer Button:** A button with the text "Show Answer & Explanation". When clicked, a hidden area underneath will appear showing the complete answer.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada semua bagian di Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax into properly formatted HTML elements. Apply this rendering to all sections in the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih keterampilan dan mengklik tombol "Mulai Latihan".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user selects a skill and clicks the "Start Practice" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang fasilitator dan pelatih keterampilan berpikir (thinking skills coach) yang ahli dalam merancang skenario dan teka-teki yang menantang.
 
@@ -51,15 +51,15 @@ Bangun sebuah aplikasi web interaktif yang berfungsi sebagai pelatih untuk menga
     ---SOLUTION---
     [Teks Jawaban & Penjelasan Anda di sini]
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi mem-parsing teks tersebut menggunakan pemisah `---HINT---` dan `---SOLUTION---` untuk memisahkan ketiga bagian konten.
-5.  Aplikasi menampilkan skenario utama, dan menyimpan petunjuk serta jawaban untuk ditampilkan saat tombol yang sesuai diklik.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving the response, the application parses the text using `---HINT---` and `---SOLUTION---` separators to separate the three pieces of content.
+5.  The application displays the main scenario, and stores clues and answers to display when the appropriate button is clicked.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, atur pilihan default pada menu dropdown saat halaman pertama kali dimuat:**
+**To allow live testing, set the default options in the dropdown menu when the page first loads:**
 
-*   **Atur pilihan "Pilih Keterampilan yang Ingin Dilatih:" ke:**
-    `Berpikir Kritis`
+*   **Set the "Select Skills You Want to Train:" option to:**
+`Critical Thinking`
 ---

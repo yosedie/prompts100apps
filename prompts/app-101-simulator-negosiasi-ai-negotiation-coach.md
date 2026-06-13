@@ -1,45 +1,45 @@
-## Nama Aplikasi
-Simulator Negosiasi AI: Negotiation Coach
+## Application Name
+AI Negotiation Simulator: Negotiation Coach
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web interaktif yang berfungsi sebagai simulator untuk melatih kemampuan negosiasi. Pengguna mendefinisikan sebuah skenario dan peran mereka, lalu AI akan berperan sebagai lawan negosiasi, memberikan penawaran dan argumen balasan secara dinamis dalam format percakapan.
+## Project Summary
+Build an interactive web application that functions as a simulator to practice negotiation skills. Users define a scenario and their roles, and then the AI ​​takes on the role of negotiating opponent, providing offers and counter-arguments dynamically in a conversational format.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Simulator Negosiasi AI".
-2.  **Layar Pengaturan Awal (Setup Screen):**
-    *   **Input Skenario:** Sebuah kolom input teks dengan label "Jelaskan Skenario Negosiasi Anda:".
-    *   **Input Peran Anda:** Sebuah kolom input teks dengan label "Apa Peran Anda?".
-    *   **Input Peran AI:** Sebuah kolom input teks dengan label "Apa Peran AI sebagai Lawan Negosiasi?".
-    *   **Input Pembuka:** Sebuah area teks (textarea) dengan label "Tulis Tawaran atau Kalimat Pembuka Anda:".
-    *   **Tombol Mulai:** Sebuah tombol utama dengan teks "Mulai Negosiasi!".
-3.  **Layar Negosiasi (Setelah Setup):**
-    *   **Jendela Percakapan:** Area utama yang menampilkan riwayat negosiasi (seperti chat).
-    *   **Input Balasan:** Kolom input teks di bawah dengan label "Balasan Anda:".
-    *   **Tombol Kirim:** Tombol untuk mengirim balasan.
-    *   **Tombol Restart:** Tombol untuk kembali ke Layar Pengaturan Awal.
-4.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Negotiation Simulator".
+2.  **Initial Setup Screen:**
+    *   **Scenario Input:** A text input field labeled "Describe Your Negotiation Scenario:".
+    *   **Input Your Role:** A text input field labeled "What is Your Role?".
+    *   **AI Role Input:** A text input field labeled "What is the Role of AI as a Negotiator?".
+    *   **Opening Input:** A text area labeled "Write Your Offer or Opening Sentence:".
+    *   **Start Button:** A main button with the text "Start Negotiations!".
+3.  **Negotiation Screen (After Setup):**
+    *   **Conversation Window:** The main area that displays negotiation history (such as chat).
+    *   **Input Reply:** The text input field below is labeled "Your Reply:".
+    *   **Send Button:** Button to send a reply.
+    *   **Restart Button:** Button to return to the Initial Setup Screen.
+4.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown menjadi elemen HTML yang diformat dengan benar.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax into properly formatted HTML elements.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail skenario di Layar Pengaturan dan mengklik "Mulai Negosiasi!".
-2.  Aplikasi membuat sebuah *prompt sistem awal* yang akan menjadi dasar peran AI.
-3.  **Logika Percakapan (Penting):**
-    *   Aplikasi harus menyimpan seluruh riwayat percakapan.
-    *   Setiap kali pengguna mengirim balasan, aplikasi harus mengirim **seluruh riwayat percakapan** ditambah *prompt sistem awal* ke model AI untuk menjaga konteks.
-    *   Respons baru dari AI kemudian ditambahkan ke Jendela Percakapan.
+1.  The user fills in the scenario details in the Setup Screen and clicks "Start Negotiation!".
+2.  The application creates an *initial system prompt* which will become the basis for the AI's role.
+3.  **Conversation Logic (Important):**
+    *   The app must store the entire conversation history.
+    *   Every time a user sends a reply, the app must send **the entire conversation history** plus the *initial system prompt* to the AI ​​model to maintain context.
+    *   New responses from the AI ​​are then added to the Conversation Window.
 
-4.  **Prompt Sistem Awal (Initial System Prompt):**
+4.  **Initial System Prompt:**
     ```
     Anda adalah seorang negosiator ahli yang berperan sebagai [Peran AI dari input pengguna]. Tujuan Anda adalah untuk mendapatkan hasil terbaik bagi pihak Anda, namun tetap bersikap realistis dan profesional.
 
@@ -47,19 +47,19 @@ Bangun sebuah aplikasi web interaktif yang berfungsi sebagai simulator untuk mel
 
     Respons setiap argumen atau tawaran dari pengguna dengan argumen balasan yang logis. Jangan terlalu cepat menyerah. Berikan penawaran balasan jika perlu. Mulai sekarang, respons pesan pertama dari pengguna.
     ```
-5.  Aplikasi menampilkan kalimat pembuka pengguna dan respons pertama AI di Jendela Percakapan, lalu menunggu balasan pengguna selanjutnya.
+5.  The app displays the user's opening sentence and the AI's first response in the Conversation Window, then waits for the user's next reply.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input di Layar Pengaturan Awal dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow for live testing, autofill the input fields in the Initial Setup Screen with the following example data when the page first loads:**
 
-*   **Isi kolom "Jelaskan Skenario Negosiasi Anda:" dengan:**
-    `Negosiasi harga mobil bekas.`
-*   **Isi kolom "Apa Peran Anda?" dengan:**
-    `Pembeli yang cermat dan ingin harga serendah mungkin.`
-*   **Isi kolom "Apa Peran AI sebagai Lawan Negosiasi?" dengan:**
-    `Penjual mobil bekas yang berpengalaman dan ingin harga setinggi mungkin.`
-*   **Isi kolom "Tulis Tawaran atau Kalimat Pembuka Anda:" dengan:**
-    `Saya lihat mobil ini diiklankan seharga 150 juta. Kondisinya bagus, tapi saya lihat ada beberapa goresan kecil di pintu. Saya tawar 135 juta.`
+*   **Fill in the "Describe Your Negotiation Scenario:" column with:**
+`Negotiating the price of a used car.`
+*   **Fill in the "What is Your Role?" with:**
+`Careful buyers and want the lowest possible price.`
+*   **Fill in the column "What is the Role of AI as a Negotiator?" with:**
+`Experienced used car salesman who wants the highest possible price.`
+*   **Fill in the "Write Your Offer or Opening Sentence:" column with:**
+`I saw this car advertised for 150 million. It's in good condition, but I noticed a few small scratches on the door. I bid 135 million.`
 ---

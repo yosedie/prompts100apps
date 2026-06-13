@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Generator Konspirasi Fiktif: The Truth Is In Here AI
+## Application Name
+Fictitious Conspiracy Generator: The Truth Is In Here AI
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang menciptakan teori konspirasi yang terdengar meyakinkan (namun sepenuhnya fiktif dan untuk hiburan). Pengguna memasukkan sebuah objek atau peristiwa sehari-hari, dan AI akan menghasilkan sebuah teori konspirasi yang rumit dan lucu tentangnya.
+## Project Summary
+Build a web application that creates a conspiracy theory that sounds convincing (but is completely fictional and for entertainment). Users enter an object or everyday event, and the AI ​​will generate an elaborate and humorous conspiracy theory about it.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Generator Konspirasi Fiktif".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Objek atau Peristiwa Sehari-hari Apa yang Ingin Diungkap?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Ungkap Kebenarannya!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menghubungkan Titik-Titik...".
-4.  **Area Output:**
-    *   Judul (H3): "Teori Konspirasi yang 'Sebenarnya':"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh teori.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Fictitious Conspiracy Generator".
+2.  **User Input Form:**
+    *   A text input field labeled "What Everyday Object or Event Do You Want to Reveal?".
+3.  **Action Button:** A main button with the text "Reveal the Truth!". While the process is running, the button should be activated and display the status "Connecting the Dots...".
+4.  **Output Area:**
+    *   Title (H3): "The 'True' Conspiracy Theory:"
+    *   A single content area to display the entire theory.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan objek/peristiwa dan mengklik tombol "Ungkap Kebenarannya!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters the object/event and clicks the "Reveal the Truth!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang ahli teori konspirasi veteran dan peneliti 'kebenaran tersembunyi'. Anda mampu melihat pola dan hubungan rahasia di balik hal-hal yang paling biasa sekalipun.
 
@@ -47,15 +47,15 @@ Bangun sebuah aplikasi web yang menciptakan teori konspirasi yang terdengar meya
 
     Gunakan format Markdown untuk menyusun teori dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan teori konspirasi yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays conspiracy theories that have been formatted in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Objek atau Peristiwa Sehari-hari Apa yang Ingin Diungkap?" dengan:**
-    `Kaus kaki yang hilang sebelah`
+*   **Fill in the column "What everyday objects or events do you want to reveal?" with:**
+`A sock is missing one side`
 ---

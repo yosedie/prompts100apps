@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Pembuat Alur Game AI: Game Concept Generator
+## Application Name
+AI Game Flow Generator: Game Concept Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web untuk para desainer game dan penulis. Pengguna memasukkan genre game dan satu kalimat ide utama, lalu AI akan menghasilkan konsep game yang lebih utuh, termasuk judul, mekanik inti, dan alur cerita dasar.
+## Project Summary
+Build a web application for game designers and writers. Users enter the game genre and one sentence of the main idea, and the AI ​​will generate a more complete game concept, including the title, core mechanics, and basic storyline.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pembuat Alur Game AI".
-2.  **Form Input Pengguna:**
-    *   **Pilihan Genre:** Sebuah menu dropdown (select) dengan label "Pilih Genre Game:" dan opsi: "RPG Fantasi", "Petualangan Sci-Fi", "Horor Psikologis", "Puzzle Platformer", "Strategi".
-    *   **Input Ide Utama:** Sebuah kolom input teks dengan label "Ide Utama Game (1 Kalimat):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Konsep Game!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Developing...".
-4.  **Area Output:**
-    *   Judul (H3): "Konsep Game Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh konsep.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "AI Gameplay Generator".
+2.  **User Input Form:**
+    *   **Genre Selection:** A dropdown menu (select) with the label "Select Game Genre:" and options: "Fantasy RPG", "Sci-Fi Adventure", "Psychological Horror", "Puzzle Platformer", "Strategy".
+    *   **Main Idea Input:** A text input field labeled "Game Main Idea (1 Sentence):".
+3.  **Action Button:** A main button with the text "Create a Game Concept!". While the process is running, the button should be activated and display the status "Developing...".
+4.  **Output Area:**
+    *   Title (H3): "Your Game Concept:"
+    *   A single content area to showcase the entire concept.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih genre, memasukkan ide, dan mengklik tombol "Buat Konsep Game!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users select a genre, enter an idea, and click the "Create Game Concept!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang desainer game (game designer) dan penulis naratif yang berpengalaman.
 
@@ -47,17 +47,17 @@ Bangun sebuah aplikasi web untuk para desainer game dan penulis. Pengguna memasu
 
     Gunakan format Markdown untuk menyusun konsep dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan konsep game yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted game concept in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Atur pilihan "Pilih Genre Game:" ke:**
-    `RPG Fantasi`
-*   **Isi kolom "Ide Utama Game (1 Kalimat):" dengan:**
-    `Seorang pustakawan menemukan bahwa buku-buku di perpustakaan kuno bisa mengubah realitas.`
+*   **Set the "Select Game Genre:" option to:**
+`Fantasy RPG`
+*   **Fill in the "Main Idea of ​​the Game (1 Sentence):" column with:**
+`A librarian discovers that books in an ancient library can change reality.`
 ---

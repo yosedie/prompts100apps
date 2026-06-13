@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Penulis Surat Protes AI: Complaint Letter Assistant
+## Application Name
+AI Protest Letter Writer: Complaint Letter Assistant
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang membantu pengguna menyusun surat keluhan atau protes yang formal dan efektif. Pengguna mendeskripsikan masalah yang mereka hadapi dan solusi yang diinginkan, lalu AI akan menulis draf surat yang jelas, tegas, namun tetap sopan.
+## Project Summary
+Build a web application that helps users compose formal and effective complaint or protest letters. Users describe the problem they are facing and the desired solution, then the AI ​​will draft a letter that is clear, firm, but still polite.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Penulis Surat Protes AI".
-2.  **Form Input Pengguna:**
-    *   **Input Nama Perusahaan:** Sebuah kolom input teks dengan label "Nama Perusahaan/Lembaga yang Dituju:".
-    *   **Input Masalah:** Sebuah area teks (textarea) dengan label "Jelaskan Masalah Anda Secara Rinci:".
-    *   **Input Solusi:** Sebuah area teks (textarea) dengan label "Apa Solusi atau Hasil yang Anda Inginkan?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Susun Surat Protes". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menyusun...".
-4.  **Area Output:**
-    *   Judul (H3): "Draf Surat Protes Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh surat.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Protest Letter Writer".
+2.  **User Input Form:**
+    *   **Input Company Name:** A text input field with the label "Name of the Company/Institution Destined:".
+    *   **Input Problem:** A text area labeled "Describe Your Problem in Detail:".
+    *   **Solution Input:** A text area with the label "What is the Solution or Result You Want?".
+3.  **Action Button:** A main button with the text "Compose a Protest Letter". While the process is running, the button should be activated and display the status "Compiling...".
+4.  **Output Area:**
+    *   Title (H3): "Draft Your Protest Letter:"
+    *   A single content area to display the entire letter.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail keluhan dan mengklik tombol "Susun Surat Protes".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the complaint details and clicks on the "Compose Protest Letter" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis surat bisnis profesional dan advokat konsumen. Anda ahli dalam menyusun komunikasi yang jelas, formal, dan persuasif.
 
@@ -47,19 +47,19 @@ Bangun sebuah aplikasi web yang membantu pengguna menyusun surat keluhan atau pr
 
     Gunakan placeholder seperti `[Nama Anda]` dan `[Tanggal]` agar mudah disesuaikan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan draf surat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the draft letter in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Nama Perusahaan/Lembaga yang Dituju:" dengan:**
-    `SuperNet ISP`
-*   **Isi kolom "Jelaskan Masalah Anda Secara Rinci:" dengan:**
-    `Koneksi internet saya dengan nomor pelanggan 12345 sudah putus total selama 3 hari terakhir, sejak tanggal 15 September 2025. Saya sudah menelepon customer service sebanyak 5 kali dan setiap kali hanya dijanjikan akan segera diperbaiki tanpa ada kepastian waktu.`
-*   **Isi kolom "Apa Solusi atau Hasil yang Anda Inginkan?" dengan:**
-    `Saya menuntut teknisi untuk datang dan memperbaiki masalah dalam 24 jam ke depan. Selain itu, saya meminta kompensasi berupa potongan tagihan untuk hari-hari di mana saya tidak menerima layanan.`
+*   **Fill in the column "Name of the Company/Institution Addressed:" with:**
+`SuperNet ISP`
+*   **Fill in the "Describe Your Problem in Detail:" field with:**
+`My internet connection with customer number 12345 has been completely lost for the last 3 days, since September 15 2025. I have called customer service 5 times and each time they were only promised that it would be repaired immediately without any certainty of time.`
+*   **Fill in the column "What Solution or Result Do You Want?" with:**
+`I demand a technician to come and fix the problem within the next 24 hours. Additionally, I request compensation in the form of a bill reduction for the days I did not receive service.`
 ---

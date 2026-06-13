@@ -1,37 +1,37 @@
-## Nama Aplikasi
-README Generator AI
+## Application Name
+AI Generator README
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang secara otomatis menghasilkan file README.md yang terstruktur dan profesional untuk proyek perangkat lunak. Pengguna memberikan nama proyek, deskripsi singkat, dan bahasa/teknologi yang digunakan, lalu AI akan membuat template README yang lengkap.
+## Project Summary
+Build a web application that automatically generates structured, professional README.md files for software projects. Users provide a project name, short description, and language/technology used, and AI will create a complete README template.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "README Generator AI".
-2.  **Form Input Pengguna:**
-    *   **Input Nama Proyek:** Sebuah kolom input teks dengan label "Nama Proyek Anda:".
-    *   **Input Deskripsi:** Sebuah area teks (textarea) dengan label "Deskripsi Singkat Proyek Anda:".
-    *   **Input Teknologi:** Sebuah kolom input teks dengan label "Bahasa/Teknologi Utama (pisahkan dengan koma):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Generate README.md". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menulis Dokumentasi...".
-4.  **Area Output:**
-    *   Judul (H3): "Pratinjau README.md Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan pratinjau README yang sudah di-render.
-    *   **Tombol Salin Markdown:** Harus ada tombol "Salin Kode Markdown" yang akan menyalin teks Markdown mentah ke clipboard, siap untuk di-paste ke GitHub.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "README Generator AI".
+2.  **User Input Form:**
+    *   **Input Project Name:** A text input field labeled "Your Project Name:".
+    *   **Input Description:** A text area labeled "Brief Description of Your Project:".
+    *   **Technology Input:** A text input field labeled "Primary Language/Technology (separate with commas):".
+3.  **Action Button:** A main button with the text "Generate README.md". While the process is running, the button should be activated and display the status "Writing Documentation...".
+4.  **Output Area:**
+    *   Title (H3): "Preview your README.md:"
+    *   A single content area to display a preview of the rendered README.
+    *   **Copy Markdown Button:** There should be a "Copy Markdown Code" button that will copy the raw Markdown text to the clipboard, ready to paste into GitHub.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI untuk pratinjau. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown menjadi elemen HTML yang diformat dengan benar.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI for preview. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax into properly formatted HTML elements.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail proyek dan mengklik tombol "Generate README.md".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the project details and clicks the "Generate README.md" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang developer senior dan kontributor open-source yang ahli dalam membuat dokumentasi proyek yang jelas dan profesional.
 
@@ -52,19 +52,19 @@ Bangun sebuah aplikasi web yang secara otomatis menghasilkan file README.md yang
 
     PENTING: Respons Anda HARUS HANYA berisi teks Markdown mentah untuk file README.md dan TIDAK ADA teks atau penjelasan lain di luar itu.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.pro**.
-4.  Setelah menerima respons, aplikasi menyimpan teks Markdown mentah untuk fungsi "Salin".
-5.  Aplikasi merender konten Markdown dari respons tersebut menjadi HTML dan menampilkannya di area pratinjau.
+3.  The application sends this prompt to the **Gemini 2.pro** model API.
+4.  After receiving the response, the application saves the raw Markdown text for the "Copy" function.
+5.  The application renders the Markdown content of the response into HTML and displays it in the preview area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Nama Proyek Anda:" dengan:**
-    `TaskMaster Pro`
-*   **Isi kolom "Deskripsi Singkat Proyek Anda:" dengan:**
-    `Sebuah aplikasi to-do list sederhana yang dibangun untuk membantu pengguna mengelola tugas harian mereka dengan lebih efisien.`
-*   **Isi kolom "Bahasa/Teknologi Utama (pisahkan dengan koma):" dengan:**
-    `React, Node.js, Express, MongoDB`
+*   **Fill in the "Your Project Name:" column with:**
+`TaskMaster Pro`
+*   **Fill in the "Brief Description of Your Project:" field with:**
+`A simple to-do list app built to help users manage their daily tasks more efficiently.`
+*   **Fill in the "Primary Language/Technology (separate with commas):" column with:**
+`React, Node.js, Express, MongoDB`
 ---

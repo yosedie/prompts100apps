@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Bapak AI: Generator Lelucon Ayah
+## Application Name
+Father AI: Dad Joke Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web sederhana yang berfungsi sebagai generator lelucon ayah (dad jokes) tanpa henti. Pengguna memasukkan sebuah kata kunci, dan AI akan membuat lelucon receh atau permainan kata (pun) berdasarkan kata kunci tersebut.
+## Project Summary
+Build a simple web application that functions as a non-stop generator of dad jokes. Users enter a keyword, and the AI ​​will create a dime joke or pun based on that keyword.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Bapak AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Beri saya satu kata kunci:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Lelucon!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari inspirasi receh...".
-4.  **Area Output:**
-    *   Judul (H3): "Lelucon Ayah Untukmu:"
-    *   Sebuah area konten tunggal yang didesain seperti kartu atau bubble chat untuk menampilkan lelucon.
-    *   **Tombol Lagi!:** Di bawah lelucon, sertakan tombol "Lagi Dong!" yang akan membuat lelucon baru dengan kata kunci yang sama tanpa perlu mengklik tombol utama lagi.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "Father of AI".
+2.  **User Input Form:**
+    *   A text input field labeled "Give me one keyword:".
+3.  **Action Button:** A main button with the text "Make a Joke!". While the process is running, the button should be activated and display the status "Looking for spare change...".
+4.  **Output Area:**
+    *   Title (H3): "Daddy Jokes For You:"
+    *   A single content area designed like a card or chat bubble to display jokes.
+    *   **More Button!:** Below the joke, include a "More Dong!" which will create a new joke with the same keyword without needing to click the main button again.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (jika ada) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (if any) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan kata kunci dan mengklik tombol "Buat Lelucon!" atau "Lagi Dong!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a keyword and clicks the "Make a Joke!" or "Again Dong!".
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang "Bapak-Bapak" dengan selera humor yang sangat receh. Anda adalah raja dari dad jokes dan permainan kata (puns).
 
@@ -42,15 +42,15 @@ Bangun sebuah aplikasi web sederhana yang berfungsi sebagai generator lelucon ay
 
     PENTING: Hanya berikan teks leluconnya saja, tanpa tambahan komentar atau emoji.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan lelucon yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays pre-formatted jokes in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Beri saya satu kata kunci:" dengan:**
-    `Ikan`
+*   **Fill in the "Give me one keyword:" column with:**
+`Fish`
 ---

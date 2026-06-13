@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Pembuat Resep Aneh AI: Grimoire Gastronomi
+## Application Name
+Weird Recipe Generator AI: Gastronomic Grimoire
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web hiburan yang menghasilkan resep makanan yang aneh dan lucu. Pengguna memilih persona (Alien atau Penyihir) dan nama makanan normal, lalu AI akan menulis ulang resep tersebut seolah-olah berasal dari dunia lain, lengkap dengan bahan-bahan dan langkah-langkah yang tidak masuk akal.
+## Project Summary
+Build an entertainment web application that generates weird and funny food recipes. Users choose a persona (Alien or Witch) and a normal food name, then the AI ​​will rewrite the recipe as if it were from another world, complete with nonsensical ingredients and steps.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pembuat Resep Aneh AI".
-2.  **Form Input Pengguna:**
-    *   **Pilihan Persona:** Sebuah menu dropdown (select) dengan label "Pilih Penulis Resep:" dan opsi: "Alien dari Galaksi Zorp", "Penyihir dari Hutan Gelap".
-    *   **Input Makanan:** Sebuah kolom input teks dengan label "Nama Makanan Normal yang Ingin Dibuat Aneh:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Resep Aneh!". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Mengaduk Kuali...".
-4.  **Area Output:**
-    *   Judul (H3): "Resep dari Dimensi Lain:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh resep.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Weird Recipe Generator".
+2.  **User Input Form:**
+    *   **Persona Selection:** A dropdown (select) menu with the label "Select Recipe Author:" and options: "Alien from the Zorp Galaxy", "Witch from the Dark Forest".
+    *   **Food Input:** A text input field labeled "Normal Food Name You Want to Make Weird:".
+3.  **Action Buttons:** A main button with the text "Create Weird Recipes!". While the process is running, the button should be disabled and display the status "Stirring the Cauldron...".
+4.  **Output Area:**
+    *   Title (H3): "Recipe from Another Dimension:"
+    *   A single content area to display all recipes.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih persona, memasukkan nama makanan, dan mengklik tombol "Buat Resep Aneh!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user selects a persona, enters a food name, and clicks the “Create a Weird Recipe!” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah [Persona dari pilihan pengguna] yang sedang menulis buku resep untuk kaum Anda.
 
@@ -47,17 +47,17 @@ Bangun sebuah aplikasi web hiburan yang menghasilkan resep makanan yang aneh dan
 
     Gunakan format Markdown untuk menyusun resep dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan resep aneh yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The app displays pre-formatted strange recipes in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Atur pilihan "Pilih Penulis Resep:" ke:**
-    `Penyihir dari Hutan Gelap`
-*   **Isi kolom "Nama Makanan Normal yang Ingin Dibuat Aneh:" dengan:**
-    `Nasi Goreng`
+*   **Set the "Select Recipe Author:" option to:**
+`Witch of the Dark Forest`
+*   **Fill in the "Normal Food Name You Want to Make Weird" column with:**
+`Fried Rice`
 ---

@@ -1,37 +1,37 @@
-## Nama Aplikasi
+## Application Name
 Trivia Forge AI: Custom Trivia Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai pembuat kuis trivia kustom. Pengguna memasukkan topik yang sangat spesifik, memilih jumlah pertanyaan dan tingkat kesulitan, lalu AI akan menghasilkan satu set pertanyaan trivia yang menantang, lengkap dengan jawabannya.
+## Project Summary
+Build a web application that functions as a custom trivia quiz maker. Users enter a very specific topic, choose the number of questions and difficulty level, and then the AI ​​will generate a set of challenging trivia questions, complete with answers.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Trivia Forge AI".
-2.  **Form Input Pengguna:**
-    *   **Input Topik:** Sebuah kolom input teks dengan label "Masukkan Topik Trivia Spesifik Anda:".
-    *   **Input Jumlah Pertanyaan:** Sebuah kolom input angka (type="number") dengan label "Jumlah Pertanyaan:" dan nilai default 10.
-    *   **Pilihan Tingkat Kesulitan:** Sebuah menu dropdown (select) dengan label "Tingkat Kesulitan:" dan opsi: "Mudah", "Sedang", "Sulit".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Pertanyaan Trivia!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari Fakta...".
-4.  **Area Output:**
-    *   Judul (H3): "Set Trivia Kustom Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan daftar pertanyaan dan jawaban.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Trivia Forge AI".
+2.  **User Input Form:**
+    *   **Topic Input:** A text input field labeled "Enter Your Specific Trivia Topic:".
+    *   **Input Number of Questions:** A number input field (type="number") with the label "Number of Questions:" and a default value of 10.
+    *   **Difficulty Level Selection:** A dropdown (select) menu with the label "Difficulty Level:" and options: "Easy", "Medium", "Hard".
+3.  **Action Button:** A main button with the text "Create a Trivia Question!". While the process is running, the button should be activated and display the status "Finding Facts...".
+4.  **Output Area:**
+    *   Title (H3): "Your Custom Trivia Set:"
+    *   A single content area to display a list of questions and answers.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan daftar bernomor) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and numbered lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail trivia dan mengklik tombol "Buat Pertanyaan Trivia!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the trivia details and clicks the "Create Trivia Question!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang 'Quizmaster' dan peneliti yang ahli dalam menemukan fakta-fakta menarik dan obskur tentang berbagai topik.
 
@@ -48,19 +48,19 @@ Bangun sebuah aplikasi web yang berfungsi sebagai pembuat kuis trivia kustom. Pe
     1.  **Pertanyaan:** [Teks pertanyaan Anda]?
         **Jawaban:** [Teks jawaban Anda].
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan set trivia yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays preformatted sets of trivia in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Topik Trivia Spesifik Anda:" dengan:**
-    `Sejarah dan karakter dalam film The Lord of the Rings`
-*   **Atur "Jumlah Pertanyaan:" ke:**
-    `10`
-*   **Atur pilihan "Tingkat Kesulitan:" ke:**
-    `Sedang`
+*   **Fill in the "Enter Your Specific Trivia Topic:" field with:**
+`History and characters in the film The Lord of the Rings`
+*   **Set "Number of Questions:" to:**
+`10`
+*   **Set the "Difficulty Level:" option to:**
+`Medium`
 ---

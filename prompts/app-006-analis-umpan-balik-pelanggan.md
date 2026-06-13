@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Analis Umpan Balik Pelanggan
+## Application Name
+Customer Feedback Analyst
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web analitik yang mampu merangkum ratusan ulasan pelanggan. Pengguna menempelkan sekumpulan ulasan, dan aplikasi akan menganalisisnya untuk mengidentifikasi tema-tema utama yang dibicarakan, sentimen keseluruhan (positif, negatif, atau campuran), dan memberikan daftar saran perbaikan yang bisa ditindaklanjuti.
+## Project Summary
+Build an analytical web application capable of summarizing hundreds of customer reviews. Users paste a set of reviews, and the app will analyze them to identify key themes discussed, overall sentiment (positive, negative, or mixed), and provide a list of actionable improvement suggestions.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Analis Umpan Balik Pelanggan".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang sangat besar dengan label "Tempelkan semua ulasan pelanggan di sini (pisahkan setiap ulasan dengan baris baru):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Analisis Umpan Balik". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menganalisis...".
-4.  **Area Output:** Didesain seperti dasbor ringkasan dengan tiga bagian yang jelas:
-    *   **Bagian 1: Tema Utama:** Judul (H3) "Tema Utama" diikuti area konten untuk daftar poin-poin utama.
-    *   **Bagian 2: Analisis Sentimen:** Judul (H3) "Analisis Sentimen" diikuti area konten untuk paragraf ringkasan sentimen.
-    *   **Bagian 3: Saran Perbaikan:** Judul (H3) "Saran Perbaikan (Actionable)" diikuti area konten untuk daftar saran bernomor.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Customer Feedback Analyst".
+2.  **User Input Form:**
+    *   A very large text area labeled "Paste all customer reviews here (separate each review with a new line):".
+3.  **Action Button:** A main button with the text "Feedback Analysis". While the process is running, the button should be disabled and display the status "Analyzing...".
+4.  **Output Area:** Designed like a summary dashboard with three clear sections:
+    *   **Section 1: Main Theme:** Heading (H3) "Main Theme" followed by a content area to list the main points.
+    *   **Section 2: Sentiment Analysis:** Heading (H3) "Sentiment Analysis" followed by the content area for the sentiment summary paragraph.
+    *   **Section 3: Improvement Suggestions:** Heading (H3) "Improvement Suggestions (Actionable)" followed by a content area for a numbered list of suggestions.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `###`, `**`, `*`, dan `1.`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada ketiga bagian di Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `###`, `**`, `*`, and `1.`) into properly formatted HTML elements. Apply this rendering to all three sections in the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna menempelkan teks ulasan dan mengklik tombol "Analisis Umpan Balik".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user pastes the review text and clicks the “Feedback Analysis” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang analis data dan peneliti pasar yang ahli dalam mengolah data kualitatif dari umpan balik pelanggan.
 
@@ -51,16 +51,16 @@ Bangun sebuah aplikasi web analitik yang mampu merangkum ratusan ulasan pelangga
 
     Gunakan format Markdown untuk seluruh respons Anda.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan hasil analisis di tiga bagian yang sesuai di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the analysis results in three appropriate sections in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan semua ulasan pelanggan di sini..." dengan:**
+*   **Fill in the "Paste all customer reviews here..." field with:**
     ```
     Kopi dari mesin ini enak sekali, aromanya mantap! Sangat puas.
     Barangnya sampai dengan cepat, tapi bodinya terasa agak ringkih, terlalu banyak plastik.

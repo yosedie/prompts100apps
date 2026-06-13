@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Pembuat Pidato Motivasi AI
+## Application Name
+AI Motivational Speech Maker
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai penulis pidato motivasi. Pengguna memilih sebuah tema utama, dan AI akan menghasilkan naskah pidato singkat yang kuat, membangkitkan semangat, dan siap untuk disampaikan.
+## Project Summary
+Build a web application that functions as a motivational speech writer. Users select a central theme, and AI will generate a short speech script that is powerful, inspiring, and ready to be delivered.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pembuat Pidato Motivasi AI".
-2.  **Form Input Pengguna:**
-    *   **Pilihan Tema:** Sebuah menu dropdown (select) dengan label "Pilih Tema Pidato Anda:" dan opsi: "Ketekunan & Pantang Menyerah", "Inovasi & Perubahan", "Kerja Sama Tim & Kolaborasi", "Mengatasi Kegagalan".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Bakar Semangat!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari Inspirasi...".
-4.  **Area Output:**
-    *   Judul (H3): "Naskah Pidato Motivasi Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh naskah.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Motivational Speech Maker".
+2.  **User Input Form:**
+    *   **Theme Choice:** A dropdown (select) menu with the label "Choose Your Speech Theme:" and options: "Perseverance & Never Give Up", "Innovation & Change", "Teamwork & Collaboration", "Overcoming Failure".
+3.  **Action Button:** A main button with the text "Fire the Spirit!". While the process is running, the button should be activated and display the status "Seeking Inspiration...".
+4.  **Output Area:**
+    *   Title (H3): "Your Motivational Speech Script:"
+    *   A single content area to display the entire manuscript.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih tema dan mengklik tombol "Bakar Semangat!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user selects a theme and clicks the "Fire the Spirit!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang motivator dan pembicara publik kelas dunia, setara dengan Tony Robbins atau Simon Sinek. Gaya Anda penuh semangat, inspiratif, dan persuasif.
 
@@ -45,15 +45,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai penulis pidato motivasi. Pengg
 
     Gunakan format Markdown untuk penekanan pada kata-kata atau kalimat kunci.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan naskah pidato di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the speech script in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Atur pilihan "Pilih Tema Pidato Anda:" ke:**
-    `Ketekunan & Pantang Menyerah`
+*   **Set the "Choose Your Speech Theme:" option to:**
+`Perseverance & Never Give Up`
 ---

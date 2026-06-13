@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Generator Afirmasi Harian AI
+## Application Name
+AI Daily Affirmations Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai pembuat afirmasi positif yang personal. Pengguna menuliskan tujuan, fokus, atau tantangan yang mereka hadapi hari itu, dan AI akan membuat sebuah kalimat afirmasi yang spesifik, memberdayakan, dan siap untuk diucapkan.
+## Project Summary
+Build a web application that functions as a personalized positive affirmation generator. Users write down their goals, focuses, or challenges they face that day, and AI will create a specific, empowering, and ready-to-speak affirmation.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Generator Afirmasi Harian AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) dengan label "Apa Fokus atau Tantangan Anda Hari Ini?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Afirmasi Saya". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari Kekuatan...".
-4.  **Area Output:**
-    *   Judul (H3): "Afirmasi Anda untuk Hari Ini:"
-    *   Sebuah area konten tunggal untuk menampilkan afirmasi. Desainnya bisa dibuat menonjol seperti kartu kutipan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Daily Affirmation Generator".
+2.  **User Input Form:**
+    *   A text area labeled "What is your focus or challenge today?".
+3.  **Action Button:** A main button with the text "Create My Affirmation". While the process is running, the button should be activated and display the status "Seeking Power...".
+4.  **Output Area:**
+    *   Title (H3): "Your Affirmation for Today:"
+    *   A single content area to display affirmations. The design can be made to stand out like a quote card.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan fokus/tantangan dan mengklik tombol "Buat Afirmasi Saya".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a focus/challenge and clicks the “Create My Affirmation” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang pelatih mindfulness dan ahli dalam psikologi positif. Anda mampu merumuskan kalimat yang memberdayakan.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai pembuat afirmasi positif yang 
 
     PENTING: Hanya berikan kalimat afirmasinya saja, tanpa tambahan komentar atau penjelasan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan afirmasi yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted affirmation in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa Fokus atau Tantangan Anda Hari Ini?" dengan:**
-    `Saya ada presentasi penting di depan klien dan merasa sangat gugup.`
+*   **Fill in the column "What is your focus or challenge today?" with:**
+`I have an important presentation in front of a client and am feeling very nervous.`
 ---

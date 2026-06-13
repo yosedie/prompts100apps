@@ -1,36 +1,36 @@
-## Nama Aplikasi
+## Application Name
 AI Storyteller: Alternate History
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web naratif yang menceritakan kembali peristiwa sejarah dari sudut pandang yang tidak biasa. Pengguna memasukkan sebuah peristiwa sejarah dan perspektif unik, lalu AI akan menulis sebuah cerita pendek yang imersif dari sudut pandang tersebut.
+## Project Summary
+Build a narrative web application that retells historical events from an unusual perspective. Users enter a historical event and unique perspective, and the AI ​​will write an immersive short story from that point of view.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Guru Sejarah Alternatif".
-2.  **Form Input Pengguna:**
-    *   **Input Peristiwa Sejarah:** Sebuah kolom input teks dengan label "Peristiwa Sejarah:".
-    *   **Input Sudut Pandang:** Sebuah kolom input teks dengan label "Ceritakan dari Sudut Pandang (contoh: seorang juru masak, seekor merpati pos):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Ceritakan Kisahnya!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menelusuri Arsip...".
-4.  **Area Output:**
-    *   Judul (H3): "Kisah dari Sudut Pandang Lain:"
-    *   Sebuah area konten tunggal untuk menampilkan cerita yang dihasilkan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Alternative History Teacher".
+2.  **User Input Form:**
+    *   **History Event Input:** A text input field labeled "History Event:".
+    *   **Point of View Input:** A text input field labeled "Tell me from the Point of View (example: a cook, a carrier pigeon):".
+3.  **Action Button:** A home button with the text "Tell the Story!". While the process is running, the button should be activated and display the status "Browsing Archives...".
+4.  **Output Area:**
+    *   Title (H3): "The Story from Another Point of View:"
+    *   A single content area to display generated stories.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `*italic*` atau paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `*italic*` or paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi peristiwa dan sudut pandang, lalu mengklik tombol "Ceritakan Kisahnya!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the events and point of view, then clicks the "Tell the Story!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang sejarawan naratif dan penulis fiksi sejarah yang ahli. Anda mampu menghidupkan kembali peristiwa sejarah melalui mata orang-orang biasa yang sering terlupakan.
 
@@ -45,17 +45,17 @@ Bangun sebuah aplikasi web naratif yang menceritakan kembali peristiwa sejarah d
 
     Gunakan gaya naratif yang mengalir dan puitis. Gunakan format Markdown untuk penekanan jika diperlukan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan cerita yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted story in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Peristiwa Sejarah:" dengan:**
-    `Perang Dunia II di Front Timur`
-*   **Isi kolom "Ceritakan dari Sudut Pandang..." dengan:**
-    `Seorang juru masak di unit tentara`
+*   **Fill in the "Historical Event:" column with:**
+`World War II on the Eastern Front`
+*   **Fill in the "Tell me from your point of view..." column with:**
+`A cook in an army unit`
 ---

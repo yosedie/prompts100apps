@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Generator Ulasan Produk Palsu AI
+## Application Name
+AI Fake Product Review Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang menghasilkan ulasan produk palsu yang detail dan terdengar otentik untuk tujuan pengujian atau contoh. Pengguna memasukkan nama produk dan memilih sentimen, lalu AI akan menulis sebuah ulasan lengkap seolah-olah dari pelanggan sungguhan.
+## Project Summary
+Build a web application that generates detailed, authentic-sounding fake product reviews for testing or sampling purposes. Users enter the product name and select a sentiment, then the AI ​​will write a complete review as if it were from a real customer.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Generator Ulasan Produk Palsu AI".
-2.  **Form Input Pengguna:**
-    *   **Input Nama Produk:** Sebuah kolom input teks dengan label "Nama Produk Fiktif:".
-    *   **Pilihan Sentimen:** Sebuah menu dropdown (select) dengan label "Pilih Sentimen Ulasan:" dan opsi: "Positif (5 Bintang)", "Negatif (1 Bintang)", "Seimbang (3 Bintang)".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tulis Ulasan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menulis...".
-4.  **Area Output:**
-    *   Judul (H3): "Ulasan Produk yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh ulasan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Fake Product Review Generator".
+2.  **User Input Form:**
+    *   **Input Product Name:** A text input field labeled "Fictitious Product Name:".
+    *   **Sentiment Selection:** A dropdown (select) menu with the label "Select Review Sentiment:" and options: "Positive (5 Stars)", "Negative (1 Star)", "Balanced (3 Stars)".
+3.  **Action Button:** A main button with the text "Write a Review". While the process is running, the button should be activated and display the status "Writing...".
+4.  **Output Area:**
+    *   Headline (H3): "Resulted Product Review:"
+    *   A single content area to display all reviews.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan nama produk, memilih sentimen, dan mengklik tombol "Tulis Ulasan".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters the product name, selects a sentiment, and clicks the “Write a Review” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis yang sangat pandai meniru gaya tulisan ulasan produk online. Anda bisa menulis ulasan yang terdengar sangat otentik dan detail.
 
@@ -45,17 +45,17 @@ Bangun sebuah aplikasi web yang menghasilkan ulasan produk palsu yang detail dan
 
     Pastikan gaya bahasa dan detailnya cocok dengan sentimen yang diminta.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan ulasan produk di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays product reviews in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Nama Produk Fiktif:" dengan:**
-    `Headphone Kedap Suara "AuraSound Pro"`
-*   **Atur pilihan "Pilih Sentimen Ulasan:" ke:**
-    `Positif (5 Bintang)`
+*   **Fill in the "Fictitious Product Name:" column with:**
+`Soundproof Headphones "AuraSound Pro"`
+*   **Set the "Select Review Sentiment:" option to:**
+`Positive (5 Stars)`
 ---

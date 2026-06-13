@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Radio Ad Pro: Penulis Naskah Iklan
+## Application Name
+Radio Ad Pro: Advertising Copywriter
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai penulis naskah iklan radio. Pengguna memasukkan deskripsi produk dan memilih durasi, lalu AI akan menyusun skrip iklan yang lengkap, termasuk arahan untuk efek suara (SFX), musik, dan dialog untuk durasi 30 atau 60 detik.
+## Project Summary
+Build a web application that functions as a radio ad copywriter. Users enter a product description and select a duration, then AI will create a complete ad script, including directions for sound effects (SFX), music, and dialogue for a duration of 30 or 60 seconds.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Radio Ad Pro".
-2.  **Form Input Pengguna:**
-    *   **Input Deskripsi Produk:** Sebuah area teks (textarea) dengan label "Deskripsi Produk/Layanan Anda:".
-    *   **Pilihan Durasi:** Sebuah menu dropdown (select) dengan label "Pilih Durasi Iklan:" dan opsi: "30 Detik" dan "60 Detik".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Naskah Iklan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "On Air...".
-4.  **Area Output:**
-    *   Judul (H3): "Naskah Iklan Radio:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh naskah.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Radio Ad Pro".
+2.  **User Input Form:**
+    *   **Input Product Description:** A text area labeled "Your Product/Service Description:".
+    *   **Duration Selection:** A dropdown (select) menu with the label "Select Ad Duration:" and options: "30 Seconds" and "60 Seconds".
+3.  **Action Button:** A main button with the text "Create Ad Script". While the process is running, the button should be activated and display the status "On Air...".
+4.  **Output Area:**
+    *   Title (H3): "Radio Advertising Script:"
+    *   A single content area to display the entire manuscript.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi deskripsi produk, memilih durasi, dan mengklik tombol "Buat Naskah Iklan".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users fill in the product description, select a duration, and click the “Create Ad Script” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang copywriter iklan dan produser audio yang ahli dalam membuat naskah iklan radio yang menarik dan efektif.
 
@@ -46,17 +46,17 @@ Bangun sebuah aplikasi web yang berfungsi sebagai penulis naskah iklan radio. Pe
 
     Pastikan total durasi naskah sesuai dengan yang diminta. Naskah harus memiliki pembuka yang menarik, isi yang menjelaskan keunggulan produk, dan penutup dengan call-to-action yang jelas. Gunakan format Markdown untuk memisahkan arahan (SFX/Musik) dari dialog agar mudah dibaca.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan naskah yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted script in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Deskripsi Produk/Layanan Anda:" dengan:**
-    `Kopi Kilat: Kedai kopi 'grab-and-go' yang menyajikan kopi premium dengan cepat untuk para profesional sibuk di pagi hari.`
-*   **Atur pilihan "Pilih Durasi Iklan:" ke:**
-    `30 Detik`
+*   **Fill in the "Description of Your Product/Service:" column with:**
+`Coffee Express: A 'grab-and-go' coffee shop that serves premium coffee quickly to busy professionals in the morning.`
+*   **Set the "Select Ad Duration:" option to:**
+`30 Seconds`
 ---

@@ -1,34 +1,34 @@
-## Nama Aplikasi
-FAQ Generator Otomatis
+## Application Name
+Auto Generator FAQ
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang secara cerdas menghasilkan daftar Pertanyaan yang Sering Diajukan (FAQ) dari sebuah teks deskripsi. Pengguna cukup menempelkan deskripsi produk, layanan, atau proyek, dan aplikasi akan membuat daftar pertanyaan yang relevan beserta jawabannya yang jelas dan ringkas.
+## Project Summary
+Build a web application that intelligently generates a list of Frequently Asked Questions (FAQ) from a text description. Users simply paste in a product, service, or project description, and the app will generate a list of relevant questions along with clear and concise answers.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pembuat FAQ Otomatis".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Tempelkan Deskripsi Produk atau Layanan Anda di Sini:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Daftar FAQ". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menganalisis...".
-4.  **Area Output:**
-    *   Judul (H3): "Daftar FAQ yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan daftar pertanyaan dan jawaban.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "Automatic FAQ Generator".
+2.  **User Input Form:**
+    *   A large text area labeled "Paste Your Product or Service Description Here:".
+3.  **Action Button:** A main button with the text "Create FAQ List". While the process is running, the button should be disabled and display the status "Analyzing...".
+4.  **Output Area:**
+    *   Title (H3): "Generated FAQ List:"
+    *   A single content area to display a list of questions and answers.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `###` untuk pertanyaan dan `**` untuk tebal) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `###` for questions and `**` for bold) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna menempelkan teks deskripsi dan mengklik tombol "Buat Daftar FAQ".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user pastes the description text and clicks the "Create FAQ List" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang spesialis customer support dan copywriter yang berpengalaman. Tugas Anda adalah membaca deskripsi sebuah produk atau layanan dan mengantisipasi pertanyaan yang paling mungkin ditanyakan oleh calon pengguna.
 
@@ -45,15 +45,15 @@ Bangun sebuah aplikasi web yang secara cerdas menghasilkan daftar Pertanyaan yan
 
     Pastikan pertanyaan mencakup aspek-aspek penting seperti fitur utama, harga, keamanan, dan cara penggunaan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan daftar FAQ yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a formatted list of FAQs in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan Deskripsi Produk atau Layanan Anda di Sini:" dengan:**
-    `AwanAman adalah layanan penyimpanan cloud premium yang menawarkan keamanan enkripsi end-to-end. Pengguna mendapatkan 10GB gratis saat mendaftar dan bisa mengupgrade ke paket berbayar untuk kapasitas lebih besar. Fitur kami termasuk sinkronisasi file otomatis di berbagai perangkat, berbagi file dengan tautan aman, dan riwayat versi file selama 30 hari.`
+*   **Fill in the "Paste Your Product or Service Description Here:" field with:**
+`AwanAman is a premium cloud storage service that offers end-to-end encryption security. Users get 10GB free when signing up and can upgrade to a paid plan for more capacity. Our features include automatic file sync across devices, file sharing with secure links, and 30-day file version history.`
 ---

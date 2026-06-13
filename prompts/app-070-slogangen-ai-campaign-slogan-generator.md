@@ -1,36 +1,36 @@
-## Nama Aplikasi
+## Application Name
 SloganGen AI: Campaign Slogan Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai generator slogan kampanye. Pengguna mendeskripsikan tujuan utama dan target audiens dari kampanye mereka, lalu AI akan menghasilkan beberapa opsi slogan yang menarik, ringkas, dan mudah diingat.
+## Project Summary
+Build a web application that functions as a campaign slogan generator. Users describe the main goal and target audience of their campaign, then AI will generate several slogan options that are catchy, concise and easy to remember.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "SloganGen AI".
-2.  **Form Input Pengguna:**
-    *   **Input Tujuan Kampanye:** Sebuah area teks (textarea) dengan label "Apa Tujuan Utama Kampanye Anda?".
-    *   **Input Target Audiens:** Sebuah kolom input teks dengan label "Siapa Target Audiens Utama Anda?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Slogan!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Brainstorming...".
-4.  **Area Output:**
-    *   Judul (H3): "5 Opsi Slogan Kampanye:"
-    *   Sebuah area konten tunggal untuk menampilkan 5 slogan dalam daftar bernomor.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Semua" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Gen Slogan".
+2.  **User Input Form:**
+    *   **Input Campaign Goal:** A text area labeled "What is the Main Goal of Your Campaign?".
+    *   **Target Audience Input:** A text input field labeled "Who is your Main Target Audience?".
+3.  **Action Button:** A main button with the text "Create a Slogan!". While the process is running, the button should be activated and display the status "Brainstorming...".
+4.  **Output Area:**
+    *   Headline (H3): "5 Campaign Slogan Options:"
+    *   A single content area to display 5 slogans in a numbered list.
+    *   **Copy Button:** There should be a "Copy All" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti daftar bernomor) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as numbered lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail kampanye dan mengklik tombol "Buat Slogan!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the campaign details and clicks the “Create Slogan!” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang copywriter senior dan ahli branding yang berspesialisasi dalam menciptakan slogan kampanye yang kuat dan berkesan.
 
@@ -46,17 +46,17 @@ Bangun sebuah aplikasi web yang berfungsi sebagai generator slogan kampanye. Pen
 
     Sajikan hasilnya dalam format daftar bernomor.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 5 opsi slogan di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 5 slogan options in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa Tujuan Utama Kampanye Anda?" dengan:**
-    `Mendorong masyarakat untuk mengurangi penggunaan plastik sekali pakai dan beralih ke alternatif yang lebih ramah lingkungan.`
-*   **Isi kolom "Siapa Target Audiens Utama Anda?" dengan:**
-    `Anak muda dan keluarga yang peduli terhadap lingkungan.`
+*   **Fill in the column "What is the Main Goal of Your Campaign?" with:**
+`Encouraging people to reduce the use of single-use plastics and switch to more environmentally friendly alternatives.`
+*   **Fill in the column "Who is your main target audience?" with:**
+`Young people and families who care about the environment.`
 ---

@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Resolusi SMART AI: Personal Goal Setter
+## Application Name
+SMART AI Resolution: Personal Goal Setter
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai pelatih penetapan tujuan. Pengguna memasukkan sebuah tujuan atau resolusi yang masih umum, dan AI akan membantu merumuskannya kembali menjadi tujuan yang **SMART** (Specific, Measurable, Achievable, Relevant, Time-bound).
+## Project Summary
+Build a web application that functions as a goal-setting coach. Users enter a general goal or resolution, and AI will help reformulate it into a **SMART** (Specific, Measurable, Achievable, Relevant, Time-bound) goal.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Resolusi SMART AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) dengan label "Apa Tujuan atau Resolusi Anda yang Masih Umum?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Jadi SMART!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menyusun Rencana...".
-4.  **Area Output:**
-    *   Judul (H3): "Resolusi Anda dalam Format SMART:"
-    *   Sebuah area konten tunggal untuk menampilkan rincian tujuan SMART.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "SMART AI Resolution".
+2.  **User Input Form:**
+    *   A text area labeled "What are your still general goals or resolutions?".
+3.  **Action Button:** A main button with the text "Make it SMART!". While the process is running, the button should be activated and display the status "Making a Plan...".
+4.  **Output Area:**
+    *   Title (H3): "Your Resolution in SMART Format:"
+    *   A single content area to display SMART goal details.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan tujuan umum dan mengklik tombol "Buat Jadi SMART!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a general goal and clicks the "Make It SMART!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang pelatih pengembangan diri (life coach) dan ahli produktivitas yang berspesialisasi dalam metode penetapan tujuan SMART.
 
@@ -48,15 +48,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai pelatih penetapan tujuan. Peng
 
     Setelah merinci kelima komponen tersebut, tulis satu **Pernyataan Tujuan Akhir** yang menggabungkan semua elemen SMART menjadi satu kalimat yang kuat. Gunakan format Markdown untuk menyusun jawaban dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan rincian tujuan SMART di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays SMART goal details in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa Tujuan atau Resolusi Anda yang Masih Umum?" dengan:**
-    `Saya ingin lebih sehat tahun ini.`
+*   **Fill in the column "What are your still general goals or resolutions?" with:**
+`I want to be healthier this year.`
 ---

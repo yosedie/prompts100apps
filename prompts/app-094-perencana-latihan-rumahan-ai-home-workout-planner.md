@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Perencana Latihan Rumahan AI: Home Workout Planner
+## Application Name
+AI Home Workout Planner: Home Workout Planner
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai pelatih kebugaran pribadi. Pengguna memilih area tubuh yang ingin dilatih, peralatan yang tersedia, dan tingkat kebugaran, lalu AI akan menyusun rutinitas latihan rumahan yang sederhana dan efektif, lengkap dengan deskripsi setiap gerakan.
+## Project Summary
+Build a web application that functions as a personal fitness trainer. Users select the areas of the body they want to train, the equipment available, and fitness level, then the AI ​​will put together a simple and effective home workout routine, complete with descriptions of each move.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Perencana Latihan Rumahan AI".
-2.  **Form Input Pengguna:**
-    *   **Pilihan Target Area:** Sebuah menu dropdown (select) dengan label "Pilih Target Area Tubuh:" dan opsi: "Seluruh Tubuh (Full Body)", "Perut & Inti (Abs & Core)", "Lengan & Dada (Upper Body)", "Kaki & Bokong (Lower Body)".
-    *   **Input Peralatan:** Sebuah kolom input teks dengan label "Peralatan yang Tersedia (atau 'tanpa alat'):".
-    *   **Pilihan Tingkat Kebugaran:** Sebuah menu dropdown (select) dengan label "Tingkat Kebugaran Anda:" dan opsi: "Pemula", "Menengah", "Mahir".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Rutinitas Latihan!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menyusun Latihan...".
-4.  **Area Output:**
-    *   Judul (H3): "Rutinitas Latihan Anda Hari Ini:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh rutinitas.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Home Workout Planner".
+2.  **User Input Form:**
+    *   **Target Area Selection:** A dropdown menu (select) with the label "Select Target Body Area:" and options: "Full Body", "Abs & Core", "Arms & Chest (Upper Body)", "Legs & Buttocks (Lower Body)".
+    *   **Equipment Input:** A text input field labeled "Available Equipment (or 'no tools'):".
+    *   **Fitness Level Selection:** A dropdown (select) menu with the label "Your Fitness Level:" and options: "Beginner", "Intermediate", "Advanced".
+3.  **Action Button:** A main button with the text "Create a Workout Routine!". While the process is running, the button should be activated and display the status "Composing Workout...".
+4.  **Output Area:**
+    *   Title (H3): "Your Workout Routine Today:"
+    *   A single content area to display the entire routine.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih target, peralatan, dan tingkat kebugaran, lalu mengklik tombol "Buat Rutinitas Latihan!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users select goals, equipment, and fitness level, then click the “Create Workout Routine!” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang pelatih kebugaran pribadi (personal trainer) bersertifikat. Anda ahli dalam merancang program latihan yang efektif dan aman untuk dilakukan di rumah.
 
@@ -47,19 +47,19 @@ Bangun sebuah aplikasi web yang berfungsi sebagai pelatih kebugaran pribadi. Pen
 
     Untuk setiap gerakan, berikan deskripsi singkat tentang cara melakukannya dengan benar. Gunakan format Markdown untuk menyusun rutinitas dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan rutinitas latihan di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The app displays workout routines in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Atur pilihan "Pilih Target Area Tubuh:" ke:**
-    `Perut & Inti (Abs & Core)`
-*   **Isi kolom "Peralatan yang Tersedia..." dengan:**
-    `Tanpa alat`
-*   **Atur pilihan "Tingkat Kebugaran Anda:" ke:**
-    `Pemula`
+*   **Set the "Select Target Body Area:" option to:**
+`Abs & Core`
+*   **Fill in the "Available Equipment..." column with:**
+`No tools`
+*   **Set the "Your Fitness Level:" option to:**
+`Beginner`
 ---

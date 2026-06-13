@@ -1,37 +1,37 @@
-## Nama Aplikasi
-QuizMaster AI: Pembuat Soal Latihan
+## Application Name
+QuizMaster AI: Practice Question Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang secara otomatis membuat soal-soal latihan dari sebuah teks atau materi pelajaran. Pengguna menempelkan materi, memilih jenis dan jumlah soal, dan AI akan menghasilkan kuis yang relevan untuk menguji pemahaman.
+## Project Summary
+Build a web application that automatically creates practice questions from a text or course material. Users paste in material, select the type and number of questions, and AI will generate relevant quizzes to test understanding.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "QuizMaster AI".
-2.  **Form Input Pengguna:**
-    *   **Input Materi:** Sebuah area teks (textarea) yang besar dengan label "Tempelkan Teks atau Materi Pelajaran di Sini:".
-    *   **Pilihan Tipe Soal:** Sebuah menu dropdown (select) dengan label "Pilih Tipe Soal:" dan opsi: "Pilihan Ganda", "Esai", "Campuran (5 PG, 5 Esai)".
-    *   **Input Jumlah Soal:** Sebuah kolom input angka (type="number") dengan label "Jumlah Soal:" dan nilai default 10.
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Soal Latihan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menyusun Soal...".
-4.  **Area Output:**
-    *   Judul (H3): "Soal Latihan yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh soal.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "QuizMaster AI".
+2.  **User Input Form:**
+    *   **Input Material:** A large text area labeled "Paste Text or Study Material Here:".
+    *   **Question Type Selection:** A dropdown (select) menu with the label "Select Question Type:" and options: "Multiple Choice", "Essay", "Mixed (5 PG, 5 Essays)".
+    *   **Input Number of Questions:** A number input field (type="number") with the label "Number of Questions:" and a default value of 10.
+3.  **Action Button:** A main button with the text "Create Practice Questions". While the process is running, the button should be activated and display the status "Compiling Questions...".
+4.  **Output Area:**
+    *   Title (H3): "Generated Practice Questions:"
+    *   A single content area to display all questions.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan daftar bernomor) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and numbered lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan materi, memilih tipe dan jumlah soal, lalu mengklik tombol.
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users enter material, select the type and number of questions, then click a button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang ahli perancang kurikulum dan pembuat soal ujian yang sangat teliti.
 
@@ -56,19 +56,19 @@ Bangun sebuah aplikasi web yang secara otomatis membuat soal-soal latihan dari s
 
     - **Untuk Campuran:** Buat 5 soal Pilihan Ganda terlebih dahulu, diikuti oleh 5 soal Esai.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan soal-soal yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays questions that have been formatted in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan Teks atau Materi Pelajaran di Sini:" dengan:**
-    `Fotosintesis adalah proses di mana tumbuhan hijau dan beberapa organisme lain mengubah energi cahaya menjadi energi kimia. Selama fotosintesis, tumbuhan menggunakan energi matahari untuk mengubah karbon dioksida (CO2) dan air (H2O) menjadi glukosa (gula sebagai makanan) dan oksigen (O2) sebagai produk sampingan. Proses ini terjadi di dalam kloroplas dan sangat bergantung pada klorofil, pigmen hijau yang menangkap energi cahaya.`
-*   **Atur pilihan "Pilih Tipe Soal:" ke:**
-    `Campuran (5 PG, 5 Esai)`
-*   **Atur "Jumlah Soal:" ke:**
-    `10`
+*   **Fill in the "Paste Text or Study Material Here:" column with:**
+`Photosynthesis is the process by which green plants and some other organisms convert light energy into chemical energy. During photosynthesis, plants use solar energy to convert carbon dioxide (CO2) and water (H2O) into glucose (sugar as food) and oxygen (O2) as byproducts. This process occurs in chloroplasts and relies heavily on chlorophyll, a green pigment that captures light energy.`
+*   **Set the "Select Question Type:" option to:**
+`Mixed (5 PG, 5 Essays)`
+*   **Set "Number of Questions:" to:**
+`10`
 ---

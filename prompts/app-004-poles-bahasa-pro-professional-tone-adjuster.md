@@ -1,40 +1,40 @@
-## Nama Aplikasi
-Poles Bahasa Pro: Professional Tone Adjuster
+## Application Name
+Pro Language Polish: Professional Tone Adjuster
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai asisten komunikasi. Pengguna memasukkan draf teks (email, pesan chat, dll.) yang canggung atau terlalu blak-blakan, lalu memilih konteks dan gaya bahasa yang diinginkan. Aplikasi akan menulis ulang teks tersebut menjadi versi yang lebih profesional, persuasif, atau diplomatis.
+## Project Summary
+Build a web application that functions as a communications assistant. The user enters a draft of text (email, chat message, etc.) that is awkward or too blunt, then selects the desired context and language style. The app will rewrite the text into a more professional, persuasive, or diplomatic version.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Poles Bahasa Pro".
-2.  **Form Input Pengguna:**
-    *   **Input Teks Asli:** Sebuah area teks (textarea) yang besar dengan label "Teks Asli Anda:".
-    *   **Input Konteks:** Sebuah kolom input teks dengan label "Apa Tujuan Utama Pesan Ini?".
-    *   **Pilihan Gaya Bahasa:** Sebuah menu dropdown (select) dengan label "Pilih Gaya Bahasa yang Diinginkan:" dan opsi berikut:
-        *   Profesional & Formal
-        *   Persuasif & Ramah
-        *   Diplomatis & Tegas
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Poles Teks Sekarang!". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Memoles Bahasa...".
-4.  **Area Output:**
-    *   Judul (H3): "Versi yang Disempurnakan:"
-    *   Sebuah area konten (read-only) untuk menampilkan teks yang sudah dipoles.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output untuk memudahkan pengguna.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "Pro Language Polish".
+2.  **User Input Form:**
+    *   **Input Original Text:** A large text area labeled "Your Original Text:".
+    *   **Input Context:** A text input field labeled "What is the Main Purpose of This Message?".
+    *   **Language Style Selection:** A dropdown (select) menu with the label "Select the Desired Language Style:" and the following options:
+        *   Professional & Formal
+        *   Persuasive & Friendly
+        *   Diplomatic & Firm
+3.  **Action Button:** A home button with the text "Polish Text Now!". While the process is running, the button should be disabled and display the status "Polishing Language...".
+4.  **Output Area:**
+    *   Title (H3): "Enhanced Version:"
+    *   A content area (read-only) to display polished text.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area for user convenience.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah sintaks Markdown (jika ada) menjadi elemen HTML yang diformat. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert the Markdown syntax (if any) into formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi teks asli, tujuan, dan memilih gaya bahasa, lalu mengklik tombol "Poles Teks Sekarang!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the original text, purpose, and selects a language style, then clicks the "Polish Text Now!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang ahli komunikasi profesional dan editor ahli.
 
@@ -47,19 +47,19 @@ Bangun sebuah aplikasi web yang berfungsi sebagai asisten komunikasi. Pengguna m
 
     PENTING: Hanya berikan hasil akhir teks yang sudah dipoles, tanpa tambahan komentar atau penjelasan dari Anda.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown (jika ada) dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan teks yang sudah disempurnakan di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content (if any) of the response into HTML.
+5.  The application displays the refined text in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Teks Asli Anda:" dengan:**
-    `Ini kerjaanmu salah, revisi lagi. Deadline besok jangan telat.`
-*   **Isi kolom "Apa Tujuan Utama Pesan Ini?" dengan:**
-    `Memberikan feedback revisi kepada rekan kerja dengan cara yang konstruktif.`
-*   **Atur pilihan "Pilih Gaya Bahasa yang Diinginkan:" ke:**
-    `Profesional & Formal`
+*   **Fill in the "Your Original Text:" field with:**
+`This is your work wrong, revise it again. Don't be late tomorrow's deadline.`
+*   **Fill in the column "What is the Main Purpose of This Message?" with:**
+`Provide revision feedback to colleagues in a constructive manner.`
+*   **Set the "Select the Desired Language Style:" option to:**
+`Professional & Formal`
 ---

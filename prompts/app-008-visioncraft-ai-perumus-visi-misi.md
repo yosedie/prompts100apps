@@ -1,35 +1,35 @@
-## Nama Aplikasi
-VisionCraft AI: Perumus Visi & Misi
+## Application Name
+VisionCraft AI: Vision & Mission Formulator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web strategis yang membantu para pemimpin bisnis merumuskan pernyataan Visi dan Misi yang kuat. Pengguna memasukkan nilai-nilai inti dan tujuan bisnis perusahaan mereka, dan AI akan menyusun draf pernyataan Visi yang inspiratif dan Misi yang ringkas serta dapat ditindaklanjuti.
+## Project Summary
+Build a strategic web application that helps business leaders formulate strong Vision and Mission statements. Users enter their company's core values ​​and business goals, and AI will draft an inspiring Vision statement and a concise, actionable Mission.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "VisionCraft AI".
-2.  **Form Input Pengguna:**
-    *   **Input Nilai Inti:** Sebuah area teks (textarea) dengan label "Apa Nilai-Nilai Inti Perusahaan Anda? (pisahkan dengan koma)".
-    *   **Input Tujuan Bisnis:** Sebuah area teks (textarea) dengan label "Jelaskan Tujuan Utama Bisnis Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Rumuskan Visi & Misi". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Merumuskan...".
-4.  **Area Output:** Dibagi menjadi dua bagian yang jelas:
-    *   **Bagian Visi:** Judul (H3) "Pernyataan Visi (Vision Statement)" diikuti area konten untuk menampilkan draf visi. Harus ada tombol "Salin" di sebelahnya.
-    *   **Bagian Misi:** Judul (H3) "Pernyataan Misi (Mission Statement)" diikuti area konten untuk menampilkan draf misi. Harus ada tombol "Salin" di sebelahnya.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "VisionCraft AI".
+2.  **User Input Form:**
+    *   **Core Values ​​Input:** A text area labeled "What are your company's core values? (separate with commas)".
+    *   **Input Business Goal:** A text area labeled "Describe Your Main Business Goal:".
+3.  **Action Button:** A main button with the text "Formulate Vision & Mission". While the process is running, the button should be disabled and display the status "Formulating...".
+4.  **Output Area:** Divided into two clear sections:
+    *   **Vision Section:** Heading (H3) "Vision Statement" followed by a content area to display the draft vision. There should be a "Copy" button next to it.
+    *   **Mission Section:** Title (H3) "Mission Statement" followed by a content area to display the mission draft. There should be a "Copy" button next to it.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah sintaks Markdown (jika ada) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada kedua bagian di Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert the Markdown syntax (if any) into properly formatted HTML elements. Apply this rendering to both parts in the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi nilai-nilai inti dan tujuan bisnis, lalu mengklik tombol "Rumuskan Visi & Misi".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users fill in the core values ​​and business goals, then click the "Formulate Vision & Mission" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang konsultan strategi bisnis dan branding yang ahli dalam merumuskan identitas perusahaan.
 
@@ -44,17 +44,17 @@ Bangun sebuah aplikasi web strategis yang membantu para pemimpin bisnis merumusk
 
     Pastikan kedua pernyataan tersebut selaras dengan nilai dan tujuan yang diberikan. Sajikan hasilnya dengan jelas, dipisahkan oleh judul. Gunakan format Markdown untuk judul.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi mem-parsingnya untuk memisahkan Visi dan Misi.
-5.  Aplikasi merender konten Markdown dari setiap bagian menjadi HTML, lalu menampilkannya di area output yang sesuai.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving the response, the application parses it to separate Vision and Mission.
+5.  The application renders the Markdown content of each section into HTML, then displays it in the appropriate output area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa Nilai-Nilai Inti Perusahaan Anda?..." dengan:**
-    `Inovasi, Keberlanjutan, Pemberdayaan Komunitas Lokal`
-*   **Isi kolom "Jelaskan Tujuan Utama Bisnis Anda:" dengan:**
-    `Menjadi platform e-commerce terdepan untuk produk kerajinan tangan ramah lingkungan di Asia Tenggara dan membantu pengrajin kecil menjangkau pasar global.`
+*   **Fill in the "What Are Your Company's Core Values?..." column with:**
+`Innovation, Sustainability, Local Community Empowerment`
+*   **Fill in the "Describe the Main Goal of Your Business:" column with:**
+`To become the leading e-commerce platform for eco-friendly handicraft products in Southeast Asia and help small craftsmen reach global markets.`
 ---

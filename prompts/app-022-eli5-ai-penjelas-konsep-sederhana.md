@@ -1,35 +1,35 @@
-## Nama Aplikasi
-ELI5 AI: Penjelas Konsep Sederhana
+## Application Name
+ELI5 AI: Simple Concept Explainer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang dapat menyederhanakan topik yang sangat kompleks. Pengguna memasukkan sebuah subjek yang sulit, dan AI akan menjelaskannya dengan metode "Explain Like I'm 5" (ELI5), menggunakan analogi sederhana, bahasa yang mudah, dan tanpa jargon teknis.
+## Project Summary
+Build a web application that can simplify a very complex topic. Users enter a difficult subject, and the AI ​​will explain it with the “Explain Like I'm 5” (ELI5) method, using simple analogies, easy language, and no technical jargon.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "ELI5 AI: Jelaskan Seperti Aku 5 Tahun".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Masukkan Topik Kompleks yang Ingin Dijelaskan:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Jadi Gampang!". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menyederhanakan...".
-4.  **Area Output:**
-    *   Judul (H3): "Penjelasan Sederhana:"
-    *   Sebuah area konten tunggal untuk menampilkan penjelasan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "ELI5 AI: Explain Like I'm 5 Years Old".
+2.  **User Input Form:**
+    *   A text input field labeled "Enter a Complex Topic You Want to Explain:".
+3.  **Action Button:** A main button with the text "Make It Easy!". While the process is running, the button should be disabled and display the status "Simplifying...".
+4.  **Output Area:**
+    *   Title (H3): "Simple Explanation:"
+    *   A single content area to display explanations.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` atau `*miring*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` or `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan topik dan mengklik tombol "Buat Jadi Gampang!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users enter a topic and click the "Make It Easy!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang guru yang sangat sabar dan ahli dalam menyederhanakan konsep-konsep yang rumit untuk anak-anak.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web yang dapat menyederhanakan topik yang sangat kompleks
     - HINDARI jargon teknis sama sekali.
     - Fokus pada ide utamanya, bukan pada detail teknis yang akurat.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan penjelasan yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted explanation in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Topik Kompleks yang Ingin Dijelaskan:" dengan:**
-    `Blockchain`
+*   **Fill in the "Enter the Complex Topic You Want to Explain:" column with:**
+`Blockchain`
 ---

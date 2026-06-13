@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Perencana Kencan Sempurna AI
+## Application Name
+AI Perfect Date Planner
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai perencana kencan pribadi. Pengguna memasukkan minat pasangan, budget, dan suasana yang diinginkan, lalu AI akan merancang sebuah itinerary kencan yang unik, personal, dan lengkap dari awal hingga akhir.
+## Project Summary
+Build a web application that functions as a personal date planner. Users enter their partner's interests, budget, and desired atmosphere, then AI will design a date itinerary that is unique, personal, and complete from start to finish.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Perencana Kencan Sempurna AI".
-2.  **Form Input Pengguna:**
-    *   **Input Minat:** Sebuah area teks (textarea) dengan label "Apa minat pasangan Anda? (contoh: seni, alam, kuliner, film, musik)".
-    *   **Pilihan Budget:** Sebuah menu dropdown (select) dengan label "Budget Kencan:" dan opsi: "Hemat (di bawah 200rb)", "Sedang (200rb - 500rb)", "Spesial (di atas 500rb)".
-    *   **Pilihan Suasana:** Sebuah menu dropdown (select) dengan label "Suasana yang Diinginkan:" dan opsi: "Romantis & Tenang", "Seru & Aktif", "Santai & Kasual", "Unik & Anti-Mainstream".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Rancang Kencan Sempurna!". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Merancang Momen...".
-4.  **Area Output:**
-    *   Judul (H3): "Rencana Kencan Spesial Untukmu:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh rencana.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI's Perfect Dating Planner".
+2.  **User Input Form:**
+    *   **Input Interests:** A text area with the label "What are your partner's interests? (example: art, nature, culinary, film, music)".
+    *   **Budget Selection:** A dropdown (select) menu with the label "Dating Budget:" and options: "Frugal (under 200k)", "Medium (200k - 500k)", "Special (above 500k)".
+    *   **Atmosphere Options:** A dropdown (select) menu with the label "Desired Atmosphere:" and options: "Romantic & Calm", "Fun & Active", "Relaxed & Casual", "Unique & Anti-Mainstream".
+3.  **Action Button:** A home button with the text "Plan the Perfect Date!". While the process is running, the button should be disabled and display the status "Designing Moments...".
+4.  **Output Area:**
+    *   Title (H3): "Special Dating Plans For You:"
+    *   A single content area to display the entire plan.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail kencan dan mengklik tombol "Rancang Kencan Sempurna!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the date details and clicks the "Plan the Perfect Date!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang perencana kencan (date planner) yang kreatif, romantis, dan sangat detail.
 
@@ -47,19 +47,19 @@ Bangun sebuah aplikasi web yang berfungsi sebagai perencana kencan pribadi. Peng
 
     Pastikan seluruh rencana sesuai dengan minat, budget, dan suasana yang dipilih. Gunakan format Markdown untuk menyusun rencana dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan rencana kencan yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted date plan in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa minat pasangan Anda?..." dengan:**
-    `Suka seni, mengunjungi galeri, minum kopi, dan mendengarkan musik jazz.`
-*   **Atur pilihan "Budget Kencan:" ke:**
-    `Sedang (200rb - 500rb)`
-*   **Atur pilihan "Suasana yang Diinginkan:" ke:**
-    `Romantis & Tenang`
+*   **Fill in the "What is your partner's interest?..." column with:**
+`Likes art, visiting galleries, drinking coffee and listening to jazz.`
+*   **Set the "Dating Budget:" option to:**
+`Medium (200k - 500k)`
+*   **Set the "Desired Scene:" option to:**
+`Romantic & Calm`
 ---

@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Konverter Poin ke Paragraf AI: Paragraph Weaver
+## Application Name
+AI Points to Paragraph Converter: Paragraph Weaver
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang mengubah daftar poin-poin (bullet points) mentah menjadi sebuah paragraf naratif yang kohesif dan mengalir lancar. Pengguna cukup menempelkan daftar poin, dan AI akan menyusunnya menjadi teks yang enak dibaca.
+## Project Summary
+Build a web application that turns a list of raw bullet points into a cohesive, smooth-flowing narrative paragraph. Users simply paste in a list of points, and AI will organize them into readable text.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Konverter Poin ke Paragraf AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Tempelkan Daftar Poin-Poin Anda di Sini:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Ubah Jadi Paragraf". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menyusun...".
-4.  **Area Output:**
-    *   Judul (H3): "Paragraf yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh paragraf.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Points to Paragraph Converter".
+2.  **User Input Form:**
+    *   A large text area labeled "Paste Your Bullet Points Here:".
+3.  **Action Button:** A main button with the text "Convert to Paragraph". While the process is running, the button should be activated and display the status "Compiling...".
+4.  **Output Area:**
+    *   Title (H3): "Resulting Paragraph:"
+    *   A single content area to display entire paragraphs.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan daftar poin dan mengklik tombol "Ubah Jadi Paragraf".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a bulleted list and clicks the "Convert to Paragraph" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang editor dan penulis yang ahli dalam menciptakan teks yang mengalir lancar dan kohesif.
 
@@ -45,18 +45,18 @@ Bangun sebuah aplikasi web yang mengubah daftar poin-poin (bullet points) mentah
 
     PENTING: Hanya berikan hasil paragrafnya saja, tanpa tambahan komentar.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan paragraf yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted paragraph in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan Daftar Poin-Poin Anda di Sini:" dengan:**
-    `- Proyek ini bertujuan meningkatkan efisiensi.
-    - Fitur utamanya adalah otomatisasi laporan bulanan.
-    - Target pengguna adalah manajer departemen.
-    - Diharapkan bisa mengurangi waktu kerja manual hingga 40%.`
+*   **Fill in the "Paste Your Bullet Points List Here:" column with:**
+`- This project aims to increase efficiency.
+    - The main feature is monthly report automation.
+    - The target user is department managers.
+    - It is hoped that it can reduce manual work time by up to 40%.`
 ---

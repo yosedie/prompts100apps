@@ -1,36 +1,36 @@
-## Nama Aplikasi
+## Application Name
 Code Weaver AI: Pseudocode Translator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai penerjemah dari logika bahasa manusia atau pseudocode menjadi kode pemrograman yang fungsional. Pengguna menulis alur logika mereka, memilih bahasa target, dan AI akan menghasilkan kode yang siap pakai.
+## Project Summary
+Build a web application that functions as a translator from human language logic or pseudocode into functional programming code. Users write their logic flow, select the target language, and AI will generate ready-to-use code.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Code Weaver AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Tulis Logika atau Pseudocode Anda di Sini:".
-    *   **Pilihan Bahasa Target:** Sebuah menu dropdown (select) dengan label "Terjemahkan ke Bahasa:" dan opsi: "Python", "JavaScript".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Translate to Code". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menenun Kode...".
-4.  **Area Output (Blok Kode):**
-    *   Judul (H3): "Kode yang Dihasilkan:"
-    *   Sebuah **kontainer blok kode** khusus (seperti `<pre><code>...</code></pre>`) untuk menampilkan kode yang dihasilkan. Kontainer ini harus memiliki latar belakang gelap dan menggunakan font monospace.
-    *   **Tombol Salin Kode (Copy Code):** Di sudut kanan atas kontainer blok kode, **wajib** ada tombol "Copy" yang memungkinkan pengguna menyalin seluruh kode ke clipboard dengan satu klik.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Code Weaver AI".
+2.  **User Input Form:**
+    *   A large text area labeled "Write Your Logic or Pseudocode Here:".
+    *   **Target Language Selection:** A dropdown (select) menu with the label "Translate to Language:" and options: "Python", "JavaScript".
+3.  **Action Buttons:** A main button with the text "Translate to Code". While the process is running, the button should be activated and display the status "Weaving Code...".
+4.  **Output Area (Code Block):**
+    *   Title (H3): "Generated Code:"
+    *   A special **code block container** (such as `<pre><code>...</code></pre>`) to display the generated code. This container should have a dark background and use a monospaced font.
+    *   **Copy Code Button:** In the top right corner of the code block container, **required** there is a "Copy" button that allows the user to copy the entire code to the clipboard with one click.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Blok Kode dengan Syntax Highlighting:** Aplikasi **wajib** menggunakan library JavaScript seperti `highlight.js` atau `prism.js` untuk merender respons dari AI. Library ini akan secara otomatis mendeteksi bahasa (Python/JavaScript) dari Markdown fence (```python) dan memberikan pewarnaan sintaks yang sesuai di dalam kontainer blok kode.
+*   **Render Code Blocks with Syntax Highlighting:** The application **must** use a JavaScript library such as `highlight.js` or `prism.js` to render the response from the AI. This library will automatically detect the language (Python/JavaScript) of the Markdown fence (```python) and provide appropriate syntax coloring within the code block container.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan pseudocode, memilih bahasa, dan mengklik tombol "Translate to Code".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters pseudocode, selects a language, and clicks the "Translate to Code" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang programmer ahli dan code generator. Tugas Anda adalah menerjemahkan pseudocode atau logika bahasa manusia menjadi kode yang bersih dan fungsional.
 
@@ -42,18 +42,18 @@ Bangun sebuah aplikasi web yang berfungsi sebagai penerjemah dari logika bahasa 
 
     PENTING: Respons Anda HARUS HANYA berisi blok kode Markdown mentah untuk bahasa yang diminta dan TIDAK ADA teks atau penjelasan lain di luar itu.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons (yang hanya berisi blok kode), aplikasi menggunakan library syntax highlighting untuk merendernya menjadi blok kode yang diformat dengan indah di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving the response (which only contains a code block), the application uses the syntax highlighting library to render it into a beautifully formatted code block in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Tulis Logika atau Pseudocode Anda di Sini:" dengan:**
-    `Buat sebuah fungsi bernama 'sapa'.
-    Fungsi ini menerima satu parameter: 'nama'.
-    Di dalam fungsi, cetak kalimat "Halo, [nama]! Selamat datang."`
-*   **Atur pilihan "Terjemahkan ke Bahasa:" ke:**
-    `Python`
+*   **Fill in the "Write Your Logic or Pseudocode Here:" field with:**
+`Create a function called 'greet'.
+This function accepts one parameter: 'name'.
+Inside the function, print the sentence "Hello, [name]! Welcome."`
+*   **Set the "Translate to Language:" option to:**
+`Python`
 ---

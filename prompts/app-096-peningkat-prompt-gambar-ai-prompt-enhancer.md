@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Peningkat Prompt Gambar AI: Prompt Enhancer
+## Application Name
+AI Image Prompt Enhancer: Prompt Enhancer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang membantu pengguna menulis prompt yang lebih baik untuk generator gambar AI (seperti Midjourney atau Stable Diffusion). Pengguna memasukkan ide prompt yang sederhana, dan AI akan mengembangkannya menjadi prompt yang sangat detail, menambahkan elemen-elemen seperti gaya seni, pencahayaan, komposisi, dan detail teknis lainnya.
+## Project Summary
+Build a web application that helps users write better prompts for AI image generators (like Midjourney or Stable Diffusion). Users enter a simple prompt idea, and the AI ​​will develop it into a highly detailed prompt, adding elements such as art style, lighting, composition, and other technical details.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Peningkat Prompt Gambar AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Masukkan Ide Prompt Sederhana Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tingkatkan Prompt!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menambahkan Detail...".
-4.  **Area Output:**
-    *   Judul (H3): "Prompt yang Ditingkatkan:"
-    *   Sebuah area konten tunggal untuk menampilkan prompt yang detail.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Image Prompt Enhancer".
+2.  **User Input Form:**
+    *   A text input field labeled "Enter Your Simple Prompt Idea:".
+3.  **Action Button:** A main button with the text "Upgrade Prompt!". While the process is running, the button should be activated and display the status "Adding Details...".
+4.  **Output Area:**
+    *   Title (H3): "Improved Prompt:"
+    *   A single content area to display detailed prompts.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan prompt sederhana dan mengklik tombol "Tingkatkan Prompt!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a simple prompt and clicks the "Improve Prompt!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang 'prompt engineer' dan seniman digital yang sangat ahli. Anda tahu persis kata kunci apa yang harus digunakan untuk mendapatkan hasil terbaik dari model generator gambar AI.
 
@@ -47,15 +47,15 @@ Bangun sebuah aplikasi web yang membantu pengguna menulis prompt yang lebih baik
 
     PENTING: Gabungkan semua elemen ini menjadi satu paragraf teks yang siap disalin, bukan dalam bentuk daftar.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan prompt yang ditingkatkan di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays improved prompts in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Ide Prompt Sederhana Anda:" dengan:**
-    `astronot di hutan`
+*   **Fill in the "Enter Your Simple Prompt Idea:" column with:**
+`astronaut in the jungle`
 ---

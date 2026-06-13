@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Penulis Pesan Botol AI: Message in a Bottle Generator
+## Application Name
+AI Bottle Message Author: Message in a Bottle Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web kreatif yang menulis surat pendek yang misterius dan penuh perenungan. Pengguna memasukkan sebuah tema atau perasaan, dan AI akan menulis sebuah pesan seolah-olah pesan itu dimasukkan ke dalam botol dan dihanyutkan ke laut untuk ditemukan oleh orang asing di masa depan.
+## Project Summary
+Build a creative web application that writes short, mysterious and thoughtful letters. Users enter a theme or feeling, and the AI ​​will write a message as if it were put in a bottle and floated out to sea for future strangers to discover.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Penulis Pesan Botol AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Apa Perasaan atau Tema Pesan Anda?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tulis Pesan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menghanyutkan ke Laut...".
-4.  **Area Output:**
-    *   Judul (H3): "Pesan dalam Botol:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh pesan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Bottle Message Author".
+2.  **User Input Form:**
+    *   A text input field labeled "What is the Feeling or Theme of Your Message?".
+3.  **Action Button:** A main button with the text "Compose Message". While the process is running, the button should be activated and display the status "Driving into the Sea...".
+4.  **Output Area:**
+    *   Title (H3): "Message in a Bottle:"
+    *   A single content area to display the entire message.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan tema dan mengklik tombol "Tulis Pesan".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters the theme and clicks the "Compose Message" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penyair, filsuf, dan pengelana waktu yang sendirian. Anda menulis pesan-pesan singkat untuk dimasukkan ke dalam botol dan dilempar ke lautan waktu.
 
@@ -47,15 +47,15 @@ Bangun sebuah aplikasi web kreatif yang menulis surat pendek yang misterius dan 
 
     Gunakan format Markdown untuk penekanan jika diperlukan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan pesan yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted message in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa Perasaan atau Tema Pesan Anda?" dengan:**
-    `Harapan`
+*   **Fill in the column "What is the Feeling or Theme of Your Message?" with:**
+`Hope`
 ---

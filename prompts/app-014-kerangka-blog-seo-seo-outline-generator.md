@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Kerangka Blog SEO: SEO Outline Generator
+## Application Name
+SEO Blog Framework: SEO Outline Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai perencana konten SEO. Pengguna memasukkan satu kata kunci utama, dan AI akan menghasilkan kerangka artikel blog yang terstruktur (H1, H2, H3) dan dioptimalkan untuk mesin pencari, lengkap dengan saran sub-topik yang relevan.
+## Project Summary
+Build a web application that functions as an SEO content planner. Users enter one main keyword, and the AI ​​will generate a blog article template that is structured (H1, H2, H3) and optimized for search engines, complete with relevant sub-topic suggestions.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Kerangka Blog SEO".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Masukkan Kata Kunci Utama Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Kerangka Blog". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menganalisis SEO...".
-4.  **Area Output:**
-    *   Judul (H3): "Kerangka Artikel SEO-Friendly:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh kerangka.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "SEO Blog Framework".
+2.  **User Input Form:**
+    *   A text input field labeled "Enter Your Primary Keyword:".
+3.  **Action Button:** A main button with the text "Create Blog Framework". While the process is running, the button should be activated and display the status "Analyzing SEO...".
+4.  **Output Area:**
+    *   Title (H3): "SEO-Friendly Article Framework:"
+    *   A single content area to display the entire framework.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (terutama `H1`, `H2`, `H3`, dan daftar) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (especially `H1`, `H2`, `H3`, and lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan kata kunci dan mengklik tombol "Buat Kerangka Blog".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters keywords and clicks the “Create Blog Template” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang Spesialis SEO Konten (Content SEO Specialist) dan ahli strategi digital yang sangat berpengalaman.
 
@@ -47,15 +47,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai perencana konten SEO. Pengguna
     - **H3 (Poin-Poin Detail):** Di bawah setiap H2, berikan beberapa H3 yang lebih spesifik sebagai poin-poin pembahasan.
     - **Saran Sub-Topik Tambahan:** Di akhir, berikan daftar poin berisi saran kata kunci turunan atau pertanyaan terkait (LSI keywords, People Also Ask) yang bisa dimasukkan ke dalam artikel.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan kerangka yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted outline in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Kata Kunci Utama Anda:" dengan:**
-    `Manfaat kopi untuk kesehatan`
+*   **Fill in the "Enter Your Main Keyword:" column with:**
+`The health benefits of coffee`
 ---

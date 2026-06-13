@@ -1,35 +1,35 @@
-## Nama Aplikasi
+## Application Name
 Viral Tweet Crafter
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai generator konten untuk platform X (Twitter). Pengguna memasukkan sebuah ide, topik, atau link artikel, dan AI akan menghasilkan 3 draf tweet atau thread yang dirancang untuk viralitas, lengkap dengan hashtag yang relevan dan call-to-action.
+## Project Summary
+Build a web application that functions as a content generator for platform X (Twitter). Users enter an idea, topic, or article link, and the AI ​​will generate 3 draft tweets or threads designed for virality, complete with relevant hashtags and calls-to-action.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Viral Tweet Crafter".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Masukkan Ide, Topik, atau Link Artikel Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Draf Tweet". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menyusun...".
-4.  **Area Output:**
-    *   Judul (H3): "3 Draf Tweet/Thread untuk Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan 3 draf. Setiap draf harus dipisahkan dengan jelas.
-    *   **Tombol Salin (Copy):** Setiap draf harus memiliki tombol "Salin" individual di sebelahnya.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Viral Tweet Crafter".
+2.  **User Input Form:**
+    *   A large text area labeled "Enter Your Article Idea, Topic, or Link:".
+3.  **Action Button:** A main button with the text "Draft Tweet". While the process is running, the button should be activated and display the status "Compiling...".
+4.  **Output Area:**
+    *   Title (H3): "3 Draft Tweets/Threads for You:"
+    *   A single content area to display 3 drafts. Each draft should be clearly separated.
+    *   **Copy Button:** Each draft should have an individual "Copy" button next to it.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan ide/link dan mengklik tombol "Buat Draf Tweet".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters an idea/link and clicks the "Draft Tweet" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang Social Media Manager dan ahli growth hacking yang sangat berpengalaman dalam menciptakan konten viral di platform X (Twitter).
 
@@ -48,15 +48,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai generator konten untuk platfor
 
     Gunakan format Markdown untuk memisahkan setiap draf dengan jelas (misalnya, menggunakan garis horizontal `---`).
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 3 draf tweet yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 3 draft tweets that have been formatted in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Ide, Topik, atau Link Artikel Anda:" dengan:**
-    `Ide: Kebiasaan tidur yang buruk ternyata bisa menurunkan produktivitas kerja lebih dari 50%.`
+*   **Fill in the "Enter your idea, topic or article link:" column with:**
+`Idea: Bad sleeping habits can actually reduce work productivity by more than 50%.`
 ---

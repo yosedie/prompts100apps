@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Proses Efisien AI: Workflow Optimizer
+## Application Name
+AI Efficient Processes: Workflow Optimizer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web analitik yang berfungsi sebagai konsultan efisiensi proses. Pengguna mendeskripsikan sebuah alur kerja (workflow) yang ada, dan AI akan menganalisisnya untuk mengidentifikasi hambatan dan memberikan saran-saran konkret untuk meningkatkan efisiensi.
+## Project Summary
+Build an analytical web application that functions as a process efficiency consultant. Users describe an existing workflow, and AI will analyze it to identify bottlenecks and provide concrete suggestions for improving efficiency.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Proses Efisien AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Jelaskan Alur Kerja Anda Saat Ini Secara Detail:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Analisis & Beri Saran". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menganalisis...".
-4.  **Area Output:**
-    *   Judul (H3): "Saran Peningkatan Proses:"
-    *   Sebuah area konten tunggal untuk menampilkan daftar saran.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Efficient Process".
+2.  **User Input Form:**
+    *   A large text area labeled "Describe Your Current Workflow in Detail:".
+3.  **Action Button:** A main button with the text "Analyze & Give Suggestions". While the process is running, the button should be disabled and display the status "Analyzing...".
+4.  **Output Area:**
+    *   Title (H3): "Process Improvement Suggestions:"
+    *   A single content area to display a list of suggestions.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `1.`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `1.`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan deskripsi alur kerja dan mengklik tombol "Analisis & Beri Saran".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a workflow description and clicks the "Analyze & Give Suggestions" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang konsultan efisiensi proses bisnis (Business Process Efficiency Consultant) yang sangat berpengalaman.
 
@@ -44,15 +44,15 @@ Bangun sebuah aplikasi web analitik yang berfungsi sebagai konsultan efisiensi p
 
     Sajikan hasilnya dalam format daftar bernomor. Gunakan format Markdown untuk kejelasan (judul, sub-judul, teks tebal).
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan daftar saran yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a formatted list of suggestions in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Jelaskan Alur Kerja Anda Saat Ini Secara Detail:" dengan:**
-    `Proses klaim reimbursement karyawan kami saat ini: 1. Karyawan mengisi formulir reimbursement kertas. 2. Karyawan menempelkan struk/bukti pembayaran fisik ke formulir. 3. Formulir diserahkan ke manajer untuk ditandatangani. 4. Manajer menyerahkan formulir ke departemen HRD. 5. HRD memeriksa dan mengarsipkan formulir fisik, lalu memberikan instruksi pembayaran ke tim keuangan. 6. Tim keuangan melakukan transfer manual.`
+*   **Fill in the "Describe Your Current Workflow in Detail:" column with:**
+`Our current employee reimbursement claim process: 1. Employees fill out a paper reimbursement form. 2. Employees attach physical receipts/proof of payment to the form. 3. The form is submitted to the manager for signature. 4. The manager submits the form to the HRD department. 5. HRD checks and files the physical form, then provides payment instructions to the finance team. 6. The finance team makes manual transfers.`
 ---

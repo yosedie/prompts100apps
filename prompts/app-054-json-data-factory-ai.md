@@ -1,36 +1,36 @@
-## Nama Aplikasi
+## Application Name
 JSON Data Factory AI
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai generator data sampel (dummy data) dalam format JSON. Pengguna mendeskripsikan skema data yang mereka butuhkan dalam bahasa biasa, dan AI akan menghasilkan array objek JSON yang sesuai, sangat berguna untuk prototyping dan pengujian.
+## Project Summary
+Build a web application that functions as a sample data generator (dummy data) in JSON format. Users describe the data schema they need in plain language, and AI will generate an array of appropriate JSON objects, very useful for prototyping and testing.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "JSON Data Factory AI".
-2.  **Form Input Pengguna:**
-    *   **Input Deskripsi Skema:** Sebuah area teks (textarea) yang besar dengan label "Jelaskan Skema Data yang Anda Butuhkan:".
-    *   **Input Jumlah Objek:** Sebuah kolom input angka (type="number") dengan label "Jumlah Objek Data yang Diinginkan:" dan nilai default 5.
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Generate JSON Data". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Generating...".
-4.  **Area Output (Blok Kode):**
-    *   Judul (H3): "Data JSON yang Dihasilkan:"
-    *   Sebuah **kontainer blok kode** khusus (seperti `<pre><code>...</code></pre>`) untuk menampilkan data JSON. Kontainer ini harus memiliki latar belakang gelap dan menggunakan font monospace.
-    *   **Tombol Salin Kode (Copy Code):** Di sudut kanan atas kontainer blok kode, **wajib** ada tombol "Copy" yang memungkinkan pengguna menyalin seluruh data JSON ke clipboard dengan satu klik.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "JSON Data Factory AI".
+2.  **User Input Form:**
+    *   **Input Schema Description:** A large text area labeled "Describe the Data Schema You Need:".
+    *   **Input Number of Objects:** A number input field (type="number") with the label "Desired Number of Data Objects:" and a default value of 5.
+3.  **Action Button:** A main button with the text "Generate JSON Data". While the process is running, the button should be activated and display the status "Generating...".
+4.  **Output Area (Code Block):**
+    *   Title (H3): "Generated JSON Data:"
+    *   A special **code block container** (such as `<pre><code>...</code></pre>`) for displaying JSON data. This container should have a dark background and use a monospaced font.
+    *   **Copy Code Button:** In the top right corner of the code block container, **required** there is a "Copy" button that allows users to copy the entire JSON data to the clipboard with one click.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Blok Kode dengan Syntax Highlighting:** Aplikasi **wajib** menggunakan library JavaScript seperti `highlight.js` atau `prism.js` untuk merender respons dari AI. Library ini akan secara otomatis mendeteksi format JSON dari Markdown fence (```json) dan memberikan pewarnaan sintaks yang sesuai di dalam kontainer blok kode.
+*   **Render Code Blocks with Syntax Highlighting:** The application **must** use a JavaScript library such as `highlight.js` or `prism.js` to render the response from the AI. This library will automatically detect the JSON format of Markdown fence (```json) and provide appropriate syntax coloring within the code block container.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan deskripsi skema, jumlah objek, dan mengklik tombol "Generate JSON Data".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a schema description, number of objects, and clicks the "Generate JSON Data" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah sebuah API data generator. Tugas Anda adalah membuat data sampel dalam format JSON berdasarkan deskripsi skema dari pengguna.
 
@@ -42,20 +42,20 @@ Bangun sebuah aplikasi web yang berfungsi sebagai generator data sampel (dummy d
 
     PENTING: Respons Anda HARUS HANYA berisi blok kode JSON mentah yang valid dan TIDAK ADA teks atau penjelasan lain di luar itu.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons (yang hanya berisi blok kode JSON), aplikasi menggunakan library syntax highlighting untuk merendernya menjadi blok kode yang diformat dengan indah di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving the response (which contains only a JSON code block), the application uses the syntax highlighting library to render it into a beautifully formatted code block in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Jelaskan Skema Data yang Anda Butuhkan:" dengan:**
-    `Saya butuh data pengguna. Setiap pengguna harus memiliki:
-    - id (nomor unik)
-    - nama (nama lengkap acak)
-    - email (alamat email acak)
-    - tanggal_bergabung (tanggal acak dalam setahun terakhir)`
-*   **Atur "Jumlah Objek Data yang Diinginkan:" ke:**
-    `5`
+*   **Fill in the "Describe the Data Schema You Need:" column with:**
+`I need user data. Each user must have:
+    - id (unique number)
+    - name (random full name)
+    - email (random email address)
+    - join_date (random date in the last year)`
+*   **Set "Desired Number of Data Objects:" to:**
+`5`
 ---

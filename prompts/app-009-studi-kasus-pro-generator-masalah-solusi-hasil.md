@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Studi Kasus Pro: Generator Masalah-Solusi-Hasil
+## Application Name
+Case Study Pro: Problem-Solution-Result Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang mengubah data mentah atau poin-poin proyek menjadi sebuah studi kasus (case study) yang naratif dan persuasif. Pengguna memasukkan detail proyek, dan AI akan menyusunnya ke dalam struktur "Masalah-Solusi-Hasil" yang terbukti efektif.
+## Project Summary
+Build a web application that turns raw data or project points into a narrative and persuasive case study. Users enter project details, and AI will organize them into a proven effective “Problem-Solution-Result” structure.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Studi Kasus Pro".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Masukkan Poin-Poin atau Data Mentah Proyek Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Studi Kasus". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menyusun Cerita...".
-4.  **Area Output:**
-    *   Judul (H3): "Studi Kasus yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh studi kasus.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Pro Case Study".
+2.  **User Input Form:**
+    *   A large text area labeled "Enter Your Project Bullet Points or Raw Data:".
+3.  **Action Button:** A main button with the text "Create a Case Study". While the process is running, the button should be disabled and display the status "Creating Story...".
+4.  **Output Area:**
+    *   Title (H3): "Resulting Case Study:"
+    *   A single content area to display all case studies.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##` untuk judul, `**` untuk tebal, dan `*` untuk daftar) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##` for titles, `**` for bold, and `*` for lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan data proyek dan mengklik tombol "Buat Studi Kasus".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters the project data and clicks the "Create Case Study" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis konten pemasaran (marketing content writer) yang ahli dalam menyusun studi kasus yang persuasif dan berorientasi pada hasil.
 
@@ -46,16 +46,16 @@ Bangun sebuah aplikasi web yang mengubah data mentah atau poin-poin proyek menja
 
     Gunakan format Markdown untuk judul, sub-judul, dan poin-poin penting untuk membuat studi kasus ini mudah dibaca dan profesional.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan studi kasus yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays formatted case studies in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Poin-Poin atau Data Mentah Proyek Anda:" dengan:**
+*   **Fill in the "Enter Your Project Bullet Points or Raw Data:" column with:**
     ```
     - Klien: PT. Logistik Cepat
     - Masalah: Proses pelacakan inventaris masih manual menggunakan spreadsheet, sering terjadi human error dan data tidak real-time. Sulit mengetahui stok barang yang akurat.

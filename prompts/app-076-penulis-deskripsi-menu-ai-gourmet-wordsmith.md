@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Penulis Deskripsi Menu AI: Gourmet Wordsmith
+## Application Name
+AI Menu Description Author: Gourmet Wordsmith
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang mengubah daftar bahan sederhana menjadi deskripsi menu yang menggugah selera. Pengguna memasukkan nama hidangan dan bahan utamanya, lalu AI akan menulis deskripsi yang puitis dan mewah, layaknya di restoran bintang lima.
+## Project Summary
+Build a web application that turns a simple ingredient list into a mouth-watering menu description. Users enter the name of the dish and its main ingredients, then AI will write a poetic and luxurious description, just like in a five-star restaurant.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Penulis Deskripsi Menu AI".
-2.  **Form Input Pengguna:**
-    *   **Input Nama Hidangan:** Sebuah kolom input teks dengan label "Nama Hidangan:".
-    *   **Input Bahan Utama:** Sebuah area teks (textarea) dengan label "Bahan-Bahan Utama (pisahkan dengan koma):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tulis Deskripsi Mewah". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Meracik Kata...".
-4.  **Area Output:**
-    *   Judul (H3): "Deskripsi Menu yang Menggugah Selera:"
-    *   Sebuah area konten tunggal untuk menampilkan deskripsi.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "AI Menu Description Writer".
+2.  **User Input Form:**
+    *   **Input Dish Name:** A text input field labeled "Dish Name:".
+    *   **Main Ingredients Input:** A text area with the label "Main Ingredients (separate with commas):".
+3.  **Action Button:** A main button with the text "Write a Fancy Description". While the process is running, the button should be activated and display the status "Composing Words...".
+4.  **Output Area:**
+    *   Title (H3): "Appetizing Menu Description:"
+    *   A single content area to display descriptions.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan nama hidangan dan bahan, lalu mengklik tombol "Tulis Deskripsi Mewah".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters the name of the dish and ingredients, then clicks the "Write a Fancy Description" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis menu profesional (menu writer) untuk restoran fine dining. Anda ahli dalam menggunakan kata-kata yang deskriptif dan menggugah selera untuk membuat hidangan terdengar mewah dan tak tertahankan.
 
@@ -45,17 +45,17 @@ Bangun sebuah aplikasi web yang mengubah daftar bahan sederhana menjadi deskrips
 
     PENTING: Hanya berikan teks deskripsinya saja, tanpa tambahan komentar.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan deskripsi menu di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays menu descriptions in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Nama Hidangan:" dengan:**
-    `Ayam Bakar Madu`
-*   **Isi kolom "Bahan-Bahan Utama (pisahkan dengan koma):" dengan:**
-    `ayam, madu, bawang putih, jahe, kecap, sambal`
+*   **Fill in the "Dish Name:" column with:**
+`Honey Grilled Chicken`
+*   **Fill in the "Main Ingredients (separate with commas):" column with:**
+`chicken, honey, garlic, ginger, soy sauce, chili sauce`
 ---

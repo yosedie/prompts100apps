@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Modifikator Resep Sehat AI: Healthy Recipe Makeover
+## Application Name
+AI Healthy Recipe Modifier: Healthy Recipe Makeover
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai ahli gizi virtual. Pengguna menempelkan sebuah resep masakan, dan AI akan menganalisisnya untuk memberikan saran substitusi bahan dan metode memasak agar resep tersebut menjadi lebih sehat, tanpa mengorbankan rasa secara signifikan.
+## Project Summary
+Build a web application that functions as a virtual nutritionist. Users paste in a recipe, and AI will analyze it to provide suggestions for ingredient substitutions and cooking methods to make the recipe healthier, without significantly sacrificing taste.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Modifikator Resep Sehat AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Tempelkan Resep Lengkap Anda di Sini (Bahan & Langkah):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Jadi Lebih Sehat!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menganalisis...".
-4.  **Area Output:**
-    *   Judul (H3): "Saran Modifikasi Resep Sehat:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh saran.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Healthy Recipe Modifier".
+2.  **User Input Form:**
+    *   A large text area labeled "Paste Your Complete Recipe Here (Ingredients & Steps):".
+3.  **Action Button:** A main button with the text "Make It Healthier!". While the process is running, the button should be activated and display the status "Analyzing...".
+4.  **Output Area:**
+    *   Title (H3): "Healthy Recipe Modification Suggestions:"
+    *   A single content area to display all suggestions.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna menempelkan resep dan mengklik tombol "Buat Jadi Lebih Sehat!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users paste in a recipe and click the "Make It Healthier!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang ahli gizi (nutritionist) dan koki yang ahli dalam memasak sehat. Anda tahu cara memodifikasi resep agar lebih bergizi tanpa membuatnya hambar.
 
@@ -45,28 +45,28 @@ Bangun sebuah aplikasi web yang berfungsi sebagai ahli gizi virtual. Pengguna me
 
     Gunakan format Markdown untuk menyusun saran dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan saran modifikasi di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays modification suggestions in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan Resep Lengkap Anda di Sini..." dengan:**
-    `Resep Ayam Goreng Tepung
+*   **Fill in the "Paste Your Complete Recipe Here..." column with:**
+`Fried Chicken Recipe with Flour
 
-    Bahan:
-    - 1 ekor ayam, potong 8
-    - 200g tepung terigu serbaguna
-    - 1 sdt garam
-    - 1 sdt lada
-    - Minyak goreng secukupnya
+Material:
+    - 1 chicken, cut into 8
+    - 200g all-purpose flour
+    - 1 tsp salt
+    - 1 tsp pepper
+    - Sufficient cooking oil
 
-    Langkah:
-    1. Campur tepung, garam, dan lada.
-    2. Balurkan potongan ayam ke dalam campuran tepung hingga rata.
-    3. Panaskan minyak dalam jumlah banyak.
-    4. Goreng ayam hingga terendam minyak sampai berwarna cokelat keemasan dan matang.`
+Step:
+    1. Mix flour, salt and pepper.
+    2. Coat the chicken pieces in the flour mixture until evenly coated.
+    3. Heat a large amount of oil.
+    4. Fry the chicken submerged in oil until golden brown and cooked.`
 ---

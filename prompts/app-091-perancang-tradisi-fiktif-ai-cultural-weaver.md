@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Perancang Tradisi Fiktif AI: Cultural Weaver
+## Application Name
+AI Fictitious Tradition Designer: Cultural Weaver
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web untuk para penulis dan world-builder yang menciptakan tradisi budaya fiktif. Pengguna memasukkan nama masyarakat dan nilai-nilai inti mereka, lalu AI akan merancang sebuah festival, ritual, atau tradisi unik yang mencerminkan nilai-nilai tersebut.
+## Project Summary
+Build a web application for writers and world-builders who create fictional cultural traditions. Users enter the name of the community and their core values, and then the AI ​​will design a unique festival, ritual, or tradition that reflects those values.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Perancang Tradisi Fiktif AI".
-2.  **Form Input Pengguna:**
-    *   **Input Nama Masyarakat:** Sebuah kolom input teks dengan label "Nama Masyarakat Fiktif Anda:".
-    *   **Input Nilai Inti:** Sebuah area teks (textarea) dengan label "Apa Nilai-Nilai Inti Masyarakat Ini? (pisahkan dengan koma)".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Ciptakan Tradisi". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menenun Budaya...".
-4.  **Area Output:**
-    *   Judul (H3): "Tradisi yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh deskripsi tradisi.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Fictitious Tradition Designer".
+2.  **User Input Form:**
+    *   **Input Society Name:** A text input field labeled "Your Fictitious Society Name:".
+    *   **Core Values ​​Input:** A text area labeled "What are the Core Values ​​of This Society? (separate with commas)".
+3.  **Action Button:** A main button with the text "Create a Tradition". While the process is running, the button should be activated and display the status "Culture Weaving...".
+4.  **Output Area:**
+    *   Title (H3): "Resulting Traditions:"
+    *   A single content area to display all tradition descriptions.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan nama masyarakat dan nilai-nilainya, lalu mengklik tombol "Ciptakan Tradisi".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users enter the name of the society and its values, then click the "Create Tradition" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang antropolog budaya dan sejarawan fiksi. Anda ahli dalam merancang tradisi dan ritual yang terasa otentik dan memiliki makna mendalam bagi sebuah masyarakat.
 
@@ -46,17 +46,17 @@ Bangun sebuah aplikasi web untuk para penulis dan world-builder yang menciptakan
 
     Gunakan format Markdown untuk menyusun deskripsi dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan deskripsi tradisi di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a description of the tradition in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Nama Masyarakat Fiktif Anda:" dengan:**
-    `Kaum Penempa Gunung`
-*   **Isi kolom "Apa Nilai-Nilai Inti Masyarakat Ini?..." dengan:**
-    `Keberanian, Komunitas, Kehormatan pada Leluhur`
+*   **Fill in the "Name of Your Fictitious Society:" column with:**
+`The Mountain Forgers`
+*   **Fill in the "What Are the Core Values ​​of This Society?..." column with:**
+`Courage, Community, Honor to Ancestors`
 ---

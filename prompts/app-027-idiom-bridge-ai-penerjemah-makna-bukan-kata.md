@@ -1,38 +1,38 @@
-## Nama Aplikasi
-Idiom Bridge AI: Penerjemah Makna, Bukan Kata
+## Application Name
+Idiom Bridge AI: Translator of Meanings, Not Words
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web linguistik yang mampu menerjemahkan idiom. Aplikasi ini tidak menerjemahkan secara harfiah, melainkan menjelaskan makna sebenarnya dari idiom tersebut dan memberikan padanan idiom yang memiliki makna serupa di bahasa target.
+## Project Summary
+Build a linguistic web application capable of translating idioms. This application does not translate literally, but rather explains the actual meaning of the idiom and provides an equivalent idiom that has a similar meaning in the target language.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Idiom Bridge AI".
-2.  **Form Input Pengguna:**
-    *   **Input Idiom:** Sebuah kolom input teks dengan label "Masukkan Idiom:".
-    *   **Pilihan Bahasa:** Dua menu dropdown (select) berdampingan:
-        *   "Dari Bahasa:" dengan opsi "Indonesia", "Inggris".
-        *   "Ke Bahasa:" dengan opsi "Inggris", "Indonesia".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Terjemahkan Makna". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menjembatani Makna...".
-4.  **Area Output:** Didesain dengan tiga bagian yang jelas:
-    *   **Bagian 1: Terjemahan Harfiah:** Judul (H3) "Terjemahan Harfiah (Literal)" diikuti area konten.
-    *   **Bagian 2: Makna Sebenarnya:** Judul (H3) "Makna Sebenarnya (Meaning)" diikuti area konten.
-    *   **Bagian 3: Padanan Idiom:** Judul (H3) "Padanan Idiom (Equivalent Idiom)" diikuti area konten.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Idiom Bridge AI".
+2.  **User Input Form:**
+    *   **Input Idiom:** A text input field labeled "Enter Idiom:".
+    *   **Language Selection:** Two dropdown (select) menus side by side:
+        *   "From Language:" with options "Indonesia", "English".
+        *   "To Language:" with options "English", "Indonesia".
+3.  **Action Button:** A main button with the text "Translate Meaning". While the process is running, the button should be activated and display the status "Bridging Meaning...".
+4.  **Output Area:** Designed with three clear sections:
+    *   **Section 1: Literal Translation:** Heading (H3) "Literal Translation" followed by the content area.
+    *   **Section 2: Actual Meaning:** Title (H3) "Real Meaning (Meaning)" followed by the content area.
+    *   **Section 3: Equivalent Idioms:** Title (H3) "Equivalent Idioms" followed by the content area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan idiom, memilih bahasa, dan mengklik tombol.
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters an idiom, selects a language, and clicks a button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang ahli bahasa (linguist) dan pakar budaya yang memahami nuansa idiom di berbagai bahasa.
 
@@ -52,19 +52,19 @@ Bangun sebuah aplikasi web linguistik yang mampu menerjemahkan idiom. Aplikasi i
     **Makna Sebenarnya:** [Jawaban Anda]
     **Padanan Idiom:** [Jawaban Anda]
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi mem-parsing teks tersebut untuk memisahkan ketiga bagian.
-5.  Aplikasi merender konten Markdown dan menampilkannya di tiga bagian yang sesuai di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application parses the text to separate the three parts.
+5.  The application renders the Markdown content and displays it in three appropriate sections in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow for live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Idiom:" dengan:**
-    `Kambing hitam`
-*   **Atur pilihan "Dari Bahasa:" ke:**
-    `Indonesia`
-*   **Atur pilihan "Ke Bahasa:" ke:**
-    `Inggris`
+*   **Fill in the "Enter Idiom:" column with:**
+`Black sheep`
+*   **Set the "From Language:" option to:**
+`Indonesia`
+*   **Set the "To Language:" option to:**
+`England`
 ---

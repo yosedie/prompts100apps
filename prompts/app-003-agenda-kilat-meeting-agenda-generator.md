@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Agenda Kilat: Meeting Agenda Generator
+## Application Name
+Quick Agenda: Meeting Agenda Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang sangat efisien untuk membuat agenda rapat terstruktur. Pengguna hanya perlu memasukkan satu kalimat tujuan rapat, waktu mulai, dan durasi, lalu aplikasi akan secara otomatis menghasilkan agenda lengkap dengan alokasi waktu, topik bahasan, dan tujuan untuk setiap sesi.
+## Project Summary
+Build a highly efficient web application for creating structured meeting agendas. Users only need to enter one sentence of the meeting objective, start time, and duration, then the application will automatically generate a complete agenda with time allocation, discussion topics, and objectives for each session.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Agenda Kilat".
-2.  **Form Input Pengguna:** Dibuat dalam satu baris atau grid yang rapi.
-    *   **Input Tujuan Rapat:** Sebuah kolom input teks dengan label "Tujuan Utama Rapat (1 Kalimat):".
-    *   **Input Waktu Mulai:** Sebuah kolom input waktu (type="time") dengan label "Waktu Mulai:".
-    *   **Input Durasi:** Sebuah kolom input angka (type="number") dengan label "Total Durasi (menit):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Agenda". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menyusun Agenda...".
-4.  **Area Output:**
-    *   Sebuah area konten tunggal untuk menampilkan seluruh agenda yang dihasilkan.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "Quick Agenda".
+2.  **User Input Form:** Created in one row or neat grid.
+    *   **Input Meeting Objective:** A text input field with the label "Main Objective of Meeting (1 Sentence):".
+    *   **Start Time Input:** A time input field (type="time") labeled "Start Time:".
+    *   **Duration Input:** A number input field (type="number") with the label "Total Duration (minutes):".
+3.  **Action Button:** A main button with the text "Create Agenda". While the process is running, the button should be disabled and display the status "Creating Agenda...".
+4.  **Output Area:**
+    *   A single content area to display all generated agendas.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `# Judul`, `**tebal**`, `* item daftar`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `#Title`, `**bold**`, `*list item`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi tujuan, waktu mulai, dan durasi rapat, lalu mengklik tombol "Buat Agenda".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users fill in the goal, start time, and duration of the meeting, then click the "Create Agenda" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang fasilitator rapat profesional dan asisten eksekutif yang sangat terorganisir.
 
@@ -45,19 +45,19 @@ Bangun sebuah aplikasi web yang sangat efisien untuk membuat agenda rapat terstr
 
     Strukturkan agenda secara logis, dimulai dengan perkenalan, diikuti oleh pembahasan inti, dan diakhiri dengan rangkuman serta langkah selanjutnya (action items). Gunakan format Markdown untuk kejelasan (judul, sub-judul, daftar, dan teks tebal).
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan agenda yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted agenda in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Tujuan Utama Rapat (1 Kalimat):" dengan:**
-    `Membahas dan memutuskan strategi peluncuran produk baru untuk kuartal depan.`
-*   **Isi kolom "Waktu Mulai:" dengan:**
-    `09:00`
-*   **Isi kolom "Total Durasi (menit):" dengan:**
-    `60`
+*   **Fill in the "Main Objective of the Meeting (1 Sentence):" column with:**
+`Discuss and decide on a new product launch strategy for the next quarter.`
+*   **Fill in the "Start Time:" column with:**
+`09:00`
+*   **Fill in the "Total Duration (minutes):" column with:**
+`60`
 ---

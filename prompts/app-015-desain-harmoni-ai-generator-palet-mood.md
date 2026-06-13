@@ -1,38 +1,38 @@
-## Nama Aplikasi
-Desain Harmoni AI: Generator Palet & Mood
+## Application Name
+AI Harmony Design: Palette & Mood Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web untuk para desainer dan kreator. Pengguna memasukkan sebuah tema atau kata kunci visual, dan AI akan menghasilkan palet warna yang harmonis (lengkap dengan kode HEX) serta deskripsi singkat tentang suasana (mood) yang diciptakan oleh palet tersebut.
+## Project Summary
+Build a web application for designers and creators. Users enter a theme or visual keywords, and the AI ​​will generate a harmonious color palette (complete with HEX codes) as well as a brief description of the mood created by the palette.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Desain Harmoni AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Masukkan Tema atau Kata Kunci Visual:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Palet Desain". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari Harmoni...".
-4.  **Area Output:** Dibagi menjadi dua bagian yang jelas:
-    *   **Bagian Palet Warna:**
-        *   Judul (H3): "Palet Warna yang Dihasilkan:"
-        *   Area ini harus menampilkan 5 kotak berwarna (swatches) secara horizontal. Latar belakang setiap kotak harus diisi dengan warna sesuai kode HEX yang dihasilkan. Di dalam setiap kotak, tampilkan kode HEX warna tersebut dengan teks yang kontras agar mudah dibaca.
-    *   **Bagian Deskripsi Mood:**
-        *   Judul (H3): "Deskripsi Mood Visual:"
-        *   Area konten untuk menampilkan deskripsi singkat dari AI.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Harmonious Design".
+2.  **User Input Form:**
+    *   A text input field labeled "Enter Theme or Visual Keywords:".
+3.  **Action Button:** A main button with the text "Create Design Palette". While the process is running, the button should be activated and display the status "Searching for Harmony...".
+4.  **Output Area:** Divided into two clear sections:
+    *   **Color Palette Section:**
+        *   Title (H3): "Resulting Color Palette:"
+        *   This area should display 5 colored squares (swatches) horizontally. The background of each box must be filled with the color according to the resulting HEX code. Inside each box, display the HEX code of that color with contrasting text for easy reading.
+    *   **Mood Description Section:**
+        *   Title (H3): "Visual Mood Description:"
+        *   Content area to display a brief description of the AI.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah sintaks Markdown (jika ada) menjadi elemen HTML yang diformat. Terapkan rendering ini pada bagian Deskripsi Mood.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert the Markdown syntax (if any) into formatted HTML elements. Apply this rendering to the Mood Description section.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan tema dan mengklik tombol "Buat Palet Desain".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a theme and clicks the “Create Design Palette” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang desainer grafis senior dan ahli teori warna (color theorist).
 
@@ -48,16 +48,16 @@ Bangun sebuah aplikasi web untuk para desainer dan kreator. Pengguna memasukkan 
 
     Pisahkan kedua bagian dengan jelas menggunakan penanda unik: `---MOOD---`.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi mem-parsing teks tersebut. Teks sebelum `---MOOD---` adalah daftar kode HEX. Teks setelahnya adalah deskripsi mood.
-5.  Aplikasi menggunakan daftar kode HEX untuk membuat 5 kotak berwarna secara dinamis.
-6.  Aplikasi merender deskripsi mood (dengan Markdown) dan menampilkannya di area yang sesuai.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application parses the text. The text before `---MOOD---` is a list of HEX codes. The text that follows is a mood description.
+5.  The application uses a list of HEX codes to dynamically create 5 colored squares.
+6.  The app renders a mood description (with Markdown) and displays it in the appropriate area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Tema atau Kata Kunci Visual:" dengan:**
-    `Tropis senja`
+*   **Fill in the "Enter Theme or Visual Keywords:" column with:**
+`Tropical twilight`
 ---

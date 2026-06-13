@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Pemandu Meditasi Teks AI: Guided Meditation Script
+## Application Name
+Guided Meditation Text AI: Guided Meditation Script
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai generator naskah meditasi terpandu. Pengguna memilih tema dan durasi, dan AI akan menghasilkan sebuah naskah yang menenangkan dan siap dibacakan, lengkap dengan arahan untuk jeda dan pernapasan.
+## Project Summary
+Build a web application that functions as a guided meditation script generator. Users select a theme and duration, and AI will generate a calming, ready-to-read script, complete with directions for pausing and breathing.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pemandu Meditasi Teks AI".
-2.  **Form Input Pengguna:**
-    *   **Input Tema:** Sebuah kolom input teks dengan label "Pilih Tema Meditasi Anda:".
-    *   **Pilihan Durasi:** Sebuah menu dropdown (select) dengan label "Pilih Durasi Sesi:" dan opsi: "Singkat (3 Menit)", "Sedang (5 Menit)", "Panjang (10 Menit)".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Naskah Meditasi". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menenangkan Pikiran...".
-4.  **Area Output:**
-    *   Judul (H3): "Naskah Meditasi Terpandu:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh naskah.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Text Meditation Guide".
+2.  **User Input Form:**
+    *   **Theme Input:** A text input field labeled "Choose Your Meditation Theme:".
+    *   **Duration Selection:** A dropdown (select) menu with the label "Select Session Duration:" and options: "Short (3 Minutes)", "Medium (5 Minutes)", "Long (10 Minutes)".
+3.  **Action Button:** A main button with the text "Create Meditation Script". While the process is running, the button should be activated and display the status "Relaxing Mind...".
+4.  **Output Area:**
+    *   Title (H3): "Guided Meditation Script:"
+    *   A single content area to display the entire manuscript.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `*italic*` untuk arahan) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `*italic*` for directives) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memilih tema, durasi, dan mengklik tombol "Buat Naskah Meditasi".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user selects a theme, duration, and clicks the “Create Meditation Script” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang pemandu meditasi dan instruktur mindfulness yang berpengalaman. Suara tulisan Anda tenang, lembut, dan menenangkan.
 
@@ -45,17 +45,17 @@ Bangun sebuah aplikasi web yang berfungsi sebagai generator naskah meditasi terp
 
     PENTING: Gunakan arahan dalam tanda kurung dan teks miring untuk menandakan jeda atau instruksi non-verbal. Contoh: *(jeda sejenak)* atau *(tarik napas dalam-dalam)*. Pastikan panjang naskah sesuai dengan durasi yang diminta.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan naskah meditasi yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted meditation script in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Pilih Tema Meditasi Anda:" dengan:**
-    `Mengurangi stres sebelum tidur`
-*   **Atur pilihan "Pilih Durasi Sesi:" ke:**
-    `Sedang (5 Menit)`
+*   **Fill in the "Choose Your Meditation Theme:" column with:**
+`Reducing stress before bed`
+*   **Set the "Select Session Duration:" option to:**
+`Medium (5 Minutes)`
 ---

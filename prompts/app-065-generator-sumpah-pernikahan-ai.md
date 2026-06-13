@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Generator Sumpah Pernikahan AI
+## Application Name
+AI Wedding Vow Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang membantu pengguna menulis janji atau sumpah pernikahan (wedding vows) yang personal dan menyentuh. Pengguna memasukkan beberapa kenangan, sifat yang disukai, dan janji untuk pasangan mereka, lalu AI akan merangkainya menjadi sebuah naskah yang indah dan puitis.
+## Project Summary
+Build a web application that helps users write personal and touching wedding vows. Users enter several memories, likes, and promises for their partner, and then the AI ​​will assemble them into a beautiful and poetic script.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Generator Sumpah Pernikahan AI".
-2.  **Form Input Pengguna:**
-    *   **Input Kenangan:** Sebuah area teks (textarea) dengan label "Ceritakan satu kenangan favorit bersama pasangan Anda:".
-    *   **Input Sifat:** Sebuah area teks (textarea) dengan label "Sebutkan 3 sifat yang paling Anda cintai darinya:".
-    *   **Input Janji:** Sebuah area teks (textarea) dengan label "Apa janji utama yang ingin Anda sampaikan untuk masa depan?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tulis Sumpah Pernikahan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Merangkai Kata Cinta...".
-4.  **Area Output:**
-    *   Judul (H3): "Draf Sumpah Pernikahan Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh naskah.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Wedding Vow Generator".
+2.  **User Input Form:**
+    *   **Input Memories:** A text area labeled "Tell me about one favorite memory with your partner:".
+    *   **Input Traits:** A text area with the label "Name 3 traits you love most about him:".
+    *   **Promise Input:** A text area labeled "What is the main promise you want to make for the future?".
+3.  **Action Button:** A main button with the text "Write Wedding Vows". While the process is running, the button should be activated and display the status "Composing Words of Love...".
+4.  **Output Area:**
+    *   Title (H3): "Draft Your Wedding Vows:"
+    *   A single content area to display the entire manuscript.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail kenangan, sifat, dan janji, lalu mengklik tombol "Tulis Sumpah Pernikahan".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users fill in details of memories, traits, and vows, then click the "Write Wedding Vows" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis pidato dan penyair yang sangat romantis dan empatik. Anda ahli dalam merangkai cerita personal menjadi kata-kata yang menyentuh hati.
 
@@ -49,19 +49,19 @@ Bangun sebuah aplikasi web yang membantu pengguna menulis janji atau sumpah pern
 
     Gunakan placeholder `[Nama Pasangan]` agar mudah disesuaikan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan draf sumpah pernikahan di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the draft wedding vows in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Ceritakan satu kenangan favorit bersama pasangan Anda:" dengan:**
-    `Aku tidak akan pernah lupa saat kita pertama kali kehujanan di perjalanan pulang dan akhirnya kita malah tertawa-tawa sambil menari di bawah hujan.`
-*   **Isi kolom "Sebutkan 3 sifat yang paling Anda cintai darinya:" dengan:**
-    `Tawanya yang menular, kebaikannya pada semua orang, dan caranya membuatku merasa tenang saat aku panik.`
-*   **Isi kolom "Apa janji utama yang ingin Anda sampaikan untuk masa depan?" dengan:**
-    `Aku berjanji akan selalu menjadi partner dalam petualangan dan tempatmu pulang yang paling nyaman.`
+*   **Fill in the "Tell me about one favorite memory with your partner:" column with:**
+`I will never forget the first time we got caught in the rain on the way home and we ended up laughing while dancing in the rain.`
+*   **Fill in the "Name 3 qualities you love most about him" column with:**
+`His infectious laugh, his kindness to everyone, and the way he made me feel calm when I was panicking.`
+*   **Fill in the column "What is the main promise you want to make for the future?" with:**
+`I promise to always be your partner in your adventures and the most comfortable place to come home to.`
 ---

@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Analogi Cerdas AI: Concept Connector
+## Application Name
+AI Smart Analogy: Concept Connector
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web kreatif yang membantu pengguna memahami hubungan antara dua konsep yang berbeda dengan menciptakan analogi yang cerdas. Pengguna memasukkan dua konsep, dan AI akan membuat sebuah perumpamaan yang mudah dipahami untuk menjelaskan bagaimana keduanya terhubung.
+## Project Summary
+Build a creative web application that helps users understand the relationship between two different concepts by creating clever analogies. Users enter two concepts, and the AI ​​will create an easy-to-understand analogy to explain how they are connected.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Analogi Cerdas AI".
-2.  **Form Input Pengguna:**
-    *   **Input Konsep 1:** Sebuah kolom input teks dengan label "Konsep Pertama:".
-    *   **Input Konsep 2:** Sebuah kolom input teks dengan label "Konsep Kedua:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Analogi". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menghubungkan Ide...".
-4.  **Area Output:**
-    *   Judul (H3): "Analogi yang Dihasilkan:"
-    *   Sebuah area konten tunggal untuk menampilkan analogi.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Smart Analogy".
+2.  **User Input Form:**
+    *   **Input Concept 1:** A text input field labeled "Concept 1:".
+    *   **Input Concept 2:** A text input field labeled "Concept Two:".
+3.  **Action Button:** A main button with the text "Create an Analogy". While the process is running, the button should be activated and display the status "Connecting Ideas...".
+4.  **Output Area:**
+    *   Title (H3): "Resulting Analogy:"
+    *   A single content area to display analogies.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan dua konsep dan mengklik tombol "Buat Analogi".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters two concepts and clicks the "Create Analogy" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang guru dan pemikir kreatif yang sangat ahli dalam membuat analogi untuk menjelaskan konsep-konsep yang sulit.
 
@@ -46,17 +46,17 @@ Bangun sebuah aplikasi web kreatif yang membantu pengguna memahami hubungan anta
 
     Gunakan format Markdown untuk penekanan jika diperlukan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan analogi yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted analogy in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Konsep Pertama:" dengan:**
-    `API (Application Programming Interface)`
-*   **Isi kolom "Konsep Kedua:" dengan:**
-    `Pelayan di restoran`
+*   **Fill in the "First Draft:" column with:**
+`API (Application Programming Interface)`
+*   **Fill in the "Second Concept:" column with:**
+`Waiter in restaurant`
 ---

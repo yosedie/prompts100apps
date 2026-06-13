@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Mediator Konflik AI: Neutral Ground
+## Application Name
+AI Conflict Mediator: Neutral Ground
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai mediator konflik virtual yang netral. Pengguna mendeskripsikan sebuah masalah atau perselisihan dari dua sudut pandang yang berbeda, dan AI akan memberikan analisis objektif, mengidentifikasi inti masalah, dan menyarankan langkah-langkah komunikasi untuk mencapai resolusi.
+## Project Summary
+Build a web application that serves as a neutral virtual conflict mediator. Users describe an issue or dispute from two different points of view, and AI will provide objective analysis, identify the core of the problem, and suggest communication steps to reach a resolution.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Mediator Konflik AI".
-2.  **Form Input Pengguna:**
-    *   **Input Sudut Pandang A:** Sebuah area teks (textarea) dengan label "Deskripsikan Masalah dari Sudut Pandang Pihak A:".
-    *   **Input Sudut Pandang B:** Sebuah area teks (textarea) dengan label "Deskripsikan Masalah dari Sudut Pandang Pihak B:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Cari Jalan Tengah". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menganalisis...".
-4.  **Area Output:**
-    *   Judul (H3): "Analisis & Saran Mediasi:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh analisis.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Conflict Mediator".
+2.  **User Input Form:**
+    *   **Input Point of View A:** A text area with the label "Describe the Problem from Party A's Point of View:".
+    *   **Input Point of View B:** A text area labeled "Describe the Problem from Party B's Point of View:".
+3.  **Action Button:** A main button with the text "Find the Middle Ground". While the process is running, the button should be activated and display the status "Analyzing...".
+4.  **Output Area:**
+    *   Title (H3): "Mediation Analysis & Suggestions:"
+    *   A single content area to display all analysis.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi deskripsi dari kedua sudut pandang dan mengklik tombol "Cari Jalan Tengah".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the description from both points of view and clicks the "Find Middle Ground" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang mediator konflik profesional yang netral, empatik, dan sangat objektif.
 
@@ -46,17 +46,17 @@ Bangun sebuah aplikasi web yang berfungsi sebagai mediator konflik virtual yang 
 
     Gunakan format Markdown untuk menyusun analisis dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan analisis mediasi di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays mediation analysis in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Deskripsikan Masalah dari Sudut Pandang Pihak A:" dengan:**
-    `Saya merasa rekan kerja saya, Budi, selalu menyerahkan pekerjaannya di menit-menit terakhir. Ini membuat saya harus terburu-buru dan sering lembur untuk menyelesaikan bagian saya yang bergantung pada pekerjaannya. Saya merasa tidak dihargai.`
-*   **Isi kolom "Deskripsikan Masalah dari Sudut Pandang Pihak B:" dengan:**
-    `Saya merasa Anita terlalu banyak menuntut dan tidak mengerti bahwa saya menangani beberapa proyek sekaligus. Saya selalu menyelesaikan pekerjaan sebelum deadline, tapi dia terus-menerus menanyakan progres dan membuat saya merasa tertekan.`
+*   **Fill in the "Describe the Problem from Party A's Point of View:" column with:**
+`I feel like my co-worker, Budi, always hands over his work at the last minute. This makes me have to rush and often work overtime to complete my part which depends on his work. I feel unappreciated.`
+*   **Fill in the "Describe the Problem from Party B's Point of View:" column with:**
+`I felt Anita was too demanding and didn't understand that I was juggling several projects at once. I always finish my work before the deadline, but he keeps asking about progress and makes me feel pressured.`
 ---

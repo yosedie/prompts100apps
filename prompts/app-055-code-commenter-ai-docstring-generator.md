@@ -1,42 +1,42 @@
-## Nama Aplikasi
+## Application Name
 Code Commenter AI: Docstring Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang secara otomatis mendokumentasikan kode. Pengguna menempelkan sebuah fungsi kode, dan AI akan menganalisisnya untuk menulis komentar atau docstring yang jelas, menjelaskan tujuan fungsi, parameter input, dan nilai outputnya.
+## Project Summary
+Build a web application that automatically documents code. Users paste a code function, and AI will analyze it to write a clear comment or docstring, explaining the function's purpose, input parameters, and output values.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Code Commenter AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Tempelkan Fungsi Kode Anda di Sini:". Area teks ini harus menggunakan font monospace.
-    *   **Pilihan Gaya Komentar:** Sebuah menu dropdown (select) dengan label "Pilih Gaya Komentar:" dan opsi: "Docstring (Python)", "JSDoc (JavaScript)".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Generate Komentar". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menganalisis Kode...".
-4.  **Area Output (Blok Kode):**
-    *   Judul (H3): "Kode dengan Komentar:"
-    *   Sebuah **kontainer blok kode** khusus (seperti `<pre><code>...</code></pre>`) untuk menampilkan kode yang sudah ditambahkan komentar. Kontainer ini harus memiliki latar belakang gelap dan menggunakan font monospace.
-    *   **Tombol Salin Kode (Copy Code):** Di sudut kanan atas kontainer blok kode, **wajib** ada tombol "Copy" yang memungkinkan pengguna menyalin seluruh kode ke clipboard dengan satu klik.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "Code Commenter AI".
+2.  **User Input Form:**
+    *   A large text area labeled "Paste Your Code Function Here:". This text area must use monospaced font.
+    *   **Comment Style Selection:** A dropdown (select) menu with the label "Select Comment Style:" and options: "Docstring (Python)", "JSDoc (JavaScript)".
+3.  **Action Button:** A main button with the text "Generate Comment". While the process is running, the button should be activated and display the status "Analyzing Code...".
+4.  **Output Area (Code Block):**
+    *   Title (H3): "Code with Comments:"
+    *   A special **code block container** (such as `<pre><code>...</code></pre>`) to display code with comments added. This container should have a dark background and use a monospaced font.
+    *   **Copy Code Button:** In the top right corner of the code block container, **required** there is a "Copy" button that allows the user to copy the entire code to the clipboard with one click.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Blok Kode dengan Syntax Highlighting:** Aplikasi **wajib** menggunakan library JavaScript seperti `highlight.js` atau `prism.js` untuk merender respons dari AI. Library ini akan secara otomatis mendeteksi bahasa dan memberikan pewarnaan sintaks yang sesuai di dalam kontainer blok kode.
+*   **Render Code Blocks with Syntax Highlighting:** The application **must** use a JavaScript library such as `highlight.js` or `prism.js` to render the response from the AI. This library will automatically detect the language and provide appropriate syntax coloring within the code block container.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna menempelkan kode, memilih gaya, dan mengklik tombol "Generate Komentar".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user pastes the code, chooses a style, and clicks the "Generate Comment" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang programmer senior yang sangat disiplin dalam menulis kode yang bersih dan terdokumentasi dengan baik.
 
     Berdasarkan fungsi kode berikut:
     ```
-    [Kode dari input pengguna]
+[Code from user input]
     ```
 
     Tugas Anda adalah menganalisis fungsi ini dan menulis komentar dokumentasi (docstring/JSDoc) yang sesuai dengan gaya "[Gaya dari pilihan pengguna]".
@@ -48,15 +48,15 @@ Bangun sebuah aplikasi web yang secara otomatis mendokumentasikan kode. Pengguna
 
     PENTING: Respons Anda HARUS HANYA berisi blok kode mentah yang sudah digabungkan dengan komentar barunya, dan TIDAK ADA teks atau penjelasan lain di luar itu.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons (yang hanya berisi blok kode), aplikasi menggunakan library syntax highlighting untuk merendernya menjadi blok kode yang diformat dengan indah di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving the response (which only contains a code block), the application uses the syntax highlighting library to render it into a beautifully formatted code block in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan Fungsi Kode Anda di Sini:" dengan:**
+*   **Fill in the "Paste Your Code Function Here:" field with:**
     ```python
     def calculate_area(length, width):
         if length < 0 or width < 0:
@@ -64,6 +64,6 @@ Bangun sebuah aplikasi web yang secara otomatis mendokumentasikan kode. Pengguna
         area = length * width
         return area
     ```
-*   **Atur pilihan "Pilih Gaya Komentar:" ke:**
-    `Docstring (Python)`
+*   **Set the "Choose Comment Style:" option to:**
+`Docstring (Python)`
 ---

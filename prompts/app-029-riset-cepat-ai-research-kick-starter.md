@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Riset Cepat AI: Research Kick-starter
+## Application Name
+AI Rapid Research: Research Kick-starter
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai titik awal untuk sebuah riset. Pengguna memasukkan sebuah pertanyaan riset, dan AI akan memberikan ringkasan awal, mengidentifikasi poin-poin kunci, dan menyarankan kata kunci untuk pencarian literatur lebih lanjut, mempercepat proses riset secara signifikan.
+## Project Summary
+Build a web application that serves as a starting point for research. Users enter a research question, and AI will provide an initial summary, identify key points, and suggest keywords for further literature searches, speeding up the research process significantly.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Riset Cepat AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) yang besar dengan label "Masukkan Pertanyaan Riset Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Mulai Riset". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Mencari Informasi...".
-4.  **Area Output:** Didesain seperti dasbor ringkasan dengan tiga bagian yang jelas:
-    *   **Bagian 1: Ringkasan Awal:** Judul (H3) "Ringkasan Awal" diikuti area konten untuk ringkasan singkat.
-    *   **Bagian 2: Poin-Poin Kunci:** Judul (H3) "Poin-Poin Kunci" diikuti area konten untuk daftar poin.
-    *   **Bagian 3: Kata Kunci untuk Riset Lanjutan:** Judul (H3) "Kata Kunci untuk Riset Lanjutan" diikuti area konten untuk daftar kata kunci.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Rapid Research".
+2.  **User Input Form:**
+    *   A large text area labeled "Enter Your Research Question:".
+3.  **Action Buttons:** A main button with the text "Start Research". While the process is running, the button should be disabled and display the status "Searching for Information...".
+4.  **Output Area:** Designed like a summary dashboard with three clear sections:
+    *   **Section 1: Initial Summary:** Heading (H3) "Preliminary Summary" followed by the content area for a brief summary.
+    *   **Section 2: Key Points:** Heading (H3) "Key Points" followed by a content area for the bullet list.
+    *   **Section 3: Keywords for Advanced Research:** Heading (H3) "Keywords for Advanced Research" followed by the content area for the keyword list.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `###`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada ketiga bagian di Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `###`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to all three sections in the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan pertanyaan riset dan mengklik tombol "Mulai Riset".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a research question and clicks the “Start Research” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang asisten riset AI yang terlatih untuk mensintesis informasi dan mengidentifikasi konsep-konsep inti dengan cepat.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai titik awal untuk sebuah riset.
 
     Gunakan format Markdown untuk seluruh respons Anda, dengan sub-judul yang jelas untuk setiap bagian.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan hasil analisis di tiga bagian yang sesuai di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the analysis results in three appropriate sections in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Pertanyaan Riset Anda:" dengan:**
-    `Apa dampak penggunaan media sosial terhadap kesehatan mental remaja?`
+*   **Fill in the "Enter Your Research Question:" column with:**
+`What is the impact of social media use on teenagers' mental health?`
 ---

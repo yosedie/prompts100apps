@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Penulis Ucapan Selamat AI
+## Application Name
+AI Congratulations Writer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang membantu pengguna menulis ucapan selamat yang tulus dan personal. Pengguna memilih jenis acara, hubungan mereka dengan penerima, dan gaya yang diinginkan, lalu AI akan membuat beberapa draf ucapan yang bisa langsung digunakan atau dimodifikasi.
+## Project Summary
+Build a web application that helps users write sincere and personal congratulations. Users select the type of event, their relationship with the recipient, and the desired style, then the AI ​​will create several greeting drafts that can be used or modified immediately.
 
-## Komponen Antar muka Pengguna (UI Components)
+## User Interface Components (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Penulis Ucapan Selamat AI".
-2.  **Form Input Pengguna:**
-    *   **Pilihan Acara:** Sebuah menu dropdown (select) dengan label "Untuk Acara Apa?" dan opsi: "Ulang Tahun", "Pernikahan", "Kelulusan", "Kelahiran Anak".
-    *   **Input Hubungan:** Sebuah kolom input teks dengan label "Hubungan Anda dengan Penerima? (contoh: sahabat, rekan kerja, adik)".
-    *   **Pilihan Gaya:** Sebuah menu dropdown (select) dengan label "Gaya Ucapan:" dan opsi: "Tulus & Menyentuh", "Lucu & Santai", "Formal & Penuh Hormat".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Ucapan Selamat". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Merangkai Kata...".
-4.  **Area Output:**
-    *   Judul (H3): "3 Draf Ucapan Untukmu:"
-    *   Sebuah area konten tunggal untuk menampilkan 3 draf ucapan. Setiap draf harus dipisahkan dengan jelas.
-    *   **Tombol Salin (Copy):** Setiap draf harus memiliki tombol "Salin" individual di sebelahnya.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "AI Congratulations Writer".
+2.  **User Input Form:**
+    *   **Event Selection:** A dropdown (select) menu labeled "For What Event?" and options: "Birthday", "Wedding", "Graduation", "Birth of a Child".
+    *   **Relationship Input:** A text input field with the label "Your Relationship with the Recipient? (example: best friend, coworker, younger sibling)".
+    *   **Style Selection:** A dropdown (select) menu with the label "Speech Style:" and options: "Sincere & Touching", "Funny & Casual", "Formal & Respectful".
+3.  **Action Button:** A main button with the text "Create Congratulations". While the process is running, the button should be disabled and display the "Word Stringing..." status.
+4.  **Output Area:**
+    *   Title (H3): "3 Draft Greetings For You:"
+    *   A single content area to display 3 speech drafts. Each draft should be clearly separated.
+    *   **Copy Button:** Each draft should have an individual "Copy" button next to it.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `---` atau `**`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `---` or `**`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail acara dan mengklik tombol "Buat Ucapan Selamat".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the event details and clicks the “Create Congratulations” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis kartu ucapan yang sangat empatik dan pandai merangkai kata-kata yang tulus.
 
@@ -47,19 +47,19 @@ Bangun sebuah aplikasi web yang membantu pengguna menulis ucapan selamat yang tu
 
     Gunakan format Markdown untuk memisahkan setiap draf dengan jelas (misalnya, menggunakan garis horizontal `---`).
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 3 draf ucapan yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 3 formatted speech drafts in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Atur pilihan "Untuk Acara Apa?" ke:**
-    `Pernikahan`
-*   **Isi kolom "Hubungan Anda dengan Penerima?..." dengan:**
-    `Sahabat sejak kecil`
-*   **Atur pilihan "Gaya Ucapan:" ke:**
-    `Tulus & Menyentuh`
+*   **Set the "For What Occasion?" to:**
+`Wedding`
+*   **Fill in the "Your Relationship with the Recipient?..." column with:**
+`Friends since childhood`
+*   **Set the "Speech Style:" option to:**
+`Sincere & Touching`
 ---

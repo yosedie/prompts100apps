@@ -1,36 +1,36 @@
-## Nama Aplikasi
-Surat Lamaran Pro AI: Cover Letter Writer
+## Application Name
+Pro AI Cover Letter: Cover Letter Writer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang secara otomatis membuat surat lamaran kerja (cover letter) yang dipersonalisasi. Pengguna menempelkan deskripsi pekerjaan dan CV mereka, lalu AI akan menulis draf surat lamaran yang menyoroti pengalaman paling relevan dari CV untuk posisi yang dituju.
+## Project Summary
+Build a web application that automatically creates a personalized cover letter. Users paste in their job description and CV, then the AI ​​will write a draft cover letter highlighting the most relevant experience from the CV for the intended position.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Surat Lamaran Pro AI".
-2.  **Form Input Pengguna:**
-    *   **Input Deskripsi Pekerjaan:** Sebuah area teks (textarea) dengan label "Tempelkan Deskripsi Pekerjaan di Sini:".
-    *   **Input CV:** Sebuah area teks (textarea) yang besar dengan label "Tempelkan CV atau Ringkasan Pengalaman Anda di Sini:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Buat Surat Lamaran". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menulis...".
-4.  **Area Output:**
-    *   Judul (H3): "Draf Surat Lamaran Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh surat.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Pro AI Cover Letter".
+2.  **User Input Form:**
+    *   **Input Job Description:** A text area labeled "Paste Job Description Here:".
+    *   **Input CV:** A large text area labeled "Paste Your CV or Experience Summary Here:".
+3.  **Action Button:** A main button with the text "Create Cover Letter". While the process is running, the button should be activated and display the status "Writing...".
+4.  **Output Area:**
+    *   Title (H3): "Draft Your Cover Letter:"
+    *   A single content area to display the entire letter.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna menempelkan deskripsi pekerjaan dan CV, lalu mengklik tombol "Buat Surat Lamaran".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  Users paste in the job description and CV, then click the "Create Cover Letter" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang konsultan karir dan penulis profesional yang ahli dalam membuat surat lamaran kerja yang persuasif.
 
@@ -46,27 +46,27 @@ Bangun sebuah aplikasi web yang secara otomatis membuat surat lamaran kerja (cov
 
     Gunakan placeholder seperti `[Nama Anda]` atau `[Nama Manajer Perekrutan]` jika informasi tersebut tidak tersedia.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan draf surat lamaran di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the draft cover letter in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan Deskripsi Pekerjaan di Sini:" dengan:**
-    `Dicari: Social Media Manager. Tanggung jawab termasuk mengelola semua akun media sosial perusahaan, membuat kalender konten, dan menganalisis metrik engagement. Wajib memiliki pengalaman minimal 2 tahun dalam mengelola kampanye media sosial dan familiar dengan alat analisis seperti Hootsuite.`
-*   **Isi kolom "Tempelkan CV atau Ringkasan Pengalaman Anda di Sini:" dengan:**
-    `Budi Santoso - Spesialis Pemasaran Digital
+*   **Fill in the "Paste Job Description Here:" field with:**
+`Wanted: Social Media Manager. Responsibilities include managing all company social media accounts, creating a content calendar, and analyzing engagement metrics. Must have at least 2 years of experience in managing social media campaigns and familiarity with analytical tools such as Hootsuite.`
+*   **Fill in the "Paste your CV or Summary of Experience Here:" column with:**
+`Budi Santoso - Digital Marketing Specialist
 
-    Pengalaman:
-    - Social Media Specialist di PT. Maju Jaya (2021-Sekarang)
-      - Mengelola akun Instagram & TikTok, meningkatkan followers sebesar 50%.
-      - Membuat dan menjadwalkan konten harian menggunakan Hootsuite.
-      - Melaporkan performa kampanye bulanan.
-    - Marketing Intern di Agensi Kreatif (2020)
-      - Membantu riset konten dan copywriting.
+Experience:
+    - Social Media Specialist at PT. Maju Jaya (2021-Present)
+      - Manage Instagram & TikTok accounts, increase followers by 50%.
+      - Create and schedule daily content using Hootsuite.
+      - Reporting monthly campaign performance.
+    - Marketing Intern at a Creative Agency (2020)
+      - Assist with content research and copywriting.
 
-    Keahlian: Copywriting, Hootsuite, Analisis Data, SEO Dasar.`
+Skills: Copywriting, Hootsuite, Data Analysis, Basic SEO.`
 ---

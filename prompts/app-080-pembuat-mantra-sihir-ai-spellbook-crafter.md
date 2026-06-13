@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Pembuat Mantra Sihir AI: Spellbook Crafter
+## Application Name
+AI Magic Spell Generator: Spellbook Crafter
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web kreatif yang menciptakan "mantra" atau "rapalan sihir" fiktif. Pengguna mendeskripsikan efek sihir yang diinginkan, dan AI akan menghasilkan nama mantra, rapalan yang berima, dan efek samping kecil yang menarik.
+## Project Summary
+Build a creative web application that creates fictional "spells" or "magic spells." The user describes the desired magic effect, and the AI ​​will generate spell names, rhyming incantations, and interesting little side effects.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pembuat Mantra Sihir AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) dengan label "Apa Efek Sihir yang Diinginkan?".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Rapalkan Mantra!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mengumpulkan Mana...".
-4.  **Area Output:**
-    *   Judul (H3): "Mantra yang Tercipta:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh detail mantra.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "AI Magic Spell Generator".
+2.  **User Input Form:**
+    *   A text area labeled "What is the Desired Magic Effect?".
+3.  **Action Button:** A main button with the text "Cast a Spell!". While the process is running, the button should be activated and display the status "Gathering Mana...".
+4.  **Output Area:**
+    *   Title (H3): "Created Spell:"
+    *   A single content area to display all spell details.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan efek sihir dan mengklik tombol "Rapalkan Mantra!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a magic effect and clicks the "Cast a Spell!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang Archmage, penjaga perpustakaan sihir kuno. Anda adalah pencipta mantra yang tak tertandingi.
 
@@ -46,15 +46,15 @@ Bangun sebuah aplikasi web kreatif yang menciptakan "mantra" atau "rapalan sihir
 
     Gunakan format Markdown untuk menyusun detail mantra dengan rapi.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan detail mantra di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The app displays spell details in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa Efek Sihir yang Diinginkan?" dengan:**
-    `Membuat secangkir teh hangat muncul di tangan.`
+*   **Fill in the column "What is the Desired Magic Effect?" with:**
+`Making a cup of warm tea appear in hand.`
 ---

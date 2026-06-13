@@ -1,35 +1,35 @@
-## Nama Aplikasi
-Pemandu Wisata Virtual AI
+## Application Name
+AI Virtual Tour Guide
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi sebagai pemandu wisata pribadi. Pengguna memasukkan nama sebuah kota atau museum terkenal, dan AI akan menulis sebuah narasi tur yang imersif dan informatif, seolah-olah pengguna sedang berjalan-jalan di lokasi tersebut.
+## Project Summary
+Build a web application that functions as a personal tour guide. Users enter the name of a famous city or museum, and the AI ​​will write an immersive and informative tour narrative, as if the user were walking through that location.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Pemandu Wisata Virtual AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah kolom input teks dengan label "Masukkan Lokasi Tur (Kota atau Museum):".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Mulai Tur Virtual!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Menjelajahi Lokasi...".
-4.  **Area Output:**
-    *   Judul (H3): "Narasi Tur Virtual Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh narasi tur.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The big headline says "AI Virtual Tour Guide".
+2.  **User Input Form:**
+    *   A text input field labeled "Enter Tour Location (City or Museum):".
+3.  **Action Button:** A main button with the text "Start Virtual Tour!". While the process is running, the button should be activated and display the status "Exploring Locations...".
+4.  **Output Area:**
+    *   Title (H3): "Your Virtual Tour Narrative:"
+    *   A single content area to display the entire tour narrative.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `**tebal**` dan `*italic*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `**bold**` and `*italic*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan lokasi dan mengklik tombol "Mulai Tur Virtual!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a location and clicks the "Start Virtual Tour!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang pemandu wisata (tour guide) yang sangat berpengetahuan, karismatik, dan pandai bercerita.
 
@@ -48,15 +48,15 @@ Bangun sebuah aplikasi web yang berfungsi sebagai pemandu wisata pribadi. Penggu
 
     Gunakan format Markdown untuk penekanan pada nama tempat atau detail penting.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan narasi tur yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted tour narrative in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Masukkan Lokasi Tur (Kota atau Museum):" dengan:**
-    `Tokyo`
+*   **Fill in the "Enter Tour Location (City or Museum):" field with:**
+`Tokyo`
 ---

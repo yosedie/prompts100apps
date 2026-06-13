@@ -1,38 +1,38 @@
-## Nama Aplikasi
-Riwayat Karakter: Character Backstory Generator
+## Application Name
+Character History: Character Backstory Generator
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web untuk penulis novel, skenario, atau game yang dapat menciptakan latar belakang karakter (backstory) yang kaya dan mendalam. Pengguna memasukkan beberapa sifat dasar, dan AI akan mengembangkannya menjadi profil karakter yang lengkap, termasuk motivasi, ketakutan, dan rahasia terpendam.
+## Project Summary
+Build a web application for novel, screenplay or game writers that can create rich and in-depth character backgrounds. Users enter a few basic traits, and the AI ​​will develop them into a complete character profile, including motivations, fears, and hidden secrets.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Riwayat Karakter".
-2.  **Form Input Pengguna:**
-    *   **Input Nama Karakter:** Sebuah kolom input teks dengan label "Nama Karakter:".
-    *   **Input Arketipe/Peran:** Sebuah kolom input teks dengan label "Arketipe/Peran Utama:".
-    *   **Input Sifat Positif:** Sebuah kolom input teks dengan label "Sifat Positif Utama:".
-    *   **Input Kelemahan:** Sebuah kolom input teks dengan label "Kelemahan/Konflik Utama:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Ciptakan Riwayat Karakter". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menulis...".
-4.  **Area Output:**
-    *   Judul (H3): "Profil Karakter:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh profil.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "Character History".
+2.  **User Input Form:**
+    *   **Character Name Input:** A text input field labeled "Character Name:".
+    *   **Archetype/Role Input:** A text input field labeled "Primary Archetype/Role:".
+    *   **Positive Trait Input:** A text input field labeled "Main Positive Trait:".
+    *   **Weakness Input:** A text input field labeled "Main Weakness/Conflict:".
+3.  **Action Button:** A main button with the text "Create Character History". While the process is running, the button should be disabled and display the status "Writing...".
+4.  **Output Area:**
+    *   Title (H3): "Character Profile:"
+    *   A single content area to display all profiles.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti `##`, `**`, dan `*`) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as `##`, `**`, and `*`) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail karakter dan mengklik tombol "Ciptakan Riwayat Karakter".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the character details and clicks the “Create Character History” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis fiksi dan master pengembangan karakter (character development).
 
@@ -52,21 +52,21 @@ Bangun sebuah aplikasi web untuk penulis novel, skenario, atau game yang dapat m
 
     Gunakan format Markdown untuk judul, sub-judul, dan poin-poin penting agar profil mudah dibaca.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan profil karakter yang sudah diformat di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays the formatted character profile in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow for live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Nama Karakter:" dengan:**
-    `Kaelan`
-*   **Isi kolom "Arketipe/Peran Utama:" dengan:**
-    `Seorang pemburu bayaran di kota cyberpunk yang sinis`
-*   **Isi kolom "Sifat Positif Utama:" dengan:**
-    `Memiliki kode etik pribadi yang kuat`
-*   **Isi kolom "Kelemahan/Konflik Utama:" dengan:**
-    `Terobsesi dengan kegagalan di masa lalunya`
+*   **Fill in the "Character Name:" column with:**
+`Kaelan`
+*   **Fill in the "Primary Archetype/Role:" column with:**
+`A bounty hunter in a cynical cyberpunk city`
+*   **Fill in the "Main Positive Trait:" column with:**
+`Have a strong personal code of ethics`
+*   **Fill in the "Main Weakness/Conflict:" column with:**
+`Obsessed with his past failures`
 ---

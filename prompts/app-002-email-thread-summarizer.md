@@ -1,38 +1,38 @@
-## Nama Aplikasi
+## Application Name
 Email Thread Summarizer
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang berfungsi untuk meringkas utas email yang panjang. Pengguna menempelkan seluruh konten email ke dalam area input, dan aplikasi akan menganalisisnya untuk menghasilkan ringkasan utama dalam 3 poin serta daftar tugas (action items) lengkap dengan penanggung jawabnya dalam format tabel.
+## Project Summary
+Build a web application that serves to summarize long email threads. Users paste the entire email content into the input area, and the application will analyze it to produce a main summary in 3 points as well as a list of tasks (action items) complete with the person responsible in table format.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Email Thread Summarizer".
-2.  **Area Input:**
-    *   Sebuah area teks (textarea) yang besar dan tinggi dengan label "Tempelkan seluruh utas email di sini:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Ringkas Sekarang!". Saat proses berjalan, tombol harus dinonaktifkan dan menampilkan status "Menganalisis...".
-4.  **Area Output:** Dibagi menjadi dua bagian yang jelas:
-    *   **Bagian Ringkasan:**
-        *   Judul (H3): "Ringkasan Utama"
-        *   Area konten untuk menampilkan 3 poin ringkasan dalam format daftar bernomor.
-    *   **Bagian Action Items:**
-        *   Judul (H3): "Action Items"
-        *   Area konten untuk menampilkan tabel tugas dan penanggung jawab.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large header says "Email Thread Summarizer".
+2.  **Input Area:**
+    *   A large, tall textarea labeled "Paste entire email thread here:".
+3.  **Action Button:** A main button with the text "Compact Now!". While the process is running, the button should be disabled and display the status "Analyzing...".
+4.  **Output Area:** Divided into two clear sections:
+    *   **Summary Section:**
+        *   Title (H3): "Main Summary"
+        *   Content area to display 3 summary points in a numbered list format.
+    *   **Action Items section:**
+        *   Title (H3): "Action Items"
+        *   Content area to display a table of tasks and people in charge.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (terutama daftar bernomor dan tabel) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada kedua bagian di Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (especially numbered lists and tables) into properly formatted HTML elements. Apply this rendering to both parts in the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna menempelkan teks utas email dan mengklik tombol "Ringkas Sekarang!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user pastes the text of the email thread and clicks the "Summarize Now!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang asisten eksekutif AI yang sangat efisien, berspesialisasi dalam menganalisis utas email yang panjang dan mengekstrak informasi paling penting.
 
@@ -47,16 +47,16 @@ Bangun sebuah aplikasi web yang berfungsi untuk meringkas utas email yang panjan
 
     Gunakan Markdown untuk format. Untuk tabel, gunakan format Markdown table dengan header "Tugas (Action Item)" dan "Penanggung Jawab (PIC)".
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi mem-parsing teks tersebut, memisahkan bagian ringkasan dan bagian tabel action items.
-5.  Aplikasi merender konten Markdown dari setiap bagian menjadi HTML, lalu menampilkannya di area output yang sesuai.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving the response, the application parses the text, separating the summary section and the action items table section.
+5.  The application renders the Markdown content of each section into HTML, then displays it in the appropriate output area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis area input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill the input area with the following example data when the page first loads:**
 
-*   **Isi kolom "Tempelkan seluruh utas email di sini:" dengan:**
+*   **Fill in the "Paste entire email thread here:" field with:**
     ```
     From: Andi (Project Manager)
     To: Tim Proyek Phoenix

@@ -1,37 +1,37 @@
-## Nama Aplikasi
-Penulis Ucapan Terima Kasih AI
+## Application Name
+Author Acknowledgments AI
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web yang membantu pengguna menulis ucapan terima kasih yang tulus dan spesifik. Pengguna memasukkan hadiah atau bantuan yang mereka terima dan dari siapa, lalu AI akan menyusun draf ucapan yang personal dan tidak terdengar generik.
+## Project Summary
+Build a web application that helps users write sincere and specific thank you notes. Users enter the gift or favor they received and from whom, and the AI ​​will draft a greeting that is personal and doesn't sound generic.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Penulis Ucapan Terima Kasih AI".
-2.  **Form Input Pengguna:**
-    *   **Input Hadiah/Bantuan:** Sebuah area teks (textarea) dengan label "Apa yang Anda terima (hadiah/bantuan)?".
-    *   **Input Pemberi:** Sebuah kolom input teks dengan label "Dari siapa?".
-    *   **Pilihan Gaya:** Sebuah menu dropdown (select) dengan label "Gaya Ucapan:" dan opsi: "Santai & Hangat", "Formal & Profesional".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tulis Ucapan Terima Kasih". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Merangkai Kata...".
-4.  **Area Output:**
-    *   Judul (H3): "Draf Ucapan Terima Kasih Anda:"
-    *   Sebuah area konten tunggal untuk menampilkan seluruh ucapan.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large headline says "Author AI Acknowledgments".
+2.  **User Input Form:**
+    *   **Gift/Aid Input:** A text area labeled "What did you receive (gift/aid)?".
+    *   **Giver Input:** A text input field labeled "From whom?".
+    *   **Style Selection:** A dropdown (select) menu with the label "Speech Style:" and options: "Casual & Warm", "Formal & Professional".
+3.  **Action Button:** A main button with the text "Write a Thank You Note". While the process is running, the button should be activated and display the status "Stringing Words...".
+4.  **Output Area:**
+    *   Title (H3): "Draft Your Acknowledgment:"
+    *   A single content area to display the entire speech.
+    *   **Copy Button:** There should be a "Copy Text" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (such as paragraphs) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna mengisi detail, memilih gaya, dan mengklik tombol "Tulis Ucapan Terima Kasih".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user fills in the details, chooses a style, and clicks the “Write a Thank You” button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang penulis yang ahli dalam mengekspresikan rasa terima kasih dengan tulus dan spesifik.
 
@@ -47,19 +47,19 @@ Bangun sebuah aplikasi web yang membantu pengguna menulis ucapan terima kasih ya
 
     Gunakan placeholder `[Nama Pemberi]` dan `[Nama Anda]` agar mudah disesuaikan.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan draf ucapan terima kasih di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays a draft thank you note in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Apa yang Anda terima (hadiah/bantuan)?" dengan:**
-    `Sebuah buku tentang astronomi untuk ulang tahunku. Aku sudah lama menginginkannya!`
-*   **Isi kolom "Dari siapa?" dengan:**
-    `Tante Rina`
-*   **Atur pilihan "Gaya Ucapan:" ke:**
-    `Santai & Hangat`
+*   **Fill in the column "What did you receive (gift/aid)?" with:**
+`A book about astronomy for my birthday. I've wanted it for a long time!`
+*   **Fill in the "From whom?" with:**
+`Aunt Rina`
+*   **Set the "Speech Style:" option to:**
+`Relaxing & Warm`
 ---

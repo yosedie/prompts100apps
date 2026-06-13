@@ -1,35 +1,35 @@
-## Nama Aplikasi
+## Application Name
 Project Codename Generator AI
 
-## Konfigurasi & Atribusi
-*   **Model AI Target:** Gemini 2.5 Pro
-*   **Pembuat:** yosedie
+## Configuration & Attribution
+*   **Target AI Model:** Gemini 2.5 Pro
+*   **Creator:** yosedie
 
 ---
 
-## Ringkasan Proyek
-Bangun sebuah aplikasi web untuk para developer dan manajer proyek yang memberikan ide-ide nama kode (codename) yang kreatif. Pengguna memasukkan deskripsi singkat tentang tujuan proyek, dan AI akan menghasilkan 10 ide nama kode yang unik dan tematik.
+## Project Summary
+Build a web application for developers and project managers that provides creative codename ideas. Users enter a brief description of the project's goals, and AI will generate 10 unique and thematic codename ideas.
 
-## Komponen Antarmuka Pengguna (UI Components)
+## User Interface Components (UI Components) (UI Components)
 
-1.  **Header:** Judul besar bertuliskan "Project Codename Generator AI".
-2.  **Form Input Pengguna:**
-    *   Sebuah area teks (textarea) dengan label "Jelaskan Tujuan Utama Proyek Anda:".
-3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Generate Codenames!". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Brainstorming...".
-4.  **Area Output:**
-    *   Judul (H3): "10 Ide Nama Kode Proyek:"
-    *   Sebuah area konten tunggal untuk menampilkan 10 nama dalam daftar bernomor.
-    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Semua" di sebelah area output.
-5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+1.  **Header:** The large title says "Project Codename Generator AI".
+2.  **User Input Form:**
+    *   A text area labeled "Describe the Main Goal of Your Project:".
+3.  **Action Buttons:** A main button with the text "Generate Codenames!". While the process is running, the button should be activated and display the status "Brainstorming...".
+4.  **Output Area:**
+    *   Title (H3): "10 Project Code Name Ideas:"
+    *   A single content area to display 10 names in a numbered list.
+    *   **Copy Button:** There should be a "Copy All" button next to the output area.
+5.  **Footer:** A simple footer containing a link (hyperlink) with the text **'Created by yosedie'**. This link should point to the URL `https://github.com/yosedie` and open in a new tab.
 
-## Persyaratan Rendering Konten
+## Content Rendering Requirements
 
-*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (daftar bernomor) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+*   **Render Markdown to HTML:** Applications **required** parse text responses from AI before displaying them in the UI. Use a JavaScript library such as `marked.js` or equivalent to convert all Markdown syntax (numbered lists) into properly formatted HTML elements. Apply this rendering to the Output Area.
 
-## Alur Kerja & Logika (Workflow & Logic)
+## Workflow & Logic (Workflow & Logic)
 
-1.  Pengguna memasukkan deskripsi proyek dan mengklik tombol "Generate Codenames!".
-2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+1.  The user enters a project description and clicks the "Generate Codenames!" button.
+2.  The application creates a structured *prompt* to send to the AI ​​model.
     ```
     Anda adalah seorang manajer produk di sebuah laboratorium inovasi rahasia (skunkworks). Anda ahli dalam memberikan nama kode yang keren, misterius, dan tematik untuk proyek-proyek baru.
 
@@ -45,15 +45,15 @@ Bangun sebuah aplikasi web untuk para developer dan manajer proyek yang memberik
 
     Sajikan hasilnya dalam format daftar bernomor.
     ```
-3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
-4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
-5.  Aplikasi menampilkan 10 ide nama kode di Area Output.
+3.  The application sends this prompt to the **Gemini 2.5 Pro** model API.
+4.  After receiving a response, the application renders the Markdown content of the response into HTML.
+5.  The application displays 10 code name ideas in the Output Area.
 
 ---
-## Skenario Pengujian Cepat (Quick Test Scenario)
+## Quick Test Scenario (Quick Test Scenario)
 
-**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+**To allow live testing, autofill input fields with the following example data when the page first loads:**
 
-*   **Isi kolom "Jelaskan Tujuan Utama Proyek Anda:" dengan:**
-    `Sebuah proyek rahasia untuk membangun ulang website perusahaan dari awal dengan teknologi terbaru, dengan fokus pada kecepatan dan pengalaman pengguna yang modern.`
+*   **Fill in the "Describe the Main Goal of Your Project:" column with:**
+`A classified project to rebuild a company website from scratch with the latest technology, with a focus on speed and a modern user experience.`
 ---
