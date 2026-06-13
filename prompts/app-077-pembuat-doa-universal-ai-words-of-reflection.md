@@ -1,0 +1,60 @@
+## Nama Aplikasi
+Pembuat Doa Universal AI: Words of Reflection
+
+## Konfigurasi & Atribusi
+*   **Model AI Target:** Gemini 2.5 Pro
+*   **Pembuat:** yosedie
+
+---
+
+## Ringkasan Proyek
+Bangun sebuah aplikasi web yang menulis doa, refleksi, atau perenungan yang bersifat universal dan non-denominasi. Pengguna memilih sebuah tema, dan AI akan menghasilkan sebuah teks yang fokus pada nilai-nilai kemanusiaan bersama seperti harapan, syukur, kekuatan, atau kedamaian.
+
+## Komponen Antarmuka Pengguna (UI Components)
+
+1.  **Header:** Judul besar bertuliskan "Pembuat Doa Universal AI".
+2.  **Form Input Pengguna:**
+    *   **Pilihan Tema:** Sebuah menu dropdown (select) dengan label "Pilih Tema Perenungan Anda:" dan opsi: "Rasa Syukur", "Harapan di Masa Sulit", "Kekuatan untuk Hari Ini", "Kedamaian Batin".
+3.  **Tombol Aksi:** Sebuah tombol utama dengan teks "Tulis Perenungan". Saat proses berjalan, tombol harus dinaktifkan dan menampilkan status "Mencari Kata...".
+4.  **Area Output:**
+    *   Judul (H3): "Sebuah Perenungan Untukmu:"
+    *   Sebuah area konten tunggal untuk menampilkan seluruh teks.
+    *   **Tombol Salin (Copy):** Harus ada tombol "Salin Teks" di sebelah area output.
+5.  **Footer:** Sebuah footer sederhana berisi tautan (hyperlink) dengan teks **'Created by yosedie'**. Tautan ini harus mengarah ke URL `https://github.com/yosedie` dan terbuka di tab baru.
+
+## Persyaratan Rendering Konten
+
+*   **Render Markdown ke HTML:** Aplikasi **wajib** mem-parsing respons teks dari AI sebelum menampilkannya di UI. Gunakan library JavaScript seperti `marked.js` atau yang setara untuk mengubah semua sintaks Markdown (seperti paragraf) menjadi elemen HTML yang diformat dengan benar. Terapkan rendering ini pada Area Output.
+
+## Alur Kerja & Logika (Workflow & Logic)
+
+1.  Pengguna memilih tema dan mengklik tombol "Tulis Perenungan".
+2.  Aplikasi membuat sebuah *prompt* terstruktur untuk dikirim ke model AI.
+    ```
+    Anda adalah seorang penulis spiritual dan filsuf yang bijaksana. Anda mampu merangkai kata-kata yang menenangkan dan menginspirasi, tanpa terikat pada satu agama atau kepercayaan tertentu.
+
+    Berdasarkan tema berikut:
+    """
+    [Tema dari pilihan pengguna]
+    """
+
+    Tugas Anda adalah menulis sebuah doa atau perenungan singkat yang bersifat universal. Teks harus:
+    - Fokus pada perasaan dan nilai-nilai kemanusiaan yang terkait dengan tema.
+    - Menggunakan bahasa yang inklusif dan dapat diterima oleh siapa saja, dari latar belakang apa pun.
+    - Menawarkan kata-kata penghiburan, kekuatan, atau perspektif.
+    - Puitis namun sederhana dan tulus.
+
+    PENTING: Hindari penggunaan nama atau istilah spesifik dari agama manapun.
+    ```
+3.  Aplikasi mengirimkan prompt ini ke API model **Gemini 2.5 Pro**.
+4.  Setelah menerima respons, aplikasi merender konten Markdown dari respons tersebut menjadi HTML.
+5.  Aplikasi menampilkan teks perenungan di Area Output.
+
+---
+## Skenario Pengujian Cepat (Quick Test Scenario)
+
+**Untuk memungkinkan pengujian langsung, isi otomatis kolom input dengan data contoh berikut saat halaman pertama kali dimuat:**
+
+*   **Atur pilihan "Pilih Tema Perenungan Anda:" ke:**
+    `Rasa Syukur`
+---
