@@ -19,6 +19,10 @@ This project demonstrates proficiency in:
 Watch the real-time process of generating these 100+ applications:
 👉 **[Watch the Demo Video on Google Drive 🎥](https://drive.google.com/file/d/1qBWXRc8436fQ5KcI-NwZQTsEEZ9xwF1J/view?usp=sharing)**
 
+## 📈 1,000 Apps Live Tracker
+This collection is part of a larger collaborative initiative comprising 1,000 AI-powered applications, of which I built these 101 apps.
+👉 **[View the Live List of 1,000 Apps (Google Sheets) 📊](https://docs.google.com/spreadsheets/d/1F35DKwG6Ri5XtoVy9L4Ul6yBokvpCxFD/edit?usp=sharing&ouid=103427347269188263749&rtpof=true&sd=true)**
+
 ---
 
 ## 📊 Application Index
