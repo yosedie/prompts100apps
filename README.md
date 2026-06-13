@@ -7,6 +7,10 @@ This project demonstrates proficiency in:
 - ⚙️ **LLM Orchestration**: Designing applications powered by Gemini models (specifically Gemini 2.5 Pro and Flash).
 - 🛠️ **Rapid Prototyping & Product Design**: Transforming raw ideas into interactive, functional web apps.
 
+## 📺 Real-Time Generation Demo
+Watch the real-time process of generating these 100+ applications:
+👉 **[Watch the Demo Video on Google Drive 🎥](https://drive.google.com/file/d/1qBWXRc8436fQ5KcI-NwZQTsEEZ9xwF1J/view?usp=sharing)**
+
 ---
 
 ## 📊 Application Index
